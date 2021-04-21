@@ -3,6 +3,10 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      colors: {
+        "romeo-text": "#284135",
+        "romeo-background": "#f3f2f1",
+      },
       fontFamily: {
         "romeo": "eb garamond",
         gab:['Gabriola'],

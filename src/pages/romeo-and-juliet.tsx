@@ -12,38 +12,67 @@ const RomeoAndJuliet = () => {
   const countdown = useCountdown(dueDate)
 
   return (
-    <div className={"max-w-7xl mx-auto"}>
+    <div className={"bg-romeo-background relative"}>
       <SEO title={"Romeo and Juliet"} />
 
-      <div className={"md:flex"}>
-        <div className={`relative p-8`}>
-          <StaticImage
-            src="../images/photo-1.jpg"
-            alt={""}
-            placeholder="blurred"
-            layout={"constrained"}
-            width={700}
-            className={"rounded-3xl shadow"}
-          />
-        </div>
+      <p className="text-xl text-romeo-text font-bold font-romeo text-center mx-auto px-8 pt-8 block md:hidden opacity-70">
+        Pernikahan
+      </p>
+      <h1 className="text-4xl text-romeo-text font-bold font-romeo text-center mx-auto px-8 block md:hidden">
+        Romeo & Juliet
+      </h1>
 
-        <div className="prose prose-2xl font-romeo text-center mx-auto p-8 md:pt-64">
-          <p className={"!my-4"}>Pernikahan</p>
+      <div className="fixed right-0 top-0 flex-col items-center p-16 font-romeo hidden xl:flex">
+        <p>{dueDate.month()}</p>
+        <p>/</p>
+        <p>{dueDate.date()}</p>
+      </div>
 
-          <h1>
-            Romeo <br />&<br /> Juliet
-          </h1>
+      <div className="fixed left-0 top-0 flex-col items-center p-16 font-romeo hidden xl:flex">
+        <p>R</p>
+        <p>/</p>
+        <p>J</p>
+      </div>
 
-          <p className={"!my-0"}>
-            {dueDate.format("YYYY MMMM DD")} <br />
-            {dueDate.format("HH:mm")}
-          </p>
+      <div className="fixed text-md origin-top-left transform -rotate-90 left-0 bottom-0 flex-col items-center m-16 font-romeo hidden xl:flex">
+        Denpasar, Bali
+      </div>
 
-          <div className={"flex justify-center"}>
-            <p className={"mr-4"}>{countdown.days} Hari</p>
-            <p>{countdown.hours} Jam</p>
+      <div className={"max-w-7xl mx-auto"}>
+        <div className={"md:flex items-center"}>
+          <div className={`relative p-8 md:pt-16`}>
+            <StaticImage
+              src="../images/photo-1.jpg"
+              alt={""}
+              placeholder="blurred"
+              layout={"constrained"}
+              width={700}
+            />
+          </div>
+
+          <div className="flex flex-col items-center px-16 mx-auto hidden md:flex">
+            <p className="max-w-7xl mx-auto pb-4 text-4xl font-romeo text-romeo-text">
+              Pernikahan
+            </p>
+
+            <h1 className="text-8xl text-romeo-text font-bold font-romeo text-center hidden md:block">
+              Romeo <br />&<br /> Juliet
+            </h1>
           </div>
         </div>
+      </div>
+
+      <div className={"max-w-7xl mx-auto px-8 pt-8 pb-4 font-bold mt-16"}>
+        Akad Nikah
+      </div>
+      <div className="max-w-7xl mx-auto px-8 font-bold text-4xl font-romeo text-romeo-text">
+        {dueDate.format("dddd")}
+      </div>
+      <div className="max-w-7xl mx-auto px-8 font-bold text-4xl font-romeo text-romeo-text">
+        {dueDate.format("DD MMMM ")}
+      </div>
+      <div className="max-w-7xl mx-auto px-8 font-bold text-4xl font-romeo text-romeo-text">
+        {dueDate.format("YYYY")}
       </div>
     </div>
   )
