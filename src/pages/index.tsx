@@ -3,7 +3,7 @@ import React from "react"
 
 const IndexPage = () => {
   return (
-    <main>
+    <main className={"prose p-8"}>
       wedding
       <ul>
         <li>

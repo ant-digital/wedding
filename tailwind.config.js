@@ -2,7 +2,11 @@ module.exports = {
   mode: "jit",
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "romeo": "eb garamond"
+      }
+    },
   },
   plugins: [
     require("@tailwindcss/typography"),
