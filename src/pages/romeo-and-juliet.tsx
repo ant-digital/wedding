@@ -12,7 +12,7 @@ const RomeoAndJuliet = () => {
   const countdown = useCountdown(dueDate)
 
   return (
-    <div className={"bg-romeo-background relative"}>
+    <div className={"bg-romeo-background relative xl:px-28"}>
       <SEO title={"Romeo and Juliet"} />
 
       <p className="text-xl text-romeo-text font-bold font-romeo text-center mx-auto px-8 pt-8 block md:hidden opacity-70">
@@ -51,11 +51,11 @@ const RomeoAndJuliet = () => {
           </div>
 
           <div className="flex flex-col items-center px-16 mx-auto hidden md:flex">
-            <p className="max-w-7xl mx-auto pb-4 text-4xl font-romeo text-romeo-text">
+            <p className="pb-4 text-2xl font-romeo text-romeo-text">
               Pernikahan
             </p>
 
-            <h1 className="text-8xl text-romeo-text font-bold font-romeo text-center hidden md:block">
+            <h1 className="text-7xl text-romeo-text font-bold font-romeo text-center hidden md:block">
               Romeo <br />&<br /> Juliet
             </h1>
           </div>
