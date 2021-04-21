@@ -39,7 +39,7 @@ const RomeoAndJuliet = () => {
       </div>
 
       <div className={"max-w-7xl mx-auto"}>
-        <div className={"md:flex items-center"}>
+        <div className={"md:flex"}>
           <div className={`relative p-8 md:pt-16`}>
             <StaticImage
               src="../images/photo-1.jpg"
@@ -50,7 +50,7 @@ const RomeoAndJuliet = () => {
             />
           </div>
 
-          <div className="flex flex-col items-center px-16 mx-auto hidden md:flex">
+          <div className="flex flex-col items-center px-16 mx-auto hidden md:flex md:mt-64">
             <p className="pb-4 text-2xl font-romeo text-romeo-text">
               Pernikahan
             </p>
