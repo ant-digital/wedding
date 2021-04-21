@@ -3,3 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    @font-face {
+      font-family: Gabriola;
+      src: url(./Gabriola.ttf) format("truetype");
+    }
+    @font-face {
+        font-family: 'Great Vibes', cursive;
+        src:url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+    }
+  }

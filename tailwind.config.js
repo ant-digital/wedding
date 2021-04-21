@@ -4,8 +4,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "romeo": "eb garamond"
-      }
+        "romeo": "eb garamond",
+        gab:['Gabriola'],
+        greatVibe:['Great Vibes' ,'cursive']
+      },
+      backgroundImage: theme => ({
+        'banner-flower': "url('images/banner.png')"
+       })
     },
   },
   plugins: [

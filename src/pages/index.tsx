@@ -9,6 +9,9 @@ const IndexPage = () => {
         <li>
           <Link to={"/romeo-and-juliet"}>Romeo & Juliet</Link>
         </li>
+        <li>
+        <Link to={"/me-and-you"}>Me & You</Link>
+        </li>
       </ul>
     </main>
   )
