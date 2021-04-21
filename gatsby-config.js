@@ -42,7 +42,7 @@ module.exports = {
   },
   siteMetadata: {
     siteUrl: "https://wedding.chrsep.dev",
-    title: "wedding",
+    title: "Wedding",
     author: "@antdigital"
   },
   plugins
