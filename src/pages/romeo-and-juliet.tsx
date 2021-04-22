@@ -71,7 +71,7 @@ const RomeoAndJuliet = () => {
       </div>
 
       <div>
-        <div className={"max-w-7xl mx-auto px-8 pt-8 pb-4 font-bold"}>
+        <div className={"max-w-7xl mx-auto px-8 pt-8 pb-4 text-romeo-text"}>
           Tanggal
         </div>
         <div className="max-w-7xl mx-auto px-8 font-bold text-4xl font-romeo text-romeo-text">
@@ -87,7 +87,7 @@ const RomeoAndJuliet = () => {
 
       <div className={"flex flex-col md:flex-row max-w-7xl mx-auto p-8 mt-16"}>
         <div className={"pb-8 pr-8"}>
-          <div className={"pb-4 font-bold"}>Lokasi</div>
+          <div className={"pb-4 text-romeo-text"}>Lokasi</div>
           <div className="font-bold text-4xl font-romeo text-romeo-text ">
             The Apurva Kempinski
           </div>
