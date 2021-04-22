@@ -13,7 +13,7 @@ const MeAndYou = () => {
       <div className="text-2xl">
         <div className="flex flex-col justify-center text-center h-screen bg-banner-flower bg-repeat-round">
           <div>
-            <h1>The wedding of</h1>
+            <h1 className="font-greatVibe text-3xl mb-3">The wedding of</h1>
           </div>
           <div>
             <h1 className="font-greatVibe text-6xl">Me</h1>

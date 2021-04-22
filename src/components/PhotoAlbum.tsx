@@ -56,7 +56,7 @@ const options = {
     showDownloadButton: false
   },
   settings: {
-    overlayColor: "rgba(255, 237, 225, 1)",
+    overlayColor: "#d6c6bc",
     transitionSpeed: 1000,
     transitionTimingFunction: "linear"
   },
@@ -65,7 +65,7 @@ const options = {
     thumbnailsOpacity: 0.4
   },
   caption: {
-    captionColor: "rgba(241, 191, 152, 1)"
+    showCaption: false
   },
   progressBar: {
     size: "4px",
@@ -75,7 +75,7 @@ const options = {
 };
 const PhotoAlbum = () => {
   return (
-    <div className="w-screen bg-gray-700">
+    <div className="w-screen" style={{backgroundColor:'#d6c6bc'}}>
       <h1 className="text-2xl text-white mb-4 text-center">Gallery</h1>
       <SRLWrapper options={options}>
         <div id="gallery-with-links" className="grid grid-cols-3 gap-4">
