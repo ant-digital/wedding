@@ -10,7 +10,16 @@ const plugins = [
       icon: "src/images/icon.png",
     },
   },
-  "gatsby-plugin-sharp",
+  {
+    resolve: `gatsby-plugin-sharp`,
+    options: {
+      // Defaults used for gatsbyImageData and StaticImage
+      defaults: {
+        formats: ["auto", "webp", "avif"],
+        placeholder: "blurred",
+      },
+    },
+  },
   "gatsby-transformer-sharp",
   {
     resolve: "gatsby-source-filesystem",
@@ -29,7 +38,7 @@ const plugins = [
       },
     },
   },
-  `gatsby-plugin-tsconfig-paths`
+  `gatsby-plugin-tsconfig-paths`,
 ]
 
 // if (process.env.NODE_ENV === "production") {
@@ -43,7 +52,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://wedding.chrsep.dev",
     title: "Wedding",
-    author: "@antdigital"
+    author: "@antdigital",
   },
-  plugins
-};
+  plugins,
+}
