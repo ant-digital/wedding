@@ -121,7 +121,7 @@ const RomeoAndJuliet = () => (
       </div>
 
       <div className="max-w-7xl mx-auto p-8 flex flex-col-reverse md:flex-row md:mt-16">
-        <section className="prose max-w-md mt-16 md:mt-32">
+        <section className="prose max-w-sm mt-16 md:mt-32">
           <h2 className={"font-romeo"}>Protokol Covid</h2>
 
           <p>
@@ -181,7 +181,7 @@ const RomeoAndJuliet = () => (
           placeholder="blurred"
           layout={"constrained"}
           width={700}
-          className={"md:ml-32"}
+          className={"lg:ml-32"}
         />
       </div>
 
