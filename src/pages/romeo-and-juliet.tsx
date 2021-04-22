@@ -110,7 +110,7 @@ const RomeoAndJuliet = () => (
       </div>
     </div>
 
-    <div className={"max-w-7xl mx-auto p-8"}>
+    <div className={"max-w-7xl mx-auto p-8 flex flex-col-reverse md:flex-row mt-16"}>
       <section className="prose max-w-md mt-16 md:mt-32">
         <h2 className={"font-romeo"}>Protokol Covid</h2>
 
@@ -164,10 +164,19 @@ const RomeoAndJuliet = () => (
           Mencuci Tangan dan Menggunakan Hand Sanitizer
         </p>
       </section>
+
+      <StaticImage
+        src="../images/photo-2.jpg"
+        alt={""}
+        placeholder="blurred"
+        layout={"constrained"}
+        width={700}
+        className={"md:ml-32"}
+      />
     </div>
 
     <div className={"max-w-7xl mx-auto p-8 mt-32 "}>
-      <h2 className={"font-romeo text-7xl text-right mb-16"}>Gallery</h2>
+      <h2 className={"font-romeo text-7xl mb-16"}>Gallery</h2>
 
       <div className={"flex flex-wrap justify-between"}>
         <StaticImage
