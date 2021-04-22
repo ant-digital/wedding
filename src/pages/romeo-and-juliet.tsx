@@ -10,6 +10,7 @@ const RomeoAndJuliet = () => (
     <img
       className={"absolute top-96 right-0 left-0 bottom-0 w-full"}
       src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1003%26quot%3b)' fill='none'%3e%3cpath d='M -945.8968927247779%2c278 C -849.9%2c312.6 -657.9%2c455.2 -465.89689272477796%2c451 C -273.9%2c446.8 -177.9%2c251.8 14.103107275222044%2c257 C 206.1%2c262.2 302.1%2c495.4 494.10310727522204%2c477 C 686.1%2c458.6 784.92%2c180 974.1031072752221%2c165 C 1163.28%2c150 1346.82%2c354.6 1440%2c402' stroke='rgba(205%2c 201%2c 197%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -537.4188180458387%2c318 C -441.42%2c291.4 -249.42%2c179.2 -57.41881804583873%2c185 C 134.58%2c190.8 230.58%2c355.2 422.58118195416125%2c347 C 614.58%2c338.8 710.58%2c151.4 902.5811819541613%2c144 C 1094.58%2c136.6 1275.1%2c289.2 1382.5811819541614%2c310 C 1490.06%2c330.8 1428.52%2c260.4 1440%2c248' stroke='rgba(205%2c 201%2c 197%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -125.28081539758534%2c192 C -29.28%2c233.2 162.72%2c391.6 354.71918460241466%2c398 C 546.72%2c404.4 642.72%2c236.4 834.7191846024147%2c224 C 1026.72%2c211.6 1122.72%2c349.6 1314.7191846024148%2c336 C 1506.72%2c322.4 1769.66%2c145.2 1794.7191846024148%2c156 C 1819.78%2c166.8 1510.94%2c343.2 1440%2c390' stroke='rgba(205%2c 201%2c 197%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -351.9561101655452%2c91 C -255.96%2c170 -63.96%2c489.8 128.04388983445477%2c486 C 320.04%2c482.2 416.04%2c81.8 608.0438898344548%2c72 C 800.04%2c62.2 896.04%2c396.2 1088.0438898344548%2c437 C 1280.04%2c477.8 1497.65%2c306 1568.0438898344548%2c276 C 1638.44%2c246 1465.61%2c284.8 1440%2c287' stroke='rgba(205%2c 201%2c 197%2c 1)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1003'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e"
+      alt={""}
     />
 
     <main className={"relative xl:px-28"}>
@@ -49,7 +50,7 @@ const RomeoAndJuliet = () => (
         Denpasar, Bali
       </div>
       <div className={"max-w-7xl mx-auto"}>
-        <div className={"md:flex"}>
+        <div className={"md:flex md:flex-row-reverse"}>
           <div className={`relative p-8 md:pt-16`}>
             <StaticImage
               src="../images/photo-1.jpg"
@@ -72,7 +73,7 @@ const RomeoAndJuliet = () => (
         </div>
       </div>
 
-      <div className={"flex flex-col md:flex-row max-w-7xl mx-auto p-8 mt-16"}>
+      <div className={"flex flex-col md:flex-row max-w-7xl mx-auto p-8"}>
         <div className={"prose max-w-md"}>
           <p className={"text-xl font-romeo"}>
             "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa
