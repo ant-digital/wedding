@@ -72,33 +72,8 @@ const RomeoAndJuliet = () => (
         </div>
       </div>
 
-      <div>
-        <div className={"max-w-7xl mx-auto px-8 pt-8 pb-4 text-romeo-text"}>
-          Tanggal
-        </div>
-        <div className="max-w-7xl mx-auto px-8 font-bold text-4xl font-romeo text-romeo-text">
-          {dueDate.format("HH.mm, dddd")}
-        </div>
-        <div className="max-w-7xl mx-auto px-8 font-bold text-4xl font-romeo text-romeo-text">
-          {dueDate.format("DD MMMM ")}
-        </div>
-        <div className="max-w-7xl mx-auto px-8 font-bold text-4xl font-romeo text-romeo-text">
-          {dueDate.format("YYYY")}
-        </div>
-      </div>
-
       <div className={"flex flex-col md:flex-row max-w-7xl mx-auto p-8 mt-16"}>
-        <div className={"pb-8 pr-8"}>
-          <div className={"pb-4 text-romeo-text"}>Lokasi</div>
-          <div className="font-bold text-4xl font-romeo text-romeo-text ">
-            The Apurva Kempinski
-          </div>
-          <div className="font-bold text-4xl font-romeo text-romeo-text">
-            Denpasar, Bali
-          </div>
-        </div>
-
-        <div className={"prose max-w-sm ml-auto"}>
+        <div className={"prose max-w-md"}>
           <p className={"text-xl font-romeo"}>
             "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa
             yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
@@ -114,12 +89,37 @@ const RomeoAndJuliet = () => (
             Dengan segala kerendahan hati dan dengan ungkapan syukur atas
             karunia Tuhan, kami mengundang Bapak/ Ibu/ Saudara/ i untuk
             menghadiri Resepsi Pernikahan putra-putri kami yang akan
-            diselenggarakan pada :
+            diselenggarakan pada:
           </p>
+        </div>
+
+        <div className={"pb-8 ml-auto mt-16 md:mt-64"}>
+          <div>
+            <div className={"pb-4 text-romeo-text"}>Tanggal</div>
+            <div className="font-bold text-4xl font-romeo text-romeo-text">
+              {dueDate.format("HH.mm, dddd")}
+            </div>
+            <div className="font-bold text-4xl font-romeo text-romeo-text">
+              {dueDate.format("DD MMMM ")}
+            </div>
+            <div className="font-bold text-4xl font-romeo text-romeo-text">
+              {dueDate.format("YYYY")}
+            </div>
+          </div>
+
+          <div className={"mt-16"}>
+            <div className={"pb-4 text-romeo-text"}>Lokasi</div>
+            <div className="font-bold text-4xl font-romeo text-romeo-text ">
+              The Apurva Kempinski
+            </div>
+            <div className="font-bold text-4xl font-romeo text-romeo-text">
+              Denpasar, Bali
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto p-8 flex flex-col-reverse md:flex-row mt-16">
+      <div className="max-w-7xl mx-auto p-8 flex flex-col-reverse md:flex-row md:mt-16">
         <section className="prose max-w-md mt-16 md:mt-32">
           <h2 className={"font-romeo"}>Protokol Covid</h2>
 
