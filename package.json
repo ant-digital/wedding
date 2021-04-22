@@ -38,7 +38,9 @@
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-h5-audio-player": "^3.7.0",
+    "react-helmet": "^6.1.0",
+    "simple-react-lightbox": "^3.6.6"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",

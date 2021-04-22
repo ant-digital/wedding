@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 
+
 const IndexPage = () => {
   return (
     <main className={"prose p-8"}>
