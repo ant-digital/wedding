@@ -165,6 +165,38 @@ const RomeoAndJuliet = () => (
         </p>
       </section>
     </div>
+
+    <div className={"max-w-7xl mx-auto p-8 mt-32 "}>
+      <h2 className={"font-romeo text-7xl text-right mb-16"}>Gallery</h2>
+
+      <div className={"flex flex-wrap justify-between"}>
+        <StaticImage
+          src="../../static/A001.jpg"
+          alt="Beach and waves"
+          className={"mb-8 md:mb-0 md:w-1/4"}
+        />
+        <StaticImage
+          src="../../static/A002.jpg"
+          alt="Waves"
+          className={"mb-8 md:mb-0 md:w-1/4"}
+        />
+        <StaticImage
+          src="../../static/A003.jpg"
+          alt="Under the water"
+          className={"mb-8 md:mb-0 md:w-1/4"}
+        />
+        <StaticImage
+          src="../../static/A004.jpg"
+          alt="Canyon night"
+          className={"mb-8 md:mb-0 md:w-1/4"}
+        />
+        <StaticImage
+          src="../../static/A005.jpg"
+          alt="Valley"
+          className={"mb-8 md:mb-0 md:w-1/4"}
+        />
+      </div>
+    </div>
   </main>
 )
 
