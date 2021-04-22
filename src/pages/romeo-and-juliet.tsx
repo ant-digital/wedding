@@ -1,8 +1,6 @@
 import SEO from "$components/SEO"
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import "@fontsource/eb-garamond/400.css"
-import "@fontsource/eb-garamond/700.css"
 import dayjs from "dayjs"
 import useCountdown from "../useCountdown"
 
@@ -13,7 +11,22 @@ const RomeoAndJuliet = () => {
 
   return (
     <div className={"bg-romeo-background relative xl:px-28"}>
-      <SEO title={"Romeo and Juliet"} />
+      <SEO title={"Romeo and Juliet"}>
+        <link
+          rel="preload"
+          href="/fonts/files/eb-garamond-latin-400-normal.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/files/eb-garamond-latin-700-normal.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </SEO>
       <p className="text-xl text-romeo-text font-bold font-romeo text-center mx-auto px-8 pt-8 block md:hidden opacity-70">
         Pernikahan
       </p>
@@ -73,7 +86,7 @@ const RomeoAndJuliet = () => {
       </div>
 
       <div className={"flex flex-col md:flex-row max-w-7xl mx-auto p-8 mt-16"}>
-        <div className={"pb-8"}>
+        <div className={"pb-8 pr-8"}>
           <div className={"pb-4 font-bold"}>Lokasi</div>
           <div className="font-bold text-4xl font-romeo text-romeo-text ">
             The Apurva Kempinski
@@ -85,9 +98,8 @@ const RomeoAndJuliet = () => {
 
         <div className={"prose max-w-sm ml-auto"}>
           <p className={"text-xl font-romeo"}>
-              "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu,
-              apa yang telah dipersatukan Allah, tidak boleh diceraikan
-              manusia."
+            "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa
+            yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
           </p>
           <p className={"font-romeo opacity-80"}>Matius 19:6 TB</p>
           <p>

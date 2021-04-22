@@ -12,4 +12,22 @@
         font-family: 'Great Vibes', cursive;
         src:url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
     }
-  }
+
+    @font-face {
+        font-family: 'EB Garamond';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src: url('/fonts/files/eb-garamond-latin-400-normal.woff2') format('woff2'), url('/fonts/files/eb-garamond-latin-400-normal.woff') format('woff');
+
+    }
+
+    @font-face {
+        font-family: 'EB Garamond';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 700;
+        src: url('/fonts/files/eb-garamond-latin-700-normal.woff2') format('woff2'), url('/fonts/files/eb-garamond-latin-700-normal.woff') format('woff');
+
+    }
+}

@@ -23,6 +23,7 @@ const SEO: FunctionComponent<Props> = ({
   description = "",
   meta = [],
   title,
+  children,
 }) => {
   const { site } = useStaticQuery<GatsbyTypes.SEODataQuery>(
     graphql`
@@ -78,7 +79,9 @@ const SEO: FunctionComponent<Props> = ({
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      {children}
+    </Helmet>
   )
 }
 
