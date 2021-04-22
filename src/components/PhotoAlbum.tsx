@@ -80,44 +80,44 @@ const PhotoAlbum = () => {
       <SRLWrapper options={options}>
         <div id="gallery-with-links" className="grid grid-cols-3 gap-4">
           <div >
-            <a href="A001.jpg">
+            {/* <a href="A001.jpg"> */}
               <StaticImage
                 src="../../static/A001.jpg"
                 alt="Beach and waves"
               ></StaticImage>
-            </a>
+            {/* </a> */}
           </div>
           <div >
-            <a href="A002.jpg">
+            {/* <a href="A002.jpg"> */}
               <StaticImage
                 src="../../static/A002.jpg"
                 alt="Waves"
               ></StaticImage>
-            </a>
+            {/* </a> */}
           </div>
           <div >
-            <a href="A003.jpg">
+            {/* <a href="A003.jpg"> */}
               <StaticImage
                 src="../../static/A003.jpg"
                 alt="Under the water"
               ></StaticImage>
-            </a>
+            {/* </a> */}
           </div>
           <div >
-            <a href="A004.jpg">
+            {/* <a href="A004.jpg"> */}
               <StaticImage
                 src="../../static/A004.jpg"
                 alt="Canyon night"
               ></StaticImage>
-            </a>
+            {/* </a> */}
           </div>
           <div >
-            <a href="A005.jpg">
+            {/* <a href="A005.jpg"> */}
               <StaticImage
                 src="../../static/A005.jpg"
                 alt="Valley"
               ></StaticImage>
-            </a>
+            {/* </a> */}
           </div>
         </div>
       </SRLWrapper>
