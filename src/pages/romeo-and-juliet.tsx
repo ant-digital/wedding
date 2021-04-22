@@ -110,7 +110,11 @@ const RomeoAndJuliet = () => (
       </div>
     </div>
 
-    <div className={"max-w-7xl mx-auto p-8 flex flex-col-reverse md:flex-row mt-16"}>
+    <div
+      className={
+        "max-w-7xl mx-auto p-8 flex flex-col-reverse md:flex-row mt-16"
+      }
+    >
       <section className="prose max-w-md mt-16 md:mt-32">
         <h2 className={"font-romeo"}>Protokol Covid</h2>
 
@@ -120,7 +124,7 @@ const RomeoAndJuliet = () => (
           berlaku.
         </p>
 
-        <p className="flex items-center">
+        <div className="flex items-center">
           <StaticImage
             src="../images/distance.png"
             alt="Picture of the author"
@@ -128,10 +132,10 @@ const RomeoAndJuliet = () => (
             height={40}
             className={"mr-2"}
           />
-          Saling Menjaga Jarak di Dalam Acara
-        </p>
+          <p>Saling Menjaga Jarak di Dalam Acara</p>
+        </div>
 
-        <p className="flex items-center">
+        <div className="flex items-center">
           <StaticImage
             src="../images/masker.png"
             alt="Picture of the author"
@@ -139,10 +143,10 @@ const RomeoAndJuliet = () => (
             height={40}
             className={"mr-2"}
           />
-          Wajib Menggunakan Masker
-        </p>
+          <p>Wajib Menggunakan Masker</p>
+        </div>
 
-        <p className="flex items-center">
+        <div className="flex items-center">
           <StaticImage
             src="../images/namaste.png"
             alt="Picture of the author"
@@ -150,10 +154,10 @@ const RomeoAndJuliet = () => (
             height={40}
             className={"mr-2"}
           />
-          Menggunakan Salam Namaste
-        </p>
+          <p>Menggunakan Salam Namaste</p>
+        </div>
 
-        <p className="flex items-center">
+        <div className="flex items-center">
           <StaticImage
             src="../images/wash.png"
             alt="Picture of the author"
@@ -161,8 +165,8 @@ const RomeoAndJuliet = () => (
             height={40}
             className={"mr-2"}
           />
-          Mencuci Tangan dan Menggunakan Hand Sanitizer
-        </p>
+          <p>Mencuci Tangan dan Menggunakan Hand Sanitizer</p>
+        </div>
       </section>
 
       <StaticImage
