@@ -41,9 +41,9 @@ const plugins = [
   `gatsby-plugin-tsconfig-paths`,
 ]
 
-if (process.env.NODE_ENV === "production") {
-  plugins.push("gatsby-plugin-preact")
-}
+// if (process.env.NODE_ENV === "production") {
+//   plugins.push("gatsby-plugin-preact")
+// }
 
 module.exports = {
   flags: {
