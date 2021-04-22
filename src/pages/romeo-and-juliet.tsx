@@ -10,7 +10,7 @@ const RomeoAndJuliet = () => {
   const countdown = useCountdown(dueDate)
 
   return (
-    <div className={"bg-romeo-background relative xl:px-28"}>
+    <main className={"bg-romeo-background relative xl:px-28"}>
       <SEO title={"Romeo and Juliet"}>
         <link
           rel="preload"
@@ -116,7 +116,63 @@ const RomeoAndJuliet = () => {
           </p>
         </div>
       </div>
-    </div>
+
+      <div className={"max-w-7xl mx-auto p-8"}>
+        <section className="prose max-w-lg mt-16 md:mt-32">
+          <h2 className={"font-romeo"}>Protokol Covid</h2>
+
+          <p>
+            Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi, kami
+            harapkan kedatangan para tamu undangan agar menjalankan protokol
+            yang berlaku.
+          </p>
+
+          <p className="flex items-center">
+            <StaticImage
+              src="../images/distance.png"
+              alt="Picture of the author"
+              width={40}
+              height={40}
+              className={"mr-2"}
+            />
+            Saling Menjaga Jarak di Dalam Acara
+          </p>
+
+          <p className="flex items-center">
+            <StaticImage
+              src="../images/masker.png"
+              alt="Picture of the author"
+              width={40}
+              height={40}
+              className={"mr-2"}
+            />
+            Wajib Menggunakan Masker
+          </p>
+
+          <p className="flex items-center">
+            <StaticImage
+              src="../images/namaste.png"
+              alt="Picture of the author"
+              width={40}
+              height={40}
+              className={"mr-2"}
+            />
+            Menggunakan Salam Namaste
+          </p>
+
+          <p className="flex items-center">
+            <StaticImage
+              src="../images/wash.png"
+              alt="Picture of the author"
+              width={40}
+              height={40}
+              className={"mr-2"}
+            />
+            Mencuci Tangan dan Menggunakan Hand Sanitizer
+          </p>
+        </section>
+      </div>
+    </main>
   )
 }
 
