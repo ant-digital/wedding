@@ -30,7 +30,7 @@ const MeAndYou = () => {
             initial="hidden"
             animate="visible"
             variants={variants}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 2 }}
           >
             <div>
               <h1 className="font-greatVibe text-3xl mb-3">The wedding of</h1>
@@ -49,11 +49,11 @@ const MeAndYou = () => {
 
         <div className="bg-gray-200 p-4 mb-4 font-gab">
           <motion.div
-          ref={ref}
+            ref={ref}
             initial="hidden"
             animate={controls}
             variants={variants}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 2 }}
           >
             <div className="flex justify-center mb-4">
               <h2 className="border-b border-black font-bold">Protokol Covid</h2>
@@ -121,11 +121,11 @@ const MeAndYou = () => {
           </div>
         </div>
         <PhotoAlbum></PhotoAlbum>
-        {/* <AudioPlayer
+        <AudioPlayer
           autoPlay
           src={song}
           onPlay={e => console.log("onPlay")}
-        /> */}
+        />
       </div>
     </SimpleReactLightbox>
   )
