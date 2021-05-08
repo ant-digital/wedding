@@ -38,13 +38,13 @@ const MeAndYou = (props) => {
               <h1 className="font-greatVibe text-3xl mb-3">Welcome</h1>
             </div>
             <div>
-              <h1 className="font-greatVibe text-6xl">{props.location.search ? props.location.search.split('=')[1] : ''}</h1>
+              <h1 className="font-greatVibe text-6xl">{props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1>
               <button onClick={enter} className="bg-red-500 p-4">Enter</button>
             </div>
             <div className="place-self-center mt-8">
               {
                 props.location.search ? (
-                  <QRCode size={128} value={props.location.search ? props.location.search.split('=')[1] : ''}></QRCode>
+                  <QRCode size={128} value={props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}></QRCode>
                 ) : ('')
               }
             </div>
@@ -60,8 +60,6 @@ const MeAndYou = (props) => {
             >
               <div>
                 <h1 className="font-greatVibe text-3xl mb-3">The wedding of</h1>
-                <QRCode size={128} value={customerName}></QRCode>
-
               </div>
               <div>
                 <h1 className="font-greatVibe text-6xl">Me</h1>
