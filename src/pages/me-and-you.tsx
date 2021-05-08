@@ -7,9 +7,12 @@ import PhotoAlbum from "$components/PhotoAlbum";
 import SimpleReactLightbox from 'simple-react-lightbox'
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
+import QRCode from "react-qr-code";
 
 const MeAndYou = (props) => {
   const [show, setShow] = useState(true)
+  const [customerName, setCustomerName] = useState("")
+
   const controls = useAnimation();
   const { ref, inView } = useInView();
   const variants = {
@@ -18,6 +21,7 @@ const MeAndYou = (props) => {
   }
   function enter() {
     setShow(!show)
+    setCustomerName(props.location.search ? props.location.search.split('=')[1] : '')
   }
   useEffect(() => {
     if (inView) {
@@ -37,6 +41,14 @@ const MeAndYou = (props) => {
               <h1 className="font-greatVibe text-6xl">{props.location.search ? props.location.search.split('=')[1] : ''}</h1>
               <button onClick={enter} className="bg-red-500 p-4">Enter</button>
             </div>
+            <div className="place-self-center mt-8">
+              {
+                props.location.search ? (
+                  <QRCode size={128} value={props.location.search ? props.location.search.split('=')[1] : ''}></QRCode>
+                ) : ('')
+              }
+            </div>
+
           </div>
         ) : (<>
           <div className="flex flex-col justify-center text-center h-screen bg-banner-flower bg-repeat-round z-10">
@@ -48,6 +60,8 @@ const MeAndYou = (props) => {
             >
               <div>
                 <h1 className="font-greatVibe text-3xl mb-3">The wedding of</h1>
+                <QRCode size={128} value={customerName}></QRCode>
+
               </div>
               <div>
                 <h1 className="font-greatVibe text-6xl">Me</h1>
