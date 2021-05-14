@@ -38,6 +38,15 @@ const plugins = [
       },
     },
   },
+  {
+    resolve: 'gatsby-plugin-google-fonts',
+    options: {
+      fonts: [
+        'material icons',
+        'roboto:300,400,500,700',
+      ],
+    },
+  },
   `gatsby-plugin-tsconfig-paths`,
 ]
 

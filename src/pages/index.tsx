@@ -13,6 +13,9 @@ const IndexPage = () => {
         <li>
         <Link to={"/me-and-you"}>Me & You</Link>
         </li>
+        <li>
+        <Link to={"/link-generator"}>Link Generator</Link>
+        </li>
       </ul>
     </main>
   )

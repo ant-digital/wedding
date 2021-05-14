@@ -688,6 +688,7 @@ type SitePluginPluginOptions {
   path: String
   outputPath: String
   emitSchema: SitePluginPluginOptionsEmitSchema
+  fonts: [String]
   pathCheck: Boolean
   allExtensions: Boolean
   isTSX: Boolean
@@ -1616,6 +1617,7 @@ input SitePluginPluginOptionsFilterInput {
   path: StringQueryOperatorInput
   outputPath: StringQueryOperatorInput
   emitSchema: SitePluginPluginOptionsEmitSchemaFilterInput
+  fonts: StringQueryOperatorInput
   pathCheck: BooleanQueryOperatorInput
   allExtensions: BooleanQueryOperatorInput
   isTSX: BooleanQueryOperatorInput
@@ -1838,6 +1840,7 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___path
   pluginCreator___pluginOptions___outputPath
   pluginCreator___pluginOptions___emitSchema___src___generated___gatsby_schema_graphql
+  pluginCreator___pluginOptions___fonts
   pluginCreator___pluginOptions___pathCheck
   pluginCreator___pluginOptions___allExtensions
   pluginCreator___pluginOptions___isTSX
@@ -2296,6 +2299,7 @@ enum SitePluginFieldsEnum {
   pluginOptions___path
   pluginOptions___outputPath
   pluginOptions___emitSchema___src___generated___gatsby_schema_graphql
+  pluginOptions___fonts
   pluginOptions___pathCheck
   pluginOptions___allExtensions
   pluginOptions___isTSX

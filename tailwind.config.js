@@ -13,7 +13,7 @@ module.exports = {
         greatVibe:['Great Vibes' ,'cursive']
       },
       backgroundImage: theme => ({
-        'banner-flower': "url('images/banner.webp')"
+        'banner-flower': "url('images/banner.png')"
        })
     },
   },
