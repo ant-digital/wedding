@@ -7,6 +7,7 @@ import {
     WhatsappIcon
 } from "react-share";
 
+
 const LinkGenerator = () => {
     const [inputLink, setInputLink] = useState('')
     const [guestName, setGuestName] = useState('')
@@ -70,9 +71,9 @@ const LinkGenerator = () => {
                         </div>
                         <div className="p-1 mt-4 w-full">
                             <WhatsappShareButton
-                                url={''}
-                                title={'hello world'}
-                                separator=":: "
+                                url={'.'}
+                                title={`Salam Sejahtera Bagi Kita Semua. Tuhan membuat segala sesuatu indah pada waktunya dan mempersatukan kami dalam suatu ikatan pernikahan kudus, semoga Tuhan memberkati dalam mengiringi pernikahan kami Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami ${guestName}. Berikut link undangan kami untuk info lengkap dari acara bisa kunjungi ${generatedLink}.Merupakan suatu kebahagiaan bagi kami apabila Bapak /Ibu /Saudara /i berkenan untuk hadir dan memberikan doa restu. Mohon maaf perihal undangan hanya di bagikan melalui  pesan ini. Karena suasana masih pandemi diharapakan untuk menggunakan masker dan datang pada jam yang telah ditentukan. Terima kasih banyak atas perhatiannya. Terima Kasih`}
+                                separator=" "
                                 className=""
                             >
                                 <WhatsappIcon size={32} round />
