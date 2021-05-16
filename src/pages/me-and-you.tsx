@@ -12,6 +12,7 @@ import QRCode from "react-qr-code";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { WhatsappShareButton, WhatsappIcon } from "react-share";
 
 const MeAndYou = (props) => {
   const [show, setShow] = useState(false)
@@ -220,7 +221,7 @@ const MeAndYou = (props) => {
           {/* <div className="flex flex-col text-center bg-gray-200 p-4 mb-4"> */}
             <Countdown></Countdown>
 
-            
+
 
           {/* </div> */}
           <Slider dots="true"
