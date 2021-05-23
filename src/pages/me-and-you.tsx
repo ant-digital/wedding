@@ -17,7 +17,7 @@ import { mutate } from "swr";
 
 const MeAndYou = (props) => {
 
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
   const [customerName, setCustomerName] = useState("")
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
@@ -77,12 +77,13 @@ const MeAndYou = (props) => {
       <div className="text-xl">
         {show ? (
           <div className="flex flex-col justify-center text-center w-screen fixed h-screen bg-white z-0">
-            <div>
-              <h1 className="font-greatVibe text-3xl mb-3">Welcome</h1>
+            <div className="mb-3">
+              <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1>
+              <h2 className="text-2xl">You are invited to the wedding of</h2>
             </div>
             <div>
-              <h1 className="font-greatVibe text-6xl">{props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1>
-              <button onClick={enter} className="bg-red-500 p-4">Enter</button>
+              <h1 className="font-greatVibe text-6xl mb-8">{eventName.replace(/[-]/ig,' ')}</h1>
+              <button onClick={enter} className="bg-black p-4 text-white w-3/4 rounded">Enter</button>
             </div>
             <div className="place-self-center mt-8">
               {
@@ -91,7 +92,6 @@ const MeAndYou = (props) => {
                 ) : ('')
               }
             </div>
-
           </div>
         ) : (<>
           <div className="flex flex-col justify-center text-center h-screen" style={{ backgroundColor: '#e8e8e8' }}>
