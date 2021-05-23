@@ -14,7 +14,6 @@ const LinkGenerator = () => {
     const [generatedLink, setGeneratedLink] = useState('')
 
     const handleChange = (e) => {
-        console.log(e.target.name)
         if (e.target.name === 'guestName') {
             setGuestName(e.target.value.trim())
         } else {

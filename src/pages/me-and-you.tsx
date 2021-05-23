@@ -12,10 +12,17 @@ import QRCode from "react-qr-code";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import useInboxes from "src/useInboxes";
+import { mutate } from "swr";
 
 const MeAndYou = (props) => {
+  const EVENT_NAME = props.location.pathname.replaceAll('/', '')
+
   const [show, setShow] = useState(false)
   const [customerName, setCustomerName] = useState("")
+  const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
+  const [senderName, setSenderName] = useState("")
+  const [message, setMessage] = useState("")
 
   const controls = useAnimation();
   const { ref, inView } = useInView();
@@ -23,15 +30,46 @@ const MeAndYou = (props) => {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
   }
-  function enter() {
+
+  const enter = () => {
     setShow(!show)
     setCustomerName(props.location.search ? props.location.search.split('=')[1] : '')
   }
+
   useEffect(() => {
     if (inView) {
       controls.start('visible');
     }
   }, [controls, inView]);
+
+  const handleInputChange = (e) => {
+    if (e.target.name === 'name') {
+      setSenderName(e.target.value.trim())
+    } else {
+      setMessage(e.target.value.trim())
+    }
+  }
+
+  const sendWishes = async () => {
+    mutate(`${process.env.BACKEND_URL}/inbox?eventName=${EVENT_NAME}`, [...inboxes, {
+      name: senderName,
+      message: message
+    }], false)
+    await fetch(`${process.env.BACKEND_URL}/inbox`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: senderName,
+        message: message,
+        eventName: EVENT_NAME
+      }),
+    })
+    mutate(`${process.env.BACKEND_URL}/inbox?eventName=${EVENT_NAME}`)
+    setSenderName("")
+    setMessage("")
+  }
 
   return (
     <SimpleReactLightbox>
@@ -139,21 +177,22 @@ const MeAndYou = (props) => {
               </div>
             </motion.div>
           </div>
-          <div>
-            <p className="text-center px-4 font-gab">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 5 }}
-              >
-                "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
+          <div className="text-center px-4 font-gab">
+            {/* <p > */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 5 }}
+            >
+              "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
             </motion.div>
-              <br></br>
+            <br></br>
             Matius 19:6 TB
             <br></br>
             Tuhan membuat segala sesuatu indah pada waktunya. Indah saat Dia mempertemukan, indah saat Dia menumbuhkan kasih, indah saat Dia mempersatukan putra-putri kami dalam suatu ikatan pernikahan.
             <br></br><br></br>
-            Dengan segala kerendahan hati dan dengan ungkapan syukur atas karunia Tuhan, kami mengundang Bapak/ Ibu/ Saudara/ i untuk menghadiri Resepsi Pernikahan putra-putri kami yang akan diselenggarakan pada :			</p>
+            Dengan segala kerendahan hati dan dengan ungkapan syukur atas karunia Tuhan, kami mengundang Bapak/ Ibu/ Saudara/ i untuk menghadiri Resepsi Pernikahan putra-putri kami yang akan diselenggarakan pada :
+            {/* </p> */}
           </div>
           <div className="flex justify-center mt-4">
             <div style={{ backgroundColor: '#e7e5d7' }} className="text-center w-screen">
@@ -207,11 +246,72 @@ const MeAndYou = (props) => {
               </div>
             </motion.div>
           </div>
-            <Countdown></Countdown>
+          <Countdown></Countdown>
+          <div className="bg-gray-200 p-4 mb-4">
+            <motion.div
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={variants}
+              transition={{ duration: 2 }}
+            >
+              <div className="flex justify-center mb-4">
+                <h2 className="border-b border-black font-bold">Wishes Box</h2>
+              </div>
+              <div className="w-full max-w-sm m-auto" >
+                <div className="md:flex md:items-center mb-6">
+                  <div className="md:w-1/3">
+                    <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
+                      Name</label>
+                  </div>
+                  <div className="md:w-2/3">
+                    <input type="text" name="name" onChange={handleInputChange} value={senderName}
+                      className="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"></input>
+                  </div>
+                </div>
+                <div className="md:flex md:items-center mb-6">
+                  <div className="md:w-1/3">
+                    <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Wishes</label>
+                  </div>
+                  <div className="md:w-2/3">
+                    <input type="textarea" name="message" onChange={handleInputChange} value={message}
+                      className="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    ></input>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <button
+                    className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded text-sm"
+                    type="button"
+                    onClick={sendWishes} >
+                    Send Wishes</button>
+                </div>
+                <div className="w-full mt-4">
+                  {
+                    inboxes.map((inbox, index) => {
+                      return index % 2 === 0 ?
+                        (<div key={inbox.name} className="rounded-xl p-2 text-center mb-2 border-2 border-white" style={{ backgroundColor: "#ffcdd2" }}>
+                          <span>{inbox.message}</span>
+                          <br></br>
+                          <span className="text-sm">{inbox.name}</span>
+                        </div>) :
+                        (<div key={inbox.name} className="rounded-xl p-2 text-center mb-2 border-2 border-white" style={{ backgroundColor: "#ffebee" }}>
+                          <span>{inbox.message}</span>
+                          <br></br>
+                          <span className="text-sm">{inbox.name}</span>
+                        </div>)
+                    })
+                  }
+                </div>
+
+              </div>
+            </motion.div>
+
+          </div>
 
 
 
-          <Slider dots="true"
+          {/* <Slider dots="true"
             infinite="true"
             speed="500"
             slidesToShow={1}
@@ -235,7 +335,7 @@ const MeAndYou = (props) => {
             <div>
               <h3>6</h3>
             </div>
-          </Slider>
+          </Slider> */}
           {/* <PhotoAlbum></PhotoAlbum> */}
           {/* <AudioPlayer
             autoPlay

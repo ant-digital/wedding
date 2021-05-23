@@ -76,7 +76,7 @@ const options = {
   }
 };
 const Countdown = () => {
-  const countdown = useCountdown(dayjs('2021-05-14:00:00.000Z'))
+  const countdown = useCountdown(dayjs('2022-05-14:00:00.000Z'))
   return (
     <div className="flex flex-col justify-center w-screen p-4" style={{ backgroundColor: '#d6c6bc' }}>
       <h1 className="text-2xl text-white mb-4 text-center">Countdown</h1>
