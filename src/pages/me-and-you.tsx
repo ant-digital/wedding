@@ -16,13 +16,13 @@ import useInboxes from "src/useInboxes";
 import { mutate } from "swr";
 
 const MeAndYou = (props) => {
-  const EVENT_NAME = props.location.pathname.replaceAll('/', '')
 
   const [show, setShow] = useState(false)
   const [customerName, setCustomerName] = useState("")
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
   const [message, setMessage] = useState("")
+  const [eventName, setEventName] = useState("")
 
   const controls = useAnimation();
   const { ref, inView } = useInView();
@@ -40,6 +40,7 @@ const MeAndYou = (props) => {
     if (inView) {
       controls.start('visible');
     }
+    setEventName(props.location.pathname.replace(/[/]/ig,''))
   }, [controls, inView]);
 
   const handleInputChange = (e) => {
@@ -51,7 +52,7 @@ const MeAndYou = (props) => {
   }
 
   const sendWishes = async () => {
-    mutate(`${process.env.BACKEND_URL}/inbox?eventName=${EVENT_NAME}`, [...inboxes, {
+    mutate(`${process.env.BACKEND_URL}/inbox?eventName=${eventName}`, [...inboxes, {
       name: senderName,
       message: message
     }], false)
@@ -63,10 +64,10 @@ const MeAndYou = (props) => {
       body: JSON.stringify({
         name: senderName,
         message: message,
-        eventName: EVENT_NAME
+        eventName: eventName
       }),
     })
-    mutate(`${process.env.BACKEND_URL}/inbox?eventName=${EVENT_NAME}`)
+    mutate(`${process.env.BACKEND_URL}/inbox?eventName=${eventName}`)
     setSenderName("")
     setMessage("")
   }
