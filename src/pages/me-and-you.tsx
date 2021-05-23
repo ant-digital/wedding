@@ -77,21 +77,25 @@ const MeAndYou = (props) => {
       <div className="text-xl">
         {show ? (
           <div className="flex flex-col justify-center text-center w-screen fixed h-screen bg-white z-0">
-            <div className="mb-3">
+            <div className="mt-8">
               <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1>
               <h2 className="text-2xl">You are invited to the wedding of</h2>
             </div>
-            <div>
+            <div className="mt-6 mb-4">
               <h1 className="font-greatVibe text-6xl mb-8">{eventName.replace(/[-]/ig,' ')}</h1>
-              <button onClick={enter} className="bg-black p-4 text-white w-3/4 rounded">Enter</button>
+              <button onClick={enter} className="bg-black p-4 text-white w-3/4 md:w-1/4 rounded">Enter</button>
             </div>
-            <div className="place-self-center mt-8">
-              {
-                props.location.search ? (
-                  <QRCode size={128} value={props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}></QRCode>
-                ) : ('')
-              }
-            </div>
+            <div className="md:w-1/5 mx-auto">
+              <StaticImage src="../images/bunga.png"
+                alt="bunga"></StaticImage>
+              </div>
+              {/* <div className="place-self-center mt-8">
+                {
+                  props.location.search ? (
+                    <QRCode size={128} value={props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}></QRCode>
+                  ) : ('')
+                }
+              </div>*/}
           </div>
         ) : (<>
           <div className="flex flex-col justify-center text-center h-screen" style={{ backgroundColor: '#e8e8e8' }}>
