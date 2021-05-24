@@ -2543,10 +2543,10 @@ type SitePluginSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type SEODataQueryVariables = Exact<{ [key: string]: never; }>;
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type SEODataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }> };
+type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -2574,9 +2574,9 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type SEODataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+type SEODataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }> };
 
 }

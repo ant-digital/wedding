@@ -17,7 +17,7 @@ import { mutate } from "swr";
 
 const MeAndYou = (props) => {
 
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
   const [customerName, setCustomerName] = useState("")
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
@@ -40,7 +40,7 @@ const MeAndYou = (props) => {
     if (inView) {
       controls.start('visible');
     }
-    setEventName(props.location.pathname.replace(/[/]/ig,''))
+    setEventName(props.location.pathname.replace(/[/]/ig, ''))
   }, [controls, inView]);
 
   const handleInputChange = (e) => {
@@ -82,14 +82,14 @@ const MeAndYou = (props) => {
               <h2 className="text-2xl">You are invited to the wedding of</h2>
             </div>
             <div className="mt-6 mb-4">
-              <h1 className="font-greatVibe text-6xl mb-8">{eventName.replace(/[-]/ig,' ')}</h1>
+              <h1 className="font-greatVibe text-6xl mb-8">{eventName.replace(/[-]/ig, ' ')}</h1>
               <button onClick={enter} className="bg-black p-4 text-white w-3/4 md:w-1/4 rounded">Enter</button>
             </div>
             <div className="md:w-1/5 mx-auto">
               <StaticImage src="../images/bunga.png"
                 alt="bunga"></StaticImage>
-              </div>
-              {/* <div className="place-self-center mt-8">
+            </div>
+            {/* <div className="place-self-center mt-8">
                 {
                   props.location.search ? (
                     <QRCode size={128} value={props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}></QRCode>
@@ -98,7 +98,7 @@ const MeAndYou = (props) => {
               </div>*/}
           </div>
         ) : (<>
-          <div className="flex flex-col justify-center text-center h-screen" style={{ backgroundColor: '#e8e8e8' }}>
+          {/* <div className="flex flex-col justify-center text-center h-screen" style={{ backgroundColor: '#e8e8e8' }}>
             <StaticImage src="../images/flower-top.png"
               alt="Picture of the author"
               width={40}
@@ -130,8 +130,45 @@ const MeAndYou = (props) => {
               height={323}
               layout="constrained"
             ></StaticImage>
+          </div> */}
+
+          <div className="grid grid-cols-1 text-center md:h-screen overflow-visible" style={{ backgroundColor: '#e8e8e8' }}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 5 }}
+              className="text-center p-4 font-gab md:col-span-3 self-center"
+              style={{ backgroundColor: '#e8e8e8' }}
+            >
+              "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia." <br></br> <span className="text-4xl mt-4">WE ARE GETTING MARRIED</span>
+            </motion.div>
+            <div className="flex flex-col md:flex-row justify-center gap-10">
+              <div className="flex flex-col">
+                <h1>The groom</h1>
+                <StaticImage src="../images/bunga.png"
+                  alt="bunga" width={360} height={240}
+                  className="my-4"
+                ></StaticImage>
+                <h2>Anindyo baskoro</h2>
+                <h3>Putri dari bapak & ibu AAA</h3>
+              </div>
+              <div className="flex flex-col md:pt-32">
+                <h1 className="text-5xl">&</h1>
+              </div>
+              <div className="flex flex-col">
+                <div>
+                  <h1>The bride</h1>
+                  <StaticImage src="../images/bunga.png"
+                    alt="bunga" width={360} height={240} className="my-4"
+                  ></StaticImage>
+                  <h2>Cynthia Angelin</h2>
+                  <h3>Putri dari bapak & ibu zzz</h3>
+                </div>
+              </div>
+            </div>
+
           </div>
-          <div className="bg-gray-200 p-4 mb-4 font-gab">
+          <div className="bg-white p-4 mb-4 font-gab">
             <motion.div
               ref={ref}
               initial="hidden"
@@ -184,13 +221,7 @@ const MeAndYou = (props) => {
           </div>
           <div className="text-center px-4 font-gab">
             {/* <p > */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 5 }}
-            >
-              "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
-            </motion.div>
+
             <br></br>
             Matius 19:6 TB
             <br></br>
