@@ -7,7 +7,7 @@ import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
 import SimpleReactLightbox from 'simple-react-lightbox'
 import { motion, useAnimation } from "framer-motion"
-import { useInView } from 'react-intersection-observer';
+import { InView } from 'react-intersection-observer';
 import QRCode from "react-qr-code";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,7 +17,7 @@ import { mutate } from "swr";
 
 const MeAndYou = (props) => {
 
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
   const [customerName, setCustomerName] = useState("")
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
@@ -25,7 +25,7 @@ const MeAndYou = (props) => {
   const [eventName, setEventName] = useState("")
 
   const controls = useAnimation();
-  const { ref, inView } = useInView();
+  const controls2 = useAnimation();
   const variants = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -37,11 +37,9 @@ const MeAndYou = (props) => {
   }
 
   useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
     setEventName(props.location.pathname.replace(/[/]/ig, ''))
-  }, [controls, inView]);
+  }, [controls]);
+
 
   const handleInputChange = (e) => {
     if (e.target.name === 'name') {
@@ -169,55 +167,61 @@ const MeAndYou = (props) => {
 
           </div>
           <div className="bg-white p-4 mb-4 font-gab">
-            <motion.div
-              ref={ref}
-              initial="hidden"
-              animate={controls}
-              variants={variants}
-              transition={{ duration: 2 }}
-            >
-              <div className="flex justify-center mb-4">
-                <h2 className="border-b border-black font-bold">Protokol Covid</h2>
-              </div>
-              <div className="flex justify-center mb-4 ">
-                <h4 className="text-center">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi, kami harapkan kedatangan para tamu undangan agar menjalankan protokol yang berlaku.</h4>
-              </div>
-              <div className="flex justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex items-center">
-                    <StaticImage src="../images/distance.png"
-                      alt="Picture of the author"
-                      width={40}
-                      height={40}></StaticImage>
-                    <span className="ml-2 text-xl">Saling Menjaga Jarak di Dalam Acara</span>
-                  </div>
-                  <div className="flex items-center">
-                    <StaticImage src="../images/masker.png"
-                      alt="Picture of the author"
-                      width={40}
-                      height={40}
-                    ></StaticImage>
-                    <span className="ml-2 text-xl">Wajib Menggunakan Masker</span>
-                  </div>
-                  <div className="flex items-center">
-                    <StaticImage src="../images/namaste.png"
-                      alt="Picture of the author"
-                      width={40}
-                      height={40}
-                    ></StaticImage>
-                    <span className="ml-2 text-xl" style={{ fontFamily: 'Gabriola' }}>Menggunakan Salam Namaste</span>
-                  </div>
-                  <div className="flex items-center">
-                    <StaticImage src="../images/wash.png"
-                      alt="Picture of the author"
-                      width={40}
-                      height={40}
-                    ></StaticImage>
-                    <span className="ml-2 text-lg">Mencuci Tangan dan Menggunakan Hand Sanitizer</span>
+            <InView as="div" onChange={(inView, entry) => {
+              if (inView) {
+                controls.start('visible')
+              }
+            }}>
+              <motion.div
+                initial="hidden"
+                animate={controls}
+                variants={variants}
+                transition={{ duration: 1 }}
+              >
+                <div className="flex justify-center mb-4">
+                  <h2 className="border-b border-black font-bold">Protokol Covid</h2>
+                </div>
+                <div className="flex justify-center mb-4 ">
+                  <h4 className="text-center">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi, kami harapkan kedatangan para tamu undangan agar menjalankan protokol yang berlaku.</h4>
+                </div>
+                <div className="flex justify-center">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="flex items-center">
+                      <StaticImage src="../images/distance.png"
+                        alt="Picture of the author"
+                        width={40}
+                        height={40}></StaticImage>
+                      <span className="ml-2 text-xl">Saling Menjaga Jarak di Dalam Acara</span>
+                    </div>
+                    <div className="flex items-center">
+                      <StaticImage src="../images/masker.png"
+                        alt="Picture of the author"
+                        width={40}
+                        height={40}
+                      ></StaticImage>
+                      <span className="ml-2 text-xl">Wajib Menggunakan Masker</span>
+                    </div>
+                    <div className="flex items-center">
+                      <StaticImage src="../images/namaste.png"
+                        alt="Picture of the author"
+                        width={40}
+                        height={40}
+                      ></StaticImage>
+                      <span className="ml-2 text-xl" style={{ fontFamily: 'Gabriola' }}>Menggunakan Salam Namaste</span>
+                    </div>
+                    <div className="flex items-center">
+                      <StaticImage src="../images/wash.png"
+                        alt="Picture of the author"
+                        width={40}
+                        height={40}
+                      ></StaticImage>
+                      <span className="ml-2 text-lg">Mencuci Tangan dan Menggunakan Hand Sanitizer</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </InView>
+
           </div>
           <div className="text-center px-4 font-gab">
             {/* <p > */}
@@ -261,87 +265,84 @@ const MeAndYou = (props) => {
             </div>
           </div>
           <div className="bg-gray-200 p-4 mb-4">
-            <motion.div
-              ref={ref}
-              initial="hidden"
-              animate={controls}
-              variants={variants}
-              transition={{ duration: 2 }}
-            >
-              <div className="flex justify-center mb-4">
-                <h2 className="border-b border-black font-bold">Kirim Dana</h2>
-              </div>
-              <div className="flex justify-center mb-4 ">
-                <span className="text-center text-xs">Sebelumnya, terimakasih atas perhatian dan bentuk tanda kasih Bapak/Ibu/Saudara/i untuk kami. Silahkan kirimkan dana melalui transfer rekening berikut :</span>
-              </div>
-              <div className="flex justify-center mb-4 ">
-                <StaticImage className="float-left" src="../images/qr-dummy.jpeg"
-                  width={150}
-                  height={150}
-                  alt="bottom"></StaticImage>
-              </div>
-            </motion.div>
+            <InView as="div" onChange={(inView, entry) => {
+              if (inView) {
+                controls2.start('visible')
+              }
+            }}>
+              <motion.div
+                initial="hidden"
+                animate={controls2}
+                variants={variants}
+                transition={{ duration: 2 }}
+              >
+                <div className="flex justify-center mb-4">
+                  <h2 className="border-b border-black font-bold">Kirim Dana</h2>
+                </div>
+                <div className="flex justify-center mb-4 ">
+                  <span className="text-center text-xs">Sebelumnya, terimakasih atas perhatian dan bentuk tanda kasih Bapak/Ibu/Saudara/i untuk kami. Silahkan kirimkan dana melalui transfer rekening berikut :</span>
+                </div>
+                <div className="flex justify-center mb-4 ">
+                  <StaticImage className="float-left" src="../images/qr-dummy.jpeg"
+                    width={150}
+                    height={150}
+                    alt="bottom"></StaticImage>
+                </div>
+              </motion.div>
+            </InView>
           </div>
           <Countdown></Countdown>
           <div className="bg-gray-200 p-4 mb-4">
-            <motion.div
-              ref={ref}
-              initial="hidden"
-              animate={controls}
-              variants={variants}
-              transition={{ duration: 2 }}
-            >
-              <div className="flex justify-center mb-4">
-                <h2 className="border-b border-black font-bold">Wishes Box</h2>
+            <div className="flex justify-center mb-4">
+              <h2 className="border-b border-black font-bold">Wishes Box</h2>
+            </div>
+            <div className="w-full max-w-sm m-auto" >
+              <div className="md:flex md:items-center mb-6">
+                <div className="md:w-1/3">
+                  <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
+                    Name</label>
+                </div>
+                <div className="md:w-2/3">
+                  <input type="text" name="name" onChange={handleInputChange} value={senderName}
+                    className="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"></input>
+                </div>
               </div>
-              <div className="w-full max-w-sm m-auto" >
-                <div className="md:flex md:items-center mb-6">
-                  <div className="md:w-1/3">
-                    <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
-                      Name</label>
-                  </div>
-                  <div className="md:w-2/3">
-                    <input type="text" name="name" onChange={handleInputChange} value={senderName}
-                      className="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"></input>
-                  </div>
+              <div className="md:flex md:items-center mb-6">
+                <div className="md:w-1/3">
+                  <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Wishes</label>
                 </div>
-                <div className="md:flex md:items-center mb-6">
-                  <div className="md:w-1/3">
-                    <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Wishes</label>
-                  </div>
-                  <div className="md:w-2/3">
-                    <input type="textarea" name="message" onChange={handleInputChange} value={message}
-                      className="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                    ></input>
-                  </div>
+                <div className="md:w-2/3">
+                  <input type="textarea" name="message" onChange={handleInputChange} value={message}
+                    className="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  ></input>
                 </div>
-                <div className="text-center">
-                  <button
-                    className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded text-sm"
-                    type="button"
-                    onClick={sendWishes} >
-                    Send Wishes</button>
-                </div>
-                <div className="w-full mt-4">
-                  {
-                    inboxes.map((inbox, index) => {
-                      return index % 2 === 0 ?
-                        (<div key={inbox.name} className="rounded-xl p-2 text-center mb-2 border-2 border-white" style={{ backgroundColor: "#ffcdd2" }}>
-                          <span>{inbox.message}</span>
-                          <br></br>
-                          <span className="text-sm">{inbox.name}</span>
-                        </div>) :
-                        (<div key={inbox.name} className="rounded-xl p-2 text-center mb-2 border-2 border-white" style={{ backgroundColor: "#ffebee" }}>
-                          <span>{inbox.message}</span>
-                          <br></br>
-                          <span className="text-sm">{inbox.name}</span>
-                        </div>)
-                    })
-                  }
-                </div>
+              </div>
+              <div className="text-center">
+                <button
+                  className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded text-sm"
+                  type="button"
+                  onClick={sendWishes} >
+                  Send Wishes</button>
+              </div>
+              <div className="w-full mt-4">
+                {
+                  inboxes.map((inbox, index) => {
+                    return index % 2 === 0 ?
+                      (<div key={inbox.name} className="rounded-xl p-2 text-center mb-2 border-2 border-white" style={{ backgroundColor: "#ffcdd2" }}>
+                        <span>{inbox.message}</span>
+                        <br></br>
+                        <span className="text-sm">{inbox.name}</span>
+                      </div>) :
+                      (<div key={inbox.name} className="rounded-xl p-2 text-center mb-2 border-2 border-white" style={{ backgroundColor: "#ffebee" }}>
+                        <span>{inbox.message}</span>
+                        <br></br>
+                        <span className="text-sm">{inbox.name}</span>
+                      </div>)
+                  })
+                }
+              </div>
 
-              </div>
-            </motion.div>
+            </div>
 
           </div>
 
