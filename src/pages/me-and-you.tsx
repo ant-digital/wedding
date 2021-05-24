@@ -17,7 +17,7 @@ import { mutate } from "swr";
 
 const MeAndYou = (props) => {
 
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
   const [customerName, setCustomerName] = useState("")
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
