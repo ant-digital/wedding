@@ -10,6 +10,8 @@ module.exports = {
       fontFamily: {
         "romeo": "eb garamond",
         gab:['Gabriola'],
+        lucky:['JosefinSans'],
+        pattaya:['Pattaya'],
         greatVibe:['Great Vibes' ,'cursive']
       },
       backgroundImage: theme => ({

@@ -14,10 +14,11 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import useInboxes from "src/useInboxes";
 import { mutate } from "swr";
+import Footer from "$components/Footer";
 
 const MeAndYou = (props) => {
 
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
   const [customerName, setCustomerName] = useState("")
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
@@ -72,12 +73,19 @@ const MeAndYou = (props) => {
 
   return (
     <SimpleReactLightbox>
-      <div className="text-xl">
+      <div className="text-xl font-romeo" style={{ backgroundColor: '#e8e8e8' }}>
         {show ? (
+          <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 3 }}
+        >
           <div className="flex flex-col justify-center text-center w-screen fixed h-screen bg-white z-0">
             <div className="mt-8">
               <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1>
-              <h2 className="text-2xl">You are invited to the wedding of</h2>
+              <h2 className="text-2xl" >You are invited to the wedding of</h2>
+
+
             </div>
             <div className="mt-6 mb-4">
               <h1 className="font-greatVibe text-6xl mb-8">{eventName.replace(/[-]/ig, ' ')}</h1>
@@ -95,6 +103,7 @@ const MeAndYou = (props) => {
                 }
               </div>*/}
           </div>
+          </motion.div>
         ) : (<>
           {/* <div className="flex flex-col justify-center text-center h-screen" style={{ backgroundColor: '#e8e8e8' }}>
             <StaticImage src="../images/flower-top.png"
@@ -130,7 +139,7 @@ const MeAndYou = (props) => {
             ></StaticImage>
           </div> */}
 
-          <div className="grid grid-cols-1 text-center md:h-screen overflow-visible" style={{ backgroundColor: '#e8e8e8' }}>
+          <div className="grid grid-cols-1 text-center md:h-screen overflow-visible" >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -138,14 +147,13 @@ const MeAndYou = (props) => {
               className="text-center p-4 font-gab md:col-span-3 self-center"
               style={{ backgroundColor: '#e8e8e8' }}
             >
-              "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia." <br></br> <span className="text-4xl mt-4">WE ARE GETTING MARRIED</span>
+              "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia." <br></br><br></br> <span className="text-4xl mt-4">WE ARE GETTING MARRIED</span>
             </motion.div>
             <div className="flex flex-col md:flex-row justify-center gap-10">
               <div className="flex flex-col">
                 <h1>The groom</h1>
                 <StaticImage src="../images/bunga.png"
-                  alt="bunga" width={360} height={240}
-                  className="my-4"
+                  alt="bunga" width={360} height={240} className="my-4"
                 ></StaticImage>
                 <h2>Anindyo baskoro</h2>
                 <h3>Putri dari bapak & ibu AAA</h3>
@@ -154,19 +162,17 @@ const MeAndYou = (props) => {
                 <h1 className="text-5xl">&</h1>
               </div>
               <div className="flex flex-col">
-                <div>
                   <h1>The bride</h1>
                   <StaticImage src="../images/bunga.png"
                     alt="bunga" width={360} height={240} className="my-4"
                   ></StaticImage>
                   <h2>Cynthia Angelin</h2>
                   <h3>Putri dari bapak & ibu zzz</h3>
-                </div>
               </div>
             </div>
 
           </div>
-          <div className="bg-white p-4 mb-4 font-gab">
+          <div className="p-4 mb-4 mt-2 border-t-2 border-white">
             <InView as="div" onChange={(inView, entry) => {
               if (inView) {
                 controls.start('visible')
@@ -179,7 +185,7 @@ const MeAndYou = (props) => {
                 transition={{ duration: 1 }}
               >
                 <div className="flex justify-center mb-4">
-                  <h2 className="border-b border-black font-bold">Protokol Covid</h2>
+                  <h2 className="font-bold">Protokol Covid</h2>
                 </div>
                 <div className="flex justify-center mb-4 ">
                   <h4 className="text-center">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi, kami harapkan kedatangan para tamu undangan agar menjalankan protokol yang berlaku.</h4>
@@ -234,7 +240,7 @@ const MeAndYou = (props) => {
             Dengan segala kerendahan hati dan dengan ungkapan syukur atas karunia Tuhan, kami mengundang Bapak/ Ibu/ Saudara/ i untuk menghadiri Resepsi Pernikahan putra-putri kami yang akan diselenggarakan pada :
             {/* </p> */}
           </div>
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center mt-4 border-t-2 border-white">
             <div style={{ backgroundColor: '#e7e5d7' }} className="text-center w-screen">
               <StaticImage src="../images/floral+7+top-right.png"
                 width={150}
@@ -246,7 +252,7 @@ const MeAndYou = (props) => {
               <p className="text-center text-md">1.00 Wita - Selesai</p>
               <p className="text-center text-md font-gab">The Apurva Kempinski Bali</p>
               <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
-                <div className="m-auto flex bg-gray-200 border-2 rounded-xl text-white text-sm w-max" style={{ backgroundColor: '#b89768', padding: '10px 10px 5px 10px' }}>
+                <div className="m-auto flex bg-gray-200 border-2 rounded-xl text-white text-sm w-max" style={{ backgroundColor: '#000000', padding: '10px 10px 5px 10px' }}>
                   <div className="mr-2">
                     <span style={{
                       fontFamily: 'Material Icons', fontSize: '24px'
@@ -264,7 +270,7 @@ const MeAndYou = (props) => {
                 alt="bottom"></StaticImage>
             </div>
           </div>
-          <div className="bg-gray-200 p-4 mb-4">
+          <div className="bg-gray-200 p-4 mb-4 border-t-2 border-white">
             <InView as="div" onChange={(inView, entry) => {
               if (inView) {
                 controls2.start('visible')
@@ -277,10 +283,10 @@ const MeAndYou = (props) => {
                 transition={{ duration: 2 }}
               >
                 <div className="flex justify-center mb-4">
-                  <h2 className="border-b border-black font-bold">Kirim Dana</h2>
+                  <h2 className="font-bold">Kirim Dana</h2>
                 </div>
                 <div className="flex justify-center mb-4 ">
-                  <span className="text-center text-xs">Sebelumnya, terimakasih atas perhatian dan bentuk tanda kasih Bapak/Ibu/Saudara/i untuk kami. Silahkan kirimkan dana melalui transfer rekening berikut :</span>
+                  <span className="text-center text-sm">Sebelumnya, terimakasih atas perhatian dan bentuk tanda kasih Bapak/Ibu/Saudara/i untuk kami. Silahkan kirimkan dana melalui transfer rekening berikut :</span>
                 </div>
                 <div className="flex justify-center mb-4 ">
                   <StaticImage className="float-left" src="../images/qr-dummy.jpeg"
@@ -292,9 +298,9 @@ const MeAndYou = (props) => {
             </InView>
           </div>
           <Countdown></Countdown>
-          <div className="bg-gray-200 p-4 mb-4">
+          <div className="bg-gray-200 p-4 mb-4 border-t-2 border-white">
             <div className="flex justify-center mb-4">
-              <h2 className="border-b border-black font-bold">Wishes Box</h2>
+              <h2 className="font-bold">Wishes Box</h2>
             </div>
             <div className="w-full max-w-sm m-auto" >
               <div className="md:flex md:items-center mb-6">
@@ -319,7 +325,7 @@ const MeAndYou = (props) => {
               </div>
               <div className="text-center">
                 <button
-                  className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded text-sm"
+                  className="shadow bg-black hover:bg-white  focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded text-sm"
                   type="button"
                   onClick={sendWishes} >
                   Send Wishes</button>
@@ -373,12 +379,13 @@ const MeAndYou = (props) => {
               <h3>6</h3>
             </div>
           </Slider> */}
-          {/* <PhotoAlbum></PhotoAlbum> */}
+          <PhotoAlbum></PhotoAlbum>
           {/* <AudioPlayer
             autoPlay
             src={song}
             onPlay={e => console.log("onPlay")}
           /> */}
+          <Footer></Footer>
         </>)
         }</div>
     </SimpleReactLightbox>

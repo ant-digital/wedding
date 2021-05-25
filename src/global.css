@@ -9,8 +9,16 @@
       src: url(./Gabriola.ttf) format("truetype");
     }
     @font-face {
+        font-family: JosefinSans;
+        src: url('/fonts/files/JosefinSans-Bold.ttf') format("truetype");
+    }
+    @font-face {
         font-family: 'Great Vibes', cursive;
         src:url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+    }
+    @font-face {
+        font-family: 'Pattaya';
+        src: url('/fonts/files/Pattaya-Regular.ttf') format("truetype");
     }
 
     @font-face {
