@@ -75,14 +75,14 @@ const options = {
 };
 const PhotoAlbum = () => {
   return (
-    <div className="w-screen" style={{backgroundColor:'#d6c6bc'}}>
-      <h1 className="text-2xl text-white mb-4 text-center">Gallery</h1>
+    <div className="w-screen">
+      <h1 className="font-bold mb-4 text-center">Gallery</h1>
       <SRLWrapper options={options}>
         <div id="gallery-with-links" className="grid grid-cols-3 gap-4">
           <div >
             {/* <a href="A001.jpg"> */}
               <StaticImage
-                src="../../static/A001.jpg"
+                src="https://images.unsplash.com/photo-1559286024-87b48d2fedc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218fHx8fHx8fHwxNjIyMDQ2OTQz&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit"
                 alt="Beach and waves"
               ></StaticImage>
             {/* </a> */}
@@ -90,7 +90,7 @@ const PhotoAlbum = () => {
           <div >
             {/* <a href="A002.jpg"> */}
               <StaticImage
-                src="../../static/A002.jpg"
+                src="../images/couple.jpg"
                 alt="Waves"
               ></StaticImage>
             {/* </a> */}
@@ -98,7 +98,7 @@ const PhotoAlbum = () => {
           <div >
             {/* <a href="A003.jpg"> */}
               <StaticImage
-                src="../../static/A003.jpg"
+                src="../images/photo-1.jpg"
                 alt="Under the water"
               ></StaticImage>
             {/* </a> */}
@@ -106,7 +106,7 @@ const PhotoAlbum = () => {
           <div >
             {/* <a href="A004.jpg"> */}
               <StaticImage
-                src="../../static/A004.jpg"
+                src="../images/couple3.jpg"
                 alt="Canyon night"
               ></StaticImage>
             {/* </a> */}
@@ -114,7 +114,7 @@ const PhotoAlbum = () => {
           <div >
             {/* <a href="A005.jpg"> */}
               <StaticImage
-                src="../../static/A005.jpg"
+                src="../images/couple4.jpg"
                 alt="Valley"
               ></StaticImage>
             {/* </a> */}

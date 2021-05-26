@@ -84,11 +84,9 @@ const MeAndYou = (props) => {
             <div className="mt-8">
               <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1>
               <h2 className="text-2xl" >You are invited to the wedding of</h2>
-
-
             </div>
             <div className="mt-6 mb-4">
-              <h1 className="font-greatVibe text-6xl mb-8">{eventName.replace(/[-]/ig, ' ')}</h1>
+              <h1 className="font-greatVibe text-5xl sm:text-8xl mb-8 font-bold">Romeo & Juliet</h1>
               <button onClick={enter} className="bg-black p-4 text-white w-3/4 md:w-1/4 rounded">Enter</button>
             </div>
             <div className="md:w-1/5 mx-auto">
@@ -147,13 +145,13 @@ const MeAndYou = (props) => {
               className="text-center p-4 font-gab md:col-span-3 self-center"
               style={{ backgroundColor: '#e8e8e8' }}
             >
-              "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia." <br></br><br></br> <span className="text-4xl mt-4">WE ARE GETTING MARRIED</span>
+              "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia." <br></br><br></br> <span className="text-4xl md:text-6xl mt-4 font-bold">WE ARE GETTING MARRIED</span>
             </motion.div>
             <div className="flex flex-col md:flex-row justify-center gap-10">
               <div className="flex flex-col">
                 <h1>The groom</h1>
-                <StaticImage src="../images/bunga.png"
-                  alt="bunga" width={360} height={240} className="my-4"
+                <StaticImage src="../images/bride.jpg" objectFit="contain"
+                  alt="bunga" width={236} height={353} className="my-4"
                 ></StaticImage>
                 <h2>Anindyo baskoro</h2>
                 <h3>Putri dari bapak & ibu AAA</h3>
@@ -163,8 +161,8 @@ const MeAndYou = (props) => {
               </div>
               <div className="flex flex-col">
                   <h1>The bride</h1>
-                  <StaticImage src="../images/bunga.png"
-                    alt="bunga" width={360} height={240} className="my-4"
+                  <StaticImage src="../images/groom.jpg"
+                    alt="bunga" width={236} height={353} className="my-4" objectFit="contain"
                   ></StaticImage>
                   <h2>Cynthia Angelin</h2>
                   <h3>Putri dari bapak & ibu zzz</h3>
