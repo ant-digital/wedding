@@ -114,7 +114,7 @@ const PhotoAlbum = () => {
           <div >
             {/* <a href="A005.jpg"> */}
               <StaticImage
-                src="../../static/A005.jpg"
+                src="../images/couple4.jpg"
                 alt="Valley"
               ></StaticImage>
             {/* </a> */}
