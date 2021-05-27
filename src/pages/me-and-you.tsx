@@ -147,7 +147,7 @@ const MeAndYou = (props) => {
               className="text-center p-4 font-gab md:col-span-3 self-center"
               style={{ backgroundColor: '#e8e8e8' }}
             >
-              "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia." <br></br><br></br> <span className="text-4xl mt-4">WE ARE GETTING MARRIED</span>
+              "Begitulah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia." <br></br><br></br> <span className="text-4xl mt-4">WE ARE GETTING MARRIED</span>
             </motion.div>
             <div className="flex flex-col md:flex-row justify-center gap-10">
               <div className="flex flex-col">
