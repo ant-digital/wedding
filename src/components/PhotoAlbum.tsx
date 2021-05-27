@@ -90,7 +90,7 @@ const PhotoAlbum = () => {
           <div >
             {/* <a href="A002.jpg"> */}
               <StaticImage
-                src="../../static/A002.jpg"
+                src="../images/couple.jpg"
                 alt="Waves"
               ></StaticImage>
             {/* </a> */}
@@ -98,7 +98,7 @@ const PhotoAlbum = () => {
           <div >
             {/* <a href="A003.jpg"> */}
               <StaticImage
-                src="../../static/A003.jpg"
+                src="../images/photo-1.jpg"
                 alt="Under the water"
               ></StaticImage>
             {/* </a> */}
@@ -106,7 +106,7 @@ const PhotoAlbum = () => {
           <div >
             {/* <a href="A004.jpg"> */}
               <StaticImage
-                src="../../static/A004.jpg"
+                src="../images/couple3.jpg"
                 alt="Canyon night"
               ></StaticImage>
             {/* </a> */}
