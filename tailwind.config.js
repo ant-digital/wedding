@@ -10,12 +10,14 @@ module.exports = {
       fontFamily: {
         "romeo": "eb garamond",
         gab:['Gabriola'],
-        lucky:['JosefinSans'],
-        pattaya:['Pattaya'],
-        greatVibe:['Great Vibes' ,'cursive']
+        abril:['Abril Fatface', 'cursive'],
+        sheline:['Sheline'],
+        greatVibe:['Great Vibes' ,'cursive'],
+        // edwardian:['Edwardian Script ITC']
       },
       backgroundImage: theme => ({
-        'banner-flower': "url('images/banner.png')"
+        'banner-flower': "url('images/banner.png')",
+        'foto': "url('images/photo-1-dark.jpg')",
        })
     },
   },

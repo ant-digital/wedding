@@ -6,19 +6,23 @@
 @layer base {
     @font-face {
       font-family: Gabriola;
-      src: url(./Gabriola.ttf) format("truetype");
+      src: url('/fonts/files/Gabriola.ttf') format("truetype");
     }
     @font-face {
-        font-family: JosefinSans;
-        src: url('/fonts/files/JosefinSans-Bold.ttf') format("truetype");
+        font-family: 'Abril Fatface', cursive;
+        src: url('/fonts/files/AbrilFatface-Regular.ttf');
+    }
+    @font-face {
+        font-family: Sheline;
+        src: url('/fonts/files/Sheline.ttf') format("truetype");
+    }
+    @font-face {
+        font-family: Edwardian Script ITC;
+        src: url('/fonts/files/edwardian.ttf') format("truetype");
     }
     @font-face {
         font-family: 'Great Vibes', cursive;
         src:url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-    }
-    @font-face {
-        font-family: 'Pattaya';
-        src: url('/fonts/files/Pattaya-Regular.ttf') format("truetype");
     }
 
     @font-face {

@@ -185,7 +185,7 @@ const RomeoAndJuliet = () => (
         />
       </div>
 
-      <div className={"max-w-7xl mx-auto p-8 py-32 "}>
+      {/* <div className={"max-w-7xl mx-auto p-8 py-32 "}>
         <h2 className={"font-romeo text-7xl mb-16"}>Gallery</h2>
 
         <div className={"flex flex-wrap justify-between"}>
@@ -215,7 +215,7 @@ const RomeoAndJuliet = () => (
             className={"mb-8 md:mb-0 md:w-1/4"}
           />
         </div>
-      </div>
+      </div> */}
     </main>
   </div>
 )

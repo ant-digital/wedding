@@ -16,9 +16,9 @@ import useInboxes from "src/useInboxes";
 import { mutate } from "swr";
 import Footer from "$components/Footer";
 
-const MeAndYou = (props) => {
+const NinoAndCynthia = (props) => {
 
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
   const [customerName, setCustomerName] = useState("")
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
@@ -75,35 +75,34 @@ const MeAndYou = (props) => {
     <SimpleReactLightbox>
       <div className="text-xl font-romeo" style={{ backgroundColor: '#e8e8e8' }}>
         {show ? (
-          <div className="w-screen fixed h-screen" style={{backgroundColor: '#e8e8e8'}}>
           <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 3 }}
-        >
-          <div className="flex flex-col justify-center text-center w-screen fixed h-screen z-0 bg-foto bg-center text-white bg-opacity-20">
-            <div className="mt-8">
-              <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1>
-              <h2 className="text-2xl" >You are invited to the wedding of</h2>
-            </div>
-            <div className="mt-6 mb-4">
-              <h1 className="font-greatVibe text-5xl sm:text-8xl mb-8 font-bold">Romeo & Juliet</h1>
-              <button onClick={enter} className="bg-white font-bold p-4 text-black w-3/4 md:w-1/4 rounded">Open Invitation</button>
-            </div>
-            {/* <div className="md:w-1/5 mx-auto">
-              <StaticImage src="../images/bunga-transparent.png"
-                alt="bunga"></StaticImage>
-            </div> */}
-            {/* <div className="place-self-center mt-8">
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 3 }}
+          >
+            <div className="flex flex-col justify-center text-center w-screen fixed h-screen bg-white z-0">
+              <div className="mt-8">
+                <h1 className="text-3xl sm:text-6xl font-bold" style={{ fontFamily: 'Abril Fatface' }} >THE WEDDING OF</h1>
+              </div>
+              <div className="mt-6 mb-4">
+                <h1 className="font-sheline text-4xl sm:text-7xl mb-8 font-bold my-6">Nino & Cynthia</h1>
+                <h1 style={{ fontFamily: 'Abril Fatface' }} className="text-3xl sm:text-6xl mb-8 font-bold my-6">07 FEBRUARY 2022</h1>
+                <button onClick={enter} className="bg-black p-2 text-white w-3/4 md:w-1/4 rounded mt-2">OPEN</button>
+              </div>
+              <div className="w-full">
+                {/* <StaticImage src="../images/bunga.png"
+                alt="bunga"></StaticImage> */}
+                <Countdown setReminder={false}></Countdown>
+              </div>
+              {/* <div className="place-self-center mt-8">
                 {
                   props.location.search ? (
                     <QRCode size={128} value={props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}></QRCode>
                   ) : ('')
                 }
               </div>*/}
-          </div>
+            </div>
           </motion.div>
-          </div>
         ) : (<>
           {/* <div className="flex flex-col justify-center text-center h-screen" style={{ backgroundColor: '#e8e8e8' }}>
             <StaticImage src="../images/flower-top.png"
@@ -139,8 +138,15 @@ const MeAndYou = (props) => {
             ></StaticImage>
           </div> */}
 
-          <div className="grid grid-cols-1 text-center md:h-screen overflow-visible" >
-            <motion.div
+          <motion.div
+            className="grid grid-cols-1 text-center md:h-screen overflow-visible"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2.5 }}
+            style={{ fontFamily: 'Abril Fatface' }}
+          // className="text-center p-4 font-gab md:col-span-3 self-center"
+          >
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 5 }}
@@ -148,31 +154,48 @@ const MeAndYou = (props) => {
               style={{ backgroundColor: '#e8e8e8' }}
             >
               "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia." <br></br><br></br> <span className="text-4xl md:text-6xl mt-4 font-bold">WE ARE GETTING MARRIED</span>
-            </motion.div>
+            </motion.div> */}
+            <div
+              className="font-bold text-5xl text-center p-4 md:col-span-3 self-center"
+
+            >
+              Meet the happy couple
+            </div>
             <div className="flex flex-col md:flex-row justify-center gap-10">
               <div className="flex flex-col">
                 <h1>The groom</h1>
                 <StaticImage src="../images/bride.jpg" objectFit="contain"
-                  alt="bunga" width={236} height={353} className="my-4"
+                  alt="bunga" width={236} height={353} className="my-4 sm:rounded-full"
                 ></StaticImage>
-                <h2>Anindyo baskoro</h2>
+                <h2 className="font-bold">Anindyo baskoro</h2>
                 <h3>Putri dari bapak & ibu AAA</h3>
               </div>
               <div className="flex flex-col md:pt-32">
                 <h1 className="text-5xl">&</h1>
               </div>
               <div className="flex flex-col">
-                  <h1>The bride</h1>
-                  <StaticImage src="../images/groom.jpg"
-                    alt="bunga" width={236} height={353} className="my-4" objectFit="contain"
-                  ></StaticImage>
-                  <h2>Cynthia Angelin</h2>
-                  <h3>Putri dari bapak & ibu zzz</h3>
+                <h1>The bride</h1>
+                <StaticImage src="../images/groom.jpg"
+                  alt="bunga" width={236} height={353} className="my-4 sm:rounded-full" objectFit="contain"
+                ></StaticImage>
+                <h2 className="font-bold">Cynthia Angelin</h2>
+                <h3>Putri dari bapak & ibu zzz</h3>
               </div>
             </div>
 
-          </div>
-          <div className="p-4 mb-4 mt-2 border-t-2 border-white">
+          </motion.div>
+          <div className="text-center p-4 flex flex-col mt-4 bg-white" >
+            <div>
+            <p className="text-2xl" style={{ fontFamily: 'Edwardian Script ITC' }}>
+              "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
+            <br></br>Matius 19:6 TB</p>
+            </div>
+            <div>
+              <h1 className="text-4xl font-bold">HOLY MATRIMONY</h1>
+            </div>
+            
+            </div>
+          <div className="p-4 border-t-2 border-white">
             <InView as="div" onChange={(inView, entry) => {
               if (inView) {
                 controls.start('visible')
@@ -229,17 +252,7 @@ const MeAndYou = (props) => {
             </InView>
 
           </div>
-          <div className="text-center px-4 font-gab">
-            {/* <p > */}
 
-            <br></br>
-            Matius 19:6 TB
-            <br></br>
-            Tuhan membuat segala sesuatu indah pada waktunya. Indah saat Dia mempertemukan, indah saat Dia menumbuhkan kasih, indah saat Dia mempersatukan putra-putri kami dalam suatu ikatan pernikahan.
-            <br></br><br></br>
-            Dengan segala kerendahan hati dan dengan ungkapan syukur atas karunia Tuhan, kami mengundang Bapak/ Ibu/ Saudara/ i untuk menghadiri Resepsi Pernikahan putra-putri kami yang akan diselenggarakan pada :
-            {/* </p> */}
-          </div>
           <div className="flex justify-center mt-4 border-t-2 border-white">
             <div style={{ backgroundColor: '#e7e5d7' }} className="text-center w-screen">
               <StaticImage src="../images/floral+7+top-right.png"
@@ -297,7 +310,7 @@ const MeAndYou = (props) => {
               </motion.div>
             </InView>
           </div>
-          <Countdown></Countdown>
+          {/* <Countdown></Countdown> */}
           <div className="bg-gray-200 p-4 mb-4 border-t-2 border-white">
             <div className="flex justify-center mb-4">
               <h2 className="font-bold">Wishes Box</h2>
@@ -334,12 +347,12 @@ const MeAndYou = (props) => {
                 {
                   inboxes.map((inbox, index) => {
                     return index % 2 === 0 ?
-                      (<div key={inbox.name} className="p-2 mb-2 border-2 border-white font-bold">
+                      (<div key={inbox.name} className="rounded-xl p-2 text-center mb-2 border-2 border-white" style={{ backgroundColor: "#ffcdd2" }}>
                         <span>{inbox.message}</span>
                         <br></br>
                         <span className="text-sm">{inbox.name}</span>
                       </div>) :
-                      (<div key={inbox.name} className="p-2 mb-2 border-2 border-white font-bold">
+                      (<div key={inbox.name} className="rounded-xl p-2 text-center mb-2 border-2 border-white" style={{ backgroundColor: "#ffebee" }}>
                         <span>{inbox.message}</span>
                         <br></br>
                         <span className="text-sm">{inbox.name}</span>
@@ -379,7 +392,7 @@ const MeAndYou = (props) => {
               <h3>6</h3>
             </div>
           </Slider> */}
-          <PhotoAlbum></PhotoAlbum>
+          {/* <PhotoAlbum></PhotoAlbum> */}
           {/* <AudioPlayer
             autoPlay
             src={song}
@@ -392,4 +405,4 @@ const MeAndYou = (props) => {
   )
 }
 
-export default MeAndYou
+export default NinoAndCynthia
