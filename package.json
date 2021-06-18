@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@fontsource/eb-garamond": "^4.3.0",
+    "@fontsource/great-vibes": "^4.4.5",
     "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/typography": "^0.4.1",
     "dayjs": "^1.10.5",
@@ -44,6 +45,7 @@
     "react-h5-audio-player": "^3.7.1",
     "react-helmet": "^6.1.0",
     "react-intersection-observer": "^8.32.0",
+    "react-parallax": "^3.3.0",
     "react-qr-code": "^1.1.1",
     "react-share": "^4.4.0",
     "react-slick": "^0.28.1",

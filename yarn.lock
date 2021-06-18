@@ -1098,6 +1098,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/eb-garamond/-/eb-garamond-4.3.0.tgz#3ecbbf422addb1cfcbe0b845078243abeffc4e7d"
   integrity sha512-TCrN21mLiV46RpH5tDwyCY6GqRNHd/jPF+blFPGKNsH/Od+H3cab1/pfk1i3pCTzs4wt5zityFp0pjHsSfK3aA==
 
+"@fontsource/great-vibes@^4.4.5":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/great-vibes/-/great-vibes-4.4.5.tgz#9504b98966bc7c0e039ae84e1924f01adcef50c6"
+  integrity sha512-dVM/3nyUshDty2j7t74+K3r1qUf04MdS0P/9FxRkZsAXAsuwRqahCF3Gq5qSaDcOngKe0c7Q99aiTxtZMz46QQ==
+
 "@fullhuman/postcss-purgecss@^3.1.3":
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-3.1.3.tgz#47af7b87c9bfb3de4bc94a38f875b928fffdf339"
@@ -11187,6 +11192,11 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-parallax@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/react-parallax/-/react-parallax-3.3.0.tgz#79f7a33451e7a419d0052f795c5d3655aa1e20b4"
+  integrity sha512-gI7YdblxdbhZ1ISqaWzIqlPSuQLX76QFbzWKmeA0hCprjephVdVD35gCN+Fu8v0p3cfw+DFTN/PE+jYgcCOLUw==
 
 react-qr-code@^1.1.1:
   version "1.1.1"

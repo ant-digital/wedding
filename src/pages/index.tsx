@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
-
+import "@fontsource/great-vibes"
 
 const IndexPage = () => {
   return (
@@ -14,7 +14,7 @@ const IndexPage = () => {
         <Link to={"/me-and-you"}>Me & You</Link>
         </li>
         <li>
-        <Link to={"/nino-and-cynthia"}>Nino & Cynthia</Link>
+        <Link to={"/sage-green"}>Sage Green</Link>
         </li>
         <li>
         <Link to={"/link-generator"}>Link Generator</Link>

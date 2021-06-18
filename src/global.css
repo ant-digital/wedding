@@ -20,10 +20,6 @@
         font-family: Edwardian Script ITC;
         src: url('/fonts/files/edwardian.ttf') format("truetype");
     }
-    @font-face {
-        font-family: 'Great Vibes', cursive;
-        src:url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-    }
 
     @font-face {
         font-family: 'EB Garamond';

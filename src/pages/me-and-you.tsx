@@ -15,6 +15,9 @@ import Slider from "react-slick";
 import useInboxes from "src/useInboxes";
 import { mutate } from "swr";
 import Footer from "$components/Footer";
+import MusicPlayer from "$components/MusicPlayer";
+import { Parallax } from 'react-parallax';
+import coupleImg from "../images/couple3.jpg"
 
 const MeAndYou = (props) => {
 
@@ -73,36 +76,36 @@ const MeAndYou = (props) => {
 
   return (
     <SimpleReactLightbox>
-      <div className="text-xl font-romeo" style={{ backgroundColor: '#e8e8e8' }}>
+      <div className="text-xl font-romeo" style={{ backgroundColor: '#e8e8e8'}} >
         {show ? (
-          <div className="w-screen fixed h-screen" style={{backgroundColor: '#e8e8e8'}}>
-          <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 3 }}
-        >
-          <div className="flex flex-col justify-center text-center w-screen fixed h-screen z-0 bg-foto bg-center text-white bg-opacity-20">
-            <div className="mt-8">
-              <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1>
-              <h2 className="text-2xl" >You are invited to the wedding of</h2>
-            </div>
-            <div className="mt-6 mb-4">
-              <h1 className="font-greatVibe text-5xl sm:text-8xl mb-8 font-bold">Romeo & Juliet</h1>
-              <button onClick={enter} className="bg-white font-bold p-4 text-black w-3/4 md:w-1/4 rounded">Open Invitation</button>
-            </div>
-            {/* <div className="md:w-1/5 mx-auto">
+          <div className="w-screen h-screen" style={{ backgroundColor: '#e8e8e8'}}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 3 }}
+            >
+              <div className="flex flex-col justify-center text-center w-screen fixed h-screen z-0 bg-foto bg-center text-white bg-opacity-20">
+                <div className="mt-8">
+                  <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1>
+                  <h2 className="text-2xl" >You are invited to the wedding of</h2>
+                </div>
+                <div className="mt-6 mb-4">
+                  <h1 className="font-greatVibe text-5xl sm:text-8xl mb-8 font-bold">Romeo & Juliet</h1>
+                  <button onClick={enter} className="bg-white font-bold p-4 text-black w-3/4 md:w-1/4 rounded">Open Invitation</button>
+                </div>
+                {/* <div className="md:w-1/5 mx-auto">
               <StaticImage src="../images/bunga-transparent.png"
                 alt="bunga"></StaticImage>
             </div> */}
-            {/* <div className="place-self-center mt-8">
+                {/* <div className="place-self-center mt-8">
                 {
                   props.location.search ? (
                     <QRCode size={128} value={props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}></QRCode>
                   ) : ('')
                 }
               </div>*/}
-          </div>
-          </motion.div>
+              </div>
+            </motion.div>
           </div>
         ) : (<>
           {/* <div className="flex flex-col justify-center text-center h-screen" style={{ backgroundColor: '#e8e8e8' }}>
@@ -138,7 +141,7 @@ const MeAndYou = (props) => {
               layout="constrained"
             ></StaticImage>
           </div> */}
-
+          <MusicPlayer song={song}></MusicPlayer>
           <div className="grid grid-cols-1 text-center md:h-screen overflow-visible" >
             <motion.div
               initial={{ opacity: 0 }}
@@ -162,16 +165,17 @@ const MeAndYou = (props) => {
                 <h1 className="text-5xl">&</h1>
               </div>
               <div className="flex flex-col">
-                  <h1>The bride</h1>
-                  <StaticImage src="../images/groom.jpg"
-                    alt="bunga" width={236} height={353} className="my-4" objectFit="contain"
-                  ></StaticImage>
-                  <h2>Cynthia Angelin</h2>
-                  <h3>Putri dari bapak & ibu zzz</h3>
+                <h1>The bride</h1>
+                <StaticImage src="../images/groom.jpg"
+                  alt="bunga" width={236} height={353} className="my-4" objectFit="contain"
+                ></StaticImage>
+                <h2>Cynthia Angelin</h2>
+                <h3>Putri dari bapak & ibu zzz</h3>
               </div>
             </div>
 
           </div>
+
           <div className="p-4 mb-4 mt-2 border-t-2 border-white">
             <InView as="div" onChange={(inView, entry) => {
               if (inView) {
@@ -184,6 +188,7 @@ const MeAndYou = (props) => {
                 variants={variants}
                 transition={{ duration: 1 }}
               >
+                
                 <div className="flex justify-center mb-4">
                   <h2 className="font-bold">Protokol Covid</h2>
                 </div>
@@ -240,15 +245,17 @@ const MeAndYou = (props) => {
             Dengan segala kerendahan hati dan dengan ungkapan syukur atas karunia Tuhan, kami mengundang Bapak/ Ibu/ Saudara/ i untuk menghadiri Resepsi Pernikahan putra-putri kami yang akan diselenggarakan pada :
             {/* </p> */}
           </div>
-          <div className="flex justify-center mt-4 border-t-2 border-white">
-            <div style={{ backgroundColor: '#e7e5d7' }} className="text-center w-screen">
-              <StaticImage src="../images/floral+7+top-right.png"
+          <Parallax blur={1} bgImage={coupleImg} bgImageAlt="the cat" strength={300} bgImageStyle={{objectFit:'cover'}}>
+
+          <div className="flex justify-center mt-4">
+            <div className="text-center w-screen text-white p-2 md:p-10" >
+              {/* <StaticImage src="../images/floral+7+top-right.png"
                 width={150}
                 height={150}
                 className="float-right"
                 alt="top"
-              ></StaticImage>
-              <p className="text-center" style={{ marginTop: '150px' }} >Sabtu, 6 Oktober 2021 </p>
+              ></StaticImage> */}
+              <p className="text-center">Sabtu, 6 Oktober 2021 </p>
               <p className="text-center text-md">1.00 Wita - Selesai</p>
               <p className="text-center text-md font-gab">The Apurva Kempinski Bali</p>
               <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
@@ -264,12 +271,13 @@ const MeAndYou = (props) => {
                   </div>
                 </div>
               </a>
-              <StaticImage className="float-left" src="../images/floral+7+bot-left.png"
+              {/* <StaticImage className="float-left" src="../images/floral+7+bot-left.png"
                 width={150}
                 height={150}
-                alt="bottom"></StaticImage>
+                alt="bottom"></StaticImage> */}
             </div>
           </div>
+          </Parallax>
           <div className="bg-gray-200 p-4 mb-4 border-t-2 border-white">
             <InView as="div" onChange={(inView, entry) => {
               if (inView) {
@@ -333,17 +341,11 @@ const MeAndYou = (props) => {
               <div className="w-full mt-4">
                 {
                   inboxes.map((inbox, index) => {
-                    return index % 2 === 0 ?
-                      (<div key={inbox.name} className="p-2 mb-2 border-2 border-white font-bold">
-                        <span>{inbox.message}</span>
-                        <br></br>
-                        <span className="text-sm">{inbox.name}</span>
-                      </div>) :
-                      (<div key={inbox.name} className="p-2 mb-2 border-2 border-white font-bold">
-                        <span>{inbox.message}</span>
-                        <br></br>
-                        <span className="text-sm">{inbox.name}</span>
-                      </div>)
+                    return (<div key={inbox.name} className="p-2 mb-2">
+                      <span>{inbox.message}</span>
+                      <br></br>
+                      <span className="text-sm font-bold">{inbox.name}</span>
+                    </div>)
                   })
                 }
               </div>

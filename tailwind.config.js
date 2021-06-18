@@ -1,23 +1,22 @@
 module.exports = {
   mode: "jit",
-  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
         "romeo-text": "#284135",
         "romeo-background": "#f3f2f1",
+        "sageGreen":"#1f5c3d"
       },
       fontFamily: {
-        "romeo": "eb garamond",
-        gab:['Gabriola'],
-        abril:['Abril Fatface', 'cursive'],
-        sheline:['Sheline'],
-        greatVibe:['Great Vibes' ,'cursive'],
-        // edwardian:['Edwardian Script ITC']
+        romeo: "eb garamond",
+        greatVibe:'Great Vibes'
       },
       backgroundImage: theme => ({
-        'banner-flower': "url('images/banner.png')",
-        'foto': "url('images/photo-1-dark.jpg')",
+        foto: "url('images/photo-1-dark.jpg')",
+        body : "url('images/sageGreen/body-bg.png')",
+        welcome : "url('images/sageGreen/welcome-bg.jpg')",
+        frame : "url('images/sageGreen/frame.png')",
        })
     },
   },
