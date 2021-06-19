@@ -104,7 +104,7 @@ const SageGreen = (props) => {
                 <h1 className="font-greatVibe text-5xl text-sageGreen">Cindy</h1>
               </div>
               <div className="text-center">
-                <StaticImage src="../images/sageGreen/ornament.webp"
+                <StaticImage src="../images/sageGreen/ornament.png"
                   alt="bunga"
                 ></StaticImage>
                 <h1 className="">To : Mr Hock and Family</h1>
