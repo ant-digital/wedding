@@ -76,7 +76,7 @@ const SageGreen = (props) => {
 
   return (
     <SimpleReactLightbox>
-      <div className="text-xl w-screen bg-body bg-cover h-full">
+      <div className="text-sm w-screen bg-body bg-contain h-full">
         {showWelcomePopUp ? (
           /**
            * Welcome Popup ( 1st Screen )
@@ -213,7 +213,7 @@ const SageGreen = (props) => {
                 >
 
                   <div className="flex justify-center mb-4">
-                    <h2 className="font-bold">Protokol Covid</h2>
+                    <h2 className="font-bold text-sageGreen text-xl">Protokol Covid-19</h2>
                   </div>
                   <div className="flex justify-center mb-4 ">
                     <h4 className="text-center">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi, kami harapkan kedatangan para tamu undangan agar menjalankan protokol yang berlaku.</h4>
@@ -225,7 +225,7 @@ const SageGreen = (props) => {
                           alt="Picture of the author"
                           width={40}
                           height={40}></StaticImage>
-                        <span className="ml-2 text-xl">Saling Menjaga Jarak di Dalam Acara</span>
+                        <span className="ml-2">Saling Menjaga Jarak di Dalam Acara</span>
                       </div>
                       <div className="flex items-center">
                         <StaticImage src="../images/masker.png"
@@ -233,7 +233,7 @@ const SageGreen = (props) => {
                           width={40}
                           height={40}
                         ></StaticImage>
-                        <span className="ml-2 text-xl">Wajib Menggunakan Masker</span>
+                        <span className="ml-2">Wajib Menggunakan Masker</span>
                       </div>
                       <div className="flex items-center">
                         <StaticImage src="../images/namaste.png"
@@ -241,7 +241,7 @@ const SageGreen = (props) => {
                           width={40}
                           height={40}
                         ></StaticImage>
-                        <span className="ml-2 text-xl" style={{ fontFamily: 'Gabriola' }}>Menggunakan Salam Namaste</span>
+                        <span className="ml-2">Menggunakan Salam Namaste</span>
                       </div>
                       <div className="flex items-center">
                         <StaticImage src="../images/wash.png"
@@ -249,7 +249,7 @@ const SageGreen = (props) => {
                           width={40}
                           height={40}
                         ></StaticImage>
-                        <span className="ml-2 text-lg">Mencuci Tangan dan Menggunakan Hand Sanitizer</span>
+                        <span className="ml-2">Mencuci Tangan dan Menggunakan Hand Sanitizer</span>
                       </div>
                     </div>
                   </div>
@@ -257,27 +257,10 @@ const SageGreen = (props) => {
               </InView>
 
             </div>
-            <div className="text-center px-4 font-gab">
-              {/* <p > */}
 
-              <br></br>
-              Matius 19:6 TB
-              <br></br>
-              Tuhan membuat segala sesuatu indah pada waktunya. Indah saat Dia mempertemukan, indah saat Dia menumbuhkan kasih, indah saat Dia mempersatukan putra-putri kami dalam suatu ikatan pernikahan.
-              <br></br><br></br>
-              Dengan segala kerendahan hati dan dengan ungkapan syukur atas karunia Tuhan, kami mengundang Bapak/ Ibu/ Saudara/ i untuk menghadiri Resepsi Pernikahan putra-putri kami yang akan diselenggarakan pada :
-              {/* </p> */}
-            </div>
-            <Parallax blur={1} bgImage={coupleImg} bgImageAlt="the cat" strength={300} bgImageStyle={{ objectFit: 'cover' }}>
-
+            {/* <Parallax blur={1} bgImage={coupleImg} bgImageAlt="the cat" strength={300} bgImageStyle={{ objectFit: 'cover' }}>
               <div className="flex justify-center mt-4">
                 <div className="text-center w-screen text-white p-2 md:p-10" >
-                  {/* <StaticImage src="../images/floral+7+top-right.png"
-                width={150}
-                height={150}
-                className="float-right"
-                alt="top"
-              ></StaticImage> */}
                   <p className="text-center">Sabtu, 6 Oktober 2021 </p>
                   <p className="text-center text-md">1.00 Wita - Selesai</p>
                   <p className="text-center text-md font-gab">The Apurva Kempinski Bali</p>
@@ -294,14 +277,10 @@ const SageGreen = (props) => {
                       </div>
                     </div>
                   </a>
-                  {/* <StaticImage className="float-left" src="../images/floral+7+bot-left.png"
-                width={150}
-                height={150}
-                alt="bottom"></StaticImage> */}
                 </div>
               </div>
-            </Parallax>
-            <div className="bg-gray-200 p-4 mb-4 border-t-2 border-white">
+            </Parallax> */}
+            <div className="p-4">
               <InView as="div" onChange={(inView, entry) => {
                 if (inView) {
                   controls2.start('visible')
@@ -314,7 +293,7 @@ const SageGreen = (props) => {
                   transition={{ duration: 2 }}
                 >
                   <div className="flex justify-center mb-4">
-                    <h2 className="font-bold">Kirim Dana</h2>
+                    <h2 className="font-bold text-sageGreen">Kirim Dana</h2>
                   </div>
                   <div className="flex justify-center mb-4 ">
                     <span className="text-center text-sm">Sebelumnya, terimakasih atas perhatian dan bentuk tanda kasih Bapak/Ibu/Saudara/i untuk kami. Silahkan kirimkan dana melalui transfer rekening berikut :</span>
@@ -329,7 +308,7 @@ const SageGreen = (props) => {
               </InView>
             </div>
             <Countdown></Countdown>
-            <div className="bg-gray-200 p-4 mb-4 border-t-2 border-white">
+            <div className="p-8 mb-4">
               <div className="flex justify-center mb-4">
                 <h2 className="font-bold">Wishes Box</h2>
               </div>
