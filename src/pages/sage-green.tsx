@@ -81,13 +81,13 @@ const SageGreen = (props) => {
           /**
            * Welcome Popup ( 1st Screen )
           */
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 3 }}
-            className=""
-          >
-            <div className="flex flex-col w-screen justify-center h-screen bg-welcome bg-cover p-14">
+          <div className="flex flex-col w-screen justify-center h-screen bg-welcome bg-cover p-14">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 3 }}
+              className=""
+            >
               <div className="text-center">
                 {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
                 <h2 className="text-2xl" >You are invited to the wedding of</h2>
@@ -96,7 +96,7 @@ const SageGreen = (props) => {
                 <h1 className="font-greatVibe text-5xl text-sageGreen">Tommy</h1>
               </div>
               <div className="text-center">
-                <StaticImage src="../images/sageGreen/frame-foto-pengantin.png"
+                <StaticImage src="../images/sageGreen/frame-foto-pengantin.webp"
                   alt="bunga" height={320}
                 ></StaticImage>
               </div>
@@ -104,7 +104,7 @@ const SageGreen = (props) => {
                 <h1 className="font-greatVibe text-5xl text-sageGreen">Cindy</h1>
               </div>
               <div className="text-center">
-                <StaticImage src="../images/sageGreen/ornament.png"
+                <StaticImage src="../images/sageGreen/ornament.webp"
                   alt="bunga"
                 ></StaticImage>
                 <h1 className="">To : Mr Hock and Family</h1>
@@ -112,8 +112,8 @@ const SageGreen = (props) => {
               <div className="mt-6 text-center">
                 <button onClick={closeWelcomePopUp} className="rounded-xl font-bold p-2  w-3/4 md:w-1/4 text-white bg-green-700">Open Invitation</button>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         ) : (
           /**
           * Main Screen
@@ -131,7 +131,7 @@ const SageGreen = (props) => {
               </motion.div>
               <div className="flex flex-col md:flex-row justify-center gap-10">
                 <div className="flex flex-col">
-                  <StaticImage src="../images/sageGreen/bride.png" objectFit="contain"
+                  <StaticImage src="../images/sageGreen/bride.webp" objectFit="contain"
                     alt="bride" className="my-4"
                   ></StaticImage>
                   <h1 className="font-greatVibe text-5xl text-sageGreen">Tommy</h1>
@@ -141,7 +141,7 @@ const SageGreen = (props) => {
                   <h1 className="text-5xl font-greatVibe text-sageGreen">&</h1>
                 </div>
                 <div className="flex flex-col">
-                  <StaticImage src="../images/sageGreen/groom.png"
+                  <StaticImage src="../images/sageGreen/groom.webp"
                     alt="groom" className="my-4" objectFit="contain"
                   ></StaticImage>
                   <h1 className="font-greatVibe text-5xl text-sageGreen">Cindy</h1>
@@ -155,14 +155,30 @@ const SageGreen = (props) => {
                 <h1 className="font-greatVibe text-5xl text-sageGreen">Save the Date</h1>
               </div>
               <div id="frame" className="bg-frame flex flex-col space-y-10 bg-cover justify-center p-14">
-              <div className="text-center text-sm">
-                <h1 className="text-sageGreen font-bold">Wedding Ceremony</h1>
-                <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
-                <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
-                    <div className="m-auto flex bg-gray-200 border-2 rounded-xl text-white text-sm w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
+                <div className="text-center text-sm">
+                  <h1 className="text-sageGreen font-bold">Wedding Ceremony</h1>
+                  <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
+                  <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
+                    <div className="m-auto flex border-2 rounded-xl text-white text-sm w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
                       <div className="mr-2">
                         <span style={{
-                          fontFamily: 'Material Icons', fontSize: '24px'
+                          fontFamily: 'Material Icons', fontSize: '18px'
+                        }}>place</span>
+                      </div>
+                      <div>
+                        <span>Petunjuk Lokasi</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div className="text-center text-sm">
+                  <h1 className="text-sageGreen font-bold">Wedding Reception</h1>
+                  <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
+                  <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
+                    <div className="m-auto flex border-2 rounded-xl text-white text-sm w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
+                      <div className="mr-2">
+                        <span style={{
+                          fontFamily: 'Material Icons', fontSize: '18px'
                         }}>place</span>
                       </div>
                       <div>
@@ -171,33 +187,16 @@ const SageGreen = (props) => {
                       </div>
                     </div>
                   </a>
+                </div>
               </div>
-              <div className="text-center text-sm">
-                <h1 className="text-sageGreen font-bold">Wedding Reception</h1>
-                <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
-                <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
-                    <div className="m-auto flex bg-gray-200 border-2 rounded-xl text-white text-sm w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
-                      <div className="mr-2">
-                        <span style={{
-                          fontFamily: 'Material Icons', fontSize: '24px'
-                        }}>place</span>
-                      </div>
-                      <div>
-                        <span>Petunjuk Lokasi</span>
 
-                      </div>
-                    </div>
-                  </a>
-              </div>
-              </div>
-              
               {/* <div id="hello" style={{position:'absolute',top:'20px'}}>
               <StaticImage src="../images/sageGreen/frame.png"
                   alt="frame"
                 >
                 </StaticImage>
               </div> */}
-                
+
             </div>
             <div className="p-4 mt-4">
               <InView as="div" onChange={(inView, entry) => {
