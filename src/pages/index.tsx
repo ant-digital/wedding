@@ -17,6 +17,9 @@ const IndexPage = () => {
         <Link to={"/sage-green"}>Sage Green</Link>
         </li>
         <li>
+        <Link to={"/black-gold"}>Black Gold</Link>
+        </li>
+        <li>
         <Link to={"/link-generator"}>Link Generator</Link>
         </li>
       </ul>

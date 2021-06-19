@@ -1,6 +1,6 @@
+
 import { StaticImage } from "gatsby-plugin-image"
 import React, { useEffect, useState } from "react"
-import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import song from '../song.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
@@ -8,20 +8,15 @@ import Countdown from "$components/Countdown"
 import SimpleReactLightbox from 'simple-react-lightbox'
 import { motion, useAnimation } from "framer-motion"
 import { InView } from 'react-intersection-observer';
-import QRCode from "react-qr-code";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import useInboxes from "src/useInboxes";
 import { mutate } from "swr";
 import Footer from "$components/Footer";
-import MusicPlayer from "$components/MusicPlayer";
-import { Parallax } from 'react-parallax';
-import coupleImg from "../images/couple3.jpg"
 
-const SageGreen = (props) => {
+const BlackGold = (props) => {
 
-  const [showWelcomePopUp, setShowWelcomePopUp] = useState(true)
+  const [showWelcomePopUp, setShowWelcomePopUp] = useState(false)
   const [customerName, setCustomerName] = useState("")
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
@@ -76,12 +71,12 @@ const SageGreen = (props) => {
 
   return (
     <SimpleReactLightbox>
-      
+      <div className="text-sm w-screen bg-bodyBlack bg-contain md:bg-auto h-full">
         {showWelcomePopUp ? (
           /**
            * Welcome Popup ( 1st Screen )
           */
-          <div className="flex flex-col w-screen justify-center h-screen bg-welcomeGreen bg-cover p-14">
+          <div className="flex flex-col w-screen justify-center h-screen bg-welcome bg-cover p-14">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -93,7 +88,7 @@ const SageGreen = (props) => {
                 <h2 className="text-2xl" >You are invited to the wedding of</h2>
               </div>
               <div className="text-left pt-4">
-                <h1 className="font-greatVibe text-5xl text-sageGreen">Tommy</h1>
+                <h1 className="font-greatVibe text-5xl ">Tommy</h1>
               </div>
               <div className="text-center">
                 <StaticImage src="../images/sageGreen/frame-foto-pengantin.webp"
@@ -101,7 +96,7 @@ const SageGreen = (props) => {
                 ></StaticImage>
               </div>
               <div className="text-right">
-                <h1 className="font-greatVibe text-5xl text-sageGreen">Cindy</h1>
+                <h1 className="font-greatVibe text-5xl ">Cindy</h1>
               </div>
               <div className="text-center">
                 <StaticImage src="../images/sageGreen/ornament.png"
@@ -118,45 +113,58 @@ const SageGreen = (props) => {
           /**
           * Main Screen
           */
-           <div className="text-sm w-screen h-full bg-bodyGreen bg-contain">
+          <>
             {/* <MusicPlayer song={song}></MusicPlayer> */}
-            <div className="grid grid-cols-1 text-center md:h-screen overflow-visible" >
-              <motion.div
+            <div className="grid grid-cols-1 text-center md:h-screen overflow-visible text-white pt-12">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="col-span-2 border-2 border-white">A</div>
+                <div className="border-2 border-white">B</div>
+                <div className="border-2 border-white">C</div>
+
+              </div>
+              {/* <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 7 }}
                 className="text-center p-8 text-black md:col-span-3 self-center text-sm"
               >
                 "Demikianlah mereka bukan lagi dua, melainkan satu. <br></br>Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
-              </motion.div>
-              <div className="flex flex-col md:flex-row justify-center gap-10">
+              </motion.div> */}
+              <div className="flex flex-col md:flex-row justify-center gap-10 mt-4">
                 <div className="flex flex-col">
-                  <StaticImage src="../images/sageGreen/bride.webp" objectFit="contain"
-                    alt="bride" className="my-4"
-                  ></StaticImage>
-                  <h1 className="font-greatVibe text-5xl text-sageGreen">Tommy</h1>
+                  <h1 className="font-greatVibe text-5xl">Tommy</h1>
                   <h3>Putra ketiga dari <br></br>Bapak & Ibu Hock</h3>
                 </div>
                 <div className="flex flex-col md:pt-32">
-                  <h1 className="text-5xl font-greatVibe text-sageGreen">&</h1>
+                  <h1 className="text-5xl font-greatVibe">&</h1>
                 </div>
                 <div className="flex flex-col">
-                  <StaticImage src="../images/sageGreen/groom.webp"
-                    alt="groom" className="my-4" objectFit="contain"
-                  ></StaticImage>
-                  <h1 className="font-greatVibe text-5xl text-sageGreen">Cindy</h1>
+                  <h1 className="font-greatVibe text-5xl ">Cindy</h1>
                   <h3>Putri ketiga dari <br></br>Bapak & Ibu Seng</h3>
+                </div>
+                <div className="text-center">
+                  <StaticImage src="../images/blackGold/ornament-small.png"
+                    alt="bunga"
+                  ></StaticImage>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 5 }}
+                    className="text-center px-4 md:col-span-3 self-center text-sm"
+                  >
+                    "Demikianlah mereka bukan lagi dua, melainkan satu. <br></br>Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
+                  </motion.div>
                 </div>
               </div>
 
             </div>
             <div className="flex flex-col mt-4 bg-white bg-opacity-40 mx-4 p-4">
               <div className="text-center mb-4">
-                <h1 className="font-greatVibe text-5xl text-sageGreen">Save the Date</h1>
+                <h1 className="font-greatVibe text-5xl ">Save the Date</h1>
               </div>
-              <div id="frame" className="bg-frameGreen flex flex-col space-y-10 bg-cover justify-center p-14">
+              <div id="frame" className="bg-frame flex flex-col space-y-10 bg-cover justify-center p-14">
                 <div className="text-center text-sm">
-                  <h1 className="text-sageGreen font-bold">Wedding Ceremony</h1>
+                  <h1 className=" font-bold">Wedding Ceremony</h1>
                   <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
                   <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
                     <div className="m-auto flex border-2 rounded-xl text-white text-sm w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
@@ -172,7 +180,7 @@ const SageGreen = (props) => {
                   </a>
                 </div>
                 <div className="text-center text-sm">
-                  <h1 className="text-sageGreen font-bold">Wedding Reception</h1>
+                  <h1 className=" font-bold">Wedding Reception</h1>
                   <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
                   <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
                     <div className="m-auto flex border-2 rounded-xl text-white text-sm w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
@@ -212,7 +220,7 @@ const SageGreen = (props) => {
                 >
 
                   <div className="flex justify-center mb-4">
-                    <h2 className="font-bold text-sageGreen text-xl">Protokol Covid-19</h2>
+                    <h2 className="font-bold  text-xl">Protokol Covid-19</h2>
                   </div>
                   <div className="flex justify-center mb-4 ">
                     <h4 className="text-center">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi, kami harapkan kedatangan para tamu undangan agar menjalankan protokol yang berlaku.</h4>
@@ -292,7 +300,7 @@ const SageGreen = (props) => {
                   transition={{ duration: 2 }}
                 >
                   <div className="flex justify-center mb-4">
-                    <h2 className="font-bold text-sageGreen">Kirim Dana</h2>
+                    <h2 className="font-bold ">Kirim Dana</h2>
                   </div>
                   <div className="flex justify-center mb-4 ">
                     <span className="text-center text-sm">Sebelumnya, terimakasih atas perhatian dan bentuk tanda kasih Bapak/Ibu/Saudara/i untuk kami. Silahkan kirimkan dana melalui transfer rekening berikut :</span>
@@ -309,7 +317,7 @@ const SageGreen = (props) => {
             <Countdown></Countdown>
             <div className="p-8 mb-4">
               <div className="flex justify-center mb-4">
-                <h2 className="font-bold text-sageGreen">Wishes Box</h2>
+                <h2 className="font-bold ">Wishes Box</h2>
               </div>
               <div className="w-full max-w-sm m-auto" >
                 <div className="md:flex md:items-center mb-6">
@@ -389,11 +397,10 @@ const SageGreen = (props) => {
             onPlay={e => console.log("onPlay")}
           /> */}
             <Footer></Footer>
-          </div>)
-        }
-        {/* </div> */}
+          </>)
+        }</div>
     </SimpleReactLightbox>
   )
 }
 
-export default SageGreen
+export default BlackGold

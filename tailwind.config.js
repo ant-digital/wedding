@@ -14,9 +14,10 @@ module.exports = {
       },
       backgroundImage: theme => ({
         foto: "url('images/photo-1-dark.jpg')",
-        body : "url('images/sageGreen/body-bg.jpg')",
-        welcome : "url('images/sageGreen/welcome-bg.jpg')",
-        frame : "url('images/sageGreen/frame.png')",
+        bodyGreen : "url('images/sageGreen/body-bg.jpg')",
+        welcomeGreen : "url('images/sageGreen/welcome-bg.jpg')",
+        frameGreen : "url('images/sageGreen/frame.png')",
+        bodyBlack : "url('images/blackGold/body-bg.jpg')"
        })
     },
   },
