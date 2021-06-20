@@ -115,10 +115,10 @@ const BlackGold = (props) => {
         <div className="text-gold text-sm md:text-md xl:text-xl w-screen bg-bodyBlack bg-contain md:bg-auto h-full font-sansNarrow">
 
           {/* <MusicPlayer song={song}></MusicPlayer> */}
-          <div className="grid grid-cols-1 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 text-center h-screen">
             <div className="grid grid-cols-2">
               <div className="col-span-2"><StaticImage src="../images/photo-4.jpg"
-                alt="bunga" 
+                alt="bunga"
               ></StaticImage></div>
               <div className=""><StaticImage src="../images/photo-1.jpg"
                 alt="bunga"
@@ -126,16 +126,7 @@ const BlackGold = (props) => {
               <div className=""><StaticImage src="../images/photo-2.jpg"
                 alt="bunga"
               ></StaticImage></div>
-
             </div>
-            {/* <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 7 }}
-                className="text-center p-8 text-black md:col-span-3 self-center text-sm"
-              >
-                "Demikianlah mereka bukan lagi dua, melainkan satu. <br></br>Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
-              </motion.div> */}
             <div className="flex flex-col md:flex-row justify-center gap-10 mt-8">
               <div className="flex flex-col">
                 <h1 className="font-greatVibe text-5xl mb-2">Tommy</h1>
@@ -148,21 +139,20 @@ const BlackGold = (props) => {
                 <h1 className="font-greatVibe text-5xl mb-2 ">Cindy</h1>
                 <h3 className="text-white font-bold">Putri ketiga dari <br></br>Bapak & Ibu Seng</h3>
               </div>
-              <div className="text-center">
-                <StaticImage src="../images/blackGold/ornament-small.png"
-                  alt="bunga"
-                ></StaticImage>
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 5 }}
-                  className="text-center px-4 md:col-span-3 self-center"
-                >
-                  "Demikianlah mereka bukan lagi dua, melainkan satu. <br></br>Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
-                </motion.div>
-              </div>
             </div>
-
+          </div>
+          <div className="text-center">
+            <StaticImage src="../images/blackGold/ornament-small.png"
+              alt="bunga"
+            ></StaticImage>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 5 }}
+              className="text-center px-4 md:col-span-3 self-center"
+            >
+              "Demikianlah mereka bukan lagi dua, melainkan satu. <br></br>Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
+            </motion.div>
           </div>
           <div className="flex flex-col mt-8 p-4">
             <div className="text-center">
