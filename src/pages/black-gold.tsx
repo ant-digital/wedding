@@ -112,19 +112,19 @@ const BlackGold = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-gold text-sm md:text-md xl:text-xl w-screen bg-bodyBlack bg-contain md:bg-auto h-full font-sansNarrow">
+        <div className="text-gold text-sm md:text-md xl:text-xl w-screen bg-bodyBlack bg-contain h-full font-sansNarrow">
 
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           <div className="grid grid-cols-1 md:grid-cols-2 text-center h-screen">
             <div className="grid grid-cols-2">
               <div className="col-span-2"><StaticImage src="../images/photo-4.jpg"
-                alt="bunga"
+                alt="bunga" layout="fullWidth"
               ></StaticImage></div>
               <div className=""><StaticImage src="../images/photo-1.jpg"
-                alt="bunga"
+                alt="bunga" layout="fullWidth"
               ></StaticImage></div>
               <div className=""><StaticImage src="../images/photo-2.jpg"
-                alt="bunga"
+                alt="bunga" layout="fullWidth"
               ></StaticImage></div>
             </div>
             <div className="flex flex-col md:flex-row justify-center gap-10 mt-8">
