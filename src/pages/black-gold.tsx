@@ -115,7 +115,7 @@ const BlackGold = (props) => {
         <div className="text-gold text-sm md:text-md xl:text-xl w-screen bg-bodyBlack bg-contain h-full font-sansNarrow">
 
           {/* <MusicPlayer song={song}></MusicPlayer> */}
-          <div className="grid grid-cols-1 md:grid-cols-2 text-center h-screen">
+          <div className="grid grid-cols-1 md:grid-cols-2 text-center">
             <div className="grid grid-cols-2">
               <div className="col-span-2"><StaticImage src="../images/photo-4.jpg"
                 alt="bunga" layout="fullWidth"
