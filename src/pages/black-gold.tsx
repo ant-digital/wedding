@@ -13,6 +13,8 @@ import "slick-carousel/slick/slick-theme.css";
 import useInboxes from "src/useInboxes";
 import { mutate } from "swr";
 import Footer from "$components/Footer";
+import bg from '../images/blackGold/body-bg.jpg'
+
 
 const BlackGold = (props) => {
 
@@ -112,7 +114,7 @@ const BlackGold = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-gold text-sm md:text-md xl:text-xl w-screen bg-bodyBlack bg-contain h-full font-sansNarrow">
+        <div className="text-gold text-sm md:text-md xl:text-xl w-screen bg-contain h-full font-sansNarrow" style={{backgroundImage:`url(${bg})`}}>
 
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           <div className="grid grid-cols-1 md:grid-cols-2 text-center">

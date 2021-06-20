@@ -18,6 +18,8 @@ import Footer from "$components/Footer";
 import MusicPlayer from "$components/MusicPlayer";
 import { Parallax } from 'react-parallax';
 import coupleImg from "../images/couple3.jpg"
+import bg from '../images/sageGreen/body-bg.jpg'
+
 
 const SageGreen = (props) => {
 
@@ -118,7 +120,7 @@ const SageGreen = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-sm w-screen h-full bg-bodyGreen bg-contain font-sansNarrow">
+        <div className="text-sm w-screen h-full bg-contain font-sansNarrow" style={{backgroundImage:`url(${bg})`}}>
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           <div className="grid grid-cols-1 text-center" >
             <motion.div

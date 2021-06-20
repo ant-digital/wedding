@@ -113,7 +113,7 @@ const BlackGoldV2 = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-gold text-sm md:text-md xl:text-xl w-screen h-full font-sansNarrow z-10 relative" style={{backgroundImage:`url(${bg})`}}>
+        <div className="text-gold text-sm md:text-4xl w-screen h-full font-sansNarrow" style={{backgroundImage:`url(${bg})`}}>
 
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           {/* <StaticImage src="../images/blackGold/body-bg.jpg"
@@ -131,16 +131,16 @@ const BlackGoldV2 = (props) => {
                 alt="bunga" layout="fullWidth"
               ></StaticImage></div>
             </div>
-            <div className="flex flex-col md:flex-row justify-center gap-10 mt-8">
+            <div className="flex flex-col justify-center space-y-10 mt-8">
               <div className="flex flex-col">
-                <h1 className="font-greatVibe text-5xl mb-2">Tommy</h1>
+                <h1 className="font-greatVibe text-5xl md:text-8xl mb-2">Tommy</h1>
                 <h3 className="text-white font-bold">Putra ketiga dari <br></br>Bapak & Ibu Hock</h3>
               </div>
-              <div className="flex flex-col md:pt-32">
+              <div className="flex flex-col">
                 <h1 className="text-5xl font-greatVibe">&</h1>
               </div>
               <div className="flex flex-col">
-                <h1 className="font-greatVibe text-5xl mb-2 ">Cindy</h1>
+                <h1 className="font-greatVibe text-5xl md:text-8xl mb-2 ">Cindy</h1>
                 <h3 className="text-white font-bold">Putri ketiga dari <br></br>Bapak & Ibu Seng</h3>
               </div>
             </div>
