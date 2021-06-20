@@ -15,8 +15,7 @@ import { mutate } from "swr";
 import Footer from "$components/Footer";
 import bg from '../images/blackGold/body-bg.jpg'
 
-
-const BlackGold = (props) => {
+const BlackGoldV2 = (props) => {
 
   const [showWelcomePopUp, setShowWelcomePopUp] = useState(false)
   const [customerName, setCustomerName] = useState("")
@@ -114,9 +113,12 @@ const BlackGold = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-gold text-sm md:text-md xl:text-xl w-screen bg-contain h-full font-sansNarrow" style={{backgroundImage:`url(${bg})`}}>
+        <div className="text-gold text-sm md:text-4xl w-screen h-full font-sansNarrow" style={{backgroundImage:`url(${bg})`}}>
 
           {/* <MusicPlayer song={song}></MusicPlayer> */}
+          {/* <StaticImage src="../images/blackGold/body-bg.jpg"
+                alt="bunga" layout="fullWidth" className="h-full"
+              ></StaticImage> */}
           <div className="grid grid-cols-1 md:grid-cols-2 text-center">
             <div className="grid grid-cols-2">
               <div className="col-span-2"><StaticImage src="../images/photo-4.jpg"
@@ -129,16 +131,16 @@ const BlackGold = (props) => {
                 alt="bunga" layout="fullWidth"
               ></StaticImage></div>
             </div>
-            <div className="flex flex-col md:flex-row justify-center gap-10 mt-8">
+            <div className="flex flex-col justify-center space-y-10 mt-8">
               <div className="flex flex-col">
-                <h1 className="font-greatVibe text-5xl mb-2">Tommy</h1>
+                <h1 className="font-greatVibe text-5xl md:text-8xl mb-2">Tommy</h1>
                 <h3 className="text-white font-bold">Putra ketiga dari <br></br>Bapak & Ibu Hock</h3>
               </div>
-              <div className="flex flex-col md:pt-32">
+              <div className="flex flex-col">
                 <h1 className="text-5xl font-greatVibe">&</h1>
               </div>
               <div className="flex flex-col">
-                <h1 className="font-greatVibe text-5xl mb-2 ">Cindy</h1>
+                <h1 className="font-greatVibe text-5xl md:text-8xl mb-2 ">Cindy</h1>
                 <h3 className="text-white font-bold">Putri ketiga dari <br></br>Bapak & Ibu Seng</h3>
               </div>
             </div>
@@ -420,4 +422,4 @@ const BlackGold = (props) => {
   )
 }
 
-export default BlackGold
+export default BlackGoldV2
