@@ -33,7 +33,8 @@ const Countdown = ({ setReminder, color }) => {
     'rounded-lg': true,
     'p-2': true,
     'md:p-6': true,
-    'border-gold': true
+    'border-gold': color === 'gold' ? true : false,
+    'border-sageGreen': color === 'sageGreen' ? true : false
   });
   return (
     <div className="flex flex-col justify-center w-screen p-4">

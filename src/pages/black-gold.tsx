@@ -118,7 +118,7 @@ const BlackGold = (props) => {
           <div className="grid grid-cols-1 text-center">
             <div className="grid grid-cols-2">
               <div className="col-span-2"><StaticImage src="../images/photo-4.jpg"
-                alt="bunga"
+                alt="bunga" 
               ></StaticImage></div>
               <div className=""><StaticImage src="../images/photo-1.jpg"
                 alt="bunga"
@@ -164,7 +164,7 @@ const BlackGold = (props) => {
             </div>
 
           </div>
-          <div className="flex flex-col mt-4 p-4">
+          <div className="flex flex-col mt-8 p-4">
             <div className="text-center">
               <h1 className="font-greatVibe text-5xl">Save the Date</h1>
             </div>
@@ -331,7 +331,7 @@ const BlackGold = (props) => {
             </InView>
           </div>
           <div>
-            <h1 className="ont-bold text-white text-xl md:text-4xl text-center">Countdown</h1>
+            <h1 className="font-bold text-white text-xl md:text-4xl text-center">Countdown</h1>
             <Countdown setReminder='' color='gold'></Countdown>
 
           </div>
