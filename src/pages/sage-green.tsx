@@ -81,7 +81,7 @@ const SageGreen = (props) => {
           /**
            * Welcome Popup ( 1st Screen )
           */
-          <div className="flex flex-col w-screen justify-center h-screen bg-welcomeGreen bg-cover p-14">
+          <div className="flex flex-col w-screen justify-center h-screen bg-welcomeGreen bg-cover p-14 font-sansNarrow">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -118,9 +118,9 @@ const SageGreen = (props) => {
           /**
           * Main Screen
           */
-           <div className="text-sm w-screen h-full bg-bodyGreen bg-contain">
+           <div className="text-sm w-screen h-full bg-bodyGreen bg-contain font-sansNarrow">
             {/* <MusicPlayer song={song}></MusicPlayer> */}
-            <div className="grid grid-cols-1 text-center md:h-screen overflow-visible" >
+            <div className="grid grid-cols-1 text-center" >
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

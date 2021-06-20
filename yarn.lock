@@ -1103,6 +1103,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/great-vibes/-/great-vibes-4.4.5.tgz#9504b98966bc7c0e039ae84e1924f01adcef50c6"
   integrity sha512-dVM/3nyUshDty2j7t74+K3r1qUf04MdS0P/9FxRkZsAXAsuwRqahCF3Gq5qSaDcOngKe0c7Q99aiTxtZMz46QQ==
 
+"@fontsource/pt-sans-narrow@^4.4.5":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/pt-sans-narrow/-/pt-sans-narrow-4.4.5.tgz#47123f4a68fa58b4e0ea41c4d5d58826d4220cb1"
+  integrity sha512-07r/fxFq0BdTNkRWtWg7QXQ3pr1KNykMCAlfdY+XQvkde78cyJguSePj6rBwhxUgX4B0I7ncv6MkGjqCQUHiiQ==
+
 "@fullhuman/postcss-purgecss@^3.1.3":
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-3.1.3.tgz#47af7b87c9bfb3de4bc94a38f875b928fffdf339"
@@ -3712,7 +3717,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
   integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==

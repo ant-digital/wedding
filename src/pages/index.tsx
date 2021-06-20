@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import "@fontsource/great-vibes"
+import "@fontsource/pt-sans-narrow"
 
 const IndexPage = () => {
   return (

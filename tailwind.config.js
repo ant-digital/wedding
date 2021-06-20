@@ -6,11 +6,13 @@ module.exports = {
       colors: {
         "romeo-text": "#284135",
         "romeo-background": "#f3f2f1",
-        "sageGreen":"#1f5c3d"
+        "sageGreen":"#1f5c3d",
+        "gold":"#ffdc73"
       },
       fontFamily: {
         romeo: "eb garamond",
-        greatVibe:'Great Vibes'
+        greatVibe:'Great Vibes',
+        sansNarrow:"PT Sans Narrow"
       },
       backgroundImage: theme => ({
         foto: "url('images/photo-1-dark.jpg')",

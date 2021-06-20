@@ -76,7 +76,6 @@ const options = {
 const PhotoAlbum = () => {
   return (
     <div className="w-screen">
-      <h1 className="font-bold mb-4 text-center">Gallery</h1>
       <SRLWrapper options={options}>
         <div id="gallery-with-links" className="grid grid-cols-3 gap-4">
           <div >
