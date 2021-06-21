@@ -23,7 +23,7 @@ import bg from '../images/sageGreen/body-bg.jpg'
 
 const SageGreen = (props) => {
 
-  const [showWelcomePopUp, setShowWelcomePopUp] = useState(true)
+  const [showWelcomePopUp, setShowWelcomePopUp] = useState(false)
   const [customerName, setCustomerName] = useState("")
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
@@ -120,7 +120,7 @@ const SageGreen = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-sm w-screen h-full bg-contain font-sansNarrow" style={{backgroundImage:`url(${bg})`}}>
+        <div className="text-sm w-screen h-full font-sansNarrow" style={{backgroundImage:`url(${bg})`}}>
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           <div className="grid grid-cols-1 text-center" >
             <motion.div

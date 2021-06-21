@@ -113,7 +113,7 @@ const BlackGoldV2 = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-gold text-sm md:text-4xl w-screen h-full font-sansNarrow" style={{backgroundImage:`url(${bg})`}}>
+        <div className="text-gold text-sm md:text-xl w-screen h-full font-sansNarrow bg-contain" style={{backgroundImage:`url(${bg})`}}>
 
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           {/* <StaticImage src="../images/blackGold/body-bg.jpg"
@@ -169,7 +169,7 @@ const BlackGoldV2 = (props) => {
                 ></StaticImage>
               </div>
               <div className="text-center">
-                <h1 className="font-bold text-white text-xl md:text-4xl">Wedding Ceremony</h1>
+                <h1 className="font-bold text-white text-xl md:text-4xl mb-4">Wedding Ceremony</h1>
                 <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
                 <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
                   <div className="m-auto flex rounded-xl text-black w-max mt-2" style={{ padding: '10px 10px 5px 10px', backgroundColor: '#fdbd00eb' }}>
@@ -184,8 +184,8 @@ const BlackGoldV2 = (props) => {
                   </div>
                 </a>
               </div>
-              <div className="text-center mt-4">
-                <h1 className="font-bold text-white text-xl md:text-4xl">Wedding Reception</h1>
+              <div className="text-center mt-10">
+                <h1 className="font-bold text-white text-xl md:text-4xl mb-4">Wedding Reception</h1>
                 <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
                 <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
                   <div className="m-auto flex rounded-xl text-black w-max mt-2" style={{ padding: '10px 10px 5px 10px', backgroundColor: '#fdbd00eb' }}>
