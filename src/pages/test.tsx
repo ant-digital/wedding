@@ -14,7 +14,7 @@ import useInboxes from "src/useInboxes";
 import { mutate } from "swr";
 import Footer from "$components/Footer";
 import bg from '../images/blackGold/body-bg.jpg'
-import bgSmall from '../images/blackGold/body-bg-small.jpg'
+import back from '../images/unsplash.jpg'
 
 
 const BlackGoldV2 = (props) => {
@@ -76,7 +76,7 @@ const BlackGoldV2 = (props) => {
     /**
     * Main Screen
     */
-    <div className="text-gold text-sm md:text-xl font-sansNarrow bg-bodyBlackSmall md:bg-bodyBlack bg-contain flex flex-col">
+    <div className="text-gold text-sm md:text-xl font-sansNarrow bg-contain flex flex-col" style={{backgroundImage:`url(${back})`}}>
       <div className="grid grid-cols-1 md:grid-cols-2 text-center">
         <div className="flex flex-col justify-center space-y-10 mt-8">
           <div className="flex flex-col">
