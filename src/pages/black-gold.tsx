@@ -14,6 +14,8 @@ import useInboxes from "src/useInboxes";
 import { mutate } from "swr";
 import Footer from "$components/Footer";
 import bg from '../images/blackGold/body-bg.jpg'
+import bgSmall from '../images/blackGold/body-bg-small.jpg'
+
 
 const BlackGoldV2 = (props) => {
 
@@ -113,7 +115,7 @@ const BlackGoldV2 = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-gold text-sm md:text-xl font-sansNarrow" style={{backgroundImage:`url(${bg})`,backgroundSize:'contain'}}>
+        <div className="text-gold text-sm md:text-xl font-sansNarrow bg-body-small md:bg-body md:bg-contain">
 
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           {/* <StaticImage src="../images/blackGold/body-bg.jpg"
