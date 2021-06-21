@@ -113,7 +113,7 @@ const BlackGoldV2 = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-gold text-sm md:text-xl w-screen h-full font-sansNarrow bg-contain" style={{backgroundImage:`url(${bg})`}}>
+        <div className="text-gold text-sm md:text-xl w-screen h-full font-sansNarrow" style={{backgroundImage:`url(${bg})`,backgroundSize:'cover'}}>
 
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           {/* <StaticImage src="../images/blackGold/body-bg.jpg"
