@@ -120,7 +120,7 @@ const SageGreen = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-sm w-screen h-full font-sansNarrow" style={{backgroundImage:`url(${bg})`}}>
+        <div className="text-sm font-sansNarrow" style={{backgroundImage:`url(${bg})`}}>
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           <div className="grid grid-cols-1 text-center" >
             <motion.div
