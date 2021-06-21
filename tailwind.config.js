@@ -19,7 +19,8 @@ module.exports = {
         bodyGreen : "url('images/sageGreen/body-bg.jpg')",
         welcomeGreen : "url('images/sageGreen/welcome-bg.jpg')",
         frameGreen : "url('images/sageGreen/frame.png')",
-        bodyBlack : "url('images/blackGold/body-bg.jpg')"
+        bodyBlack : "url('images/blackGold/body-bg.jpg')",
+        bodyBlackSmall : "url('images/blackGold/body-bg-small.jpg')",
        })
     },
   },

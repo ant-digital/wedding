@@ -115,7 +115,7 @@ const BlackGoldV2 = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-gold text-sm md:text-xl font-sansNarrow bg-body-small md:bg-body md:bg-contain">
+        <div className="text-gold text-sm md:text-xl font-sansNarrow bg-bodyBlackSmall md:bg-bodyBlack bg-contain">
 
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           {/* <StaticImage src="../images/blackGold/body-bg.jpg"

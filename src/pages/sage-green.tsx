@@ -77,7 +77,8 @@ const SageGreen = (props) => {
   }
 
   return (
-    <SimpleReactLightbox>
+    // <SimpleReactLightbox>
+    <>
 
       {showWelcomePopUp ? (
         /**
@@ -120,7 +121,7 @@ const SageGreen = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-sm font-sansNarrow" style={{backgroundImage:`url(${bg})`}}>
+        <div className="text-sm font-sansNarrow" style={{backgroundImage:`url(${bg})`,backgroundSize:'contain'}}>
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           <div className="grid grid-cols-1 text-center" >
             <motion.div
@@ -387,7 +388,7 @@ const SageGreen = (props) => {
               <h3>6</h3>
             </div>
           </Slider> */}
-          <PhotoAlbum></PhotoAlbum>
+          {/* <PhotoAlbum></PhotoAlbum> */}
           {/* <AudioPlayer
             autoPlay
             src={song}
@@ -397,7 +398,8 @@ const SageGreen = (props) => {
         </div>)
       }
       {/* </div> */}
-    </SimpleReactLightbox>
+     {/* </SimpleReactLightbox> */}
+     </>
   )
 }
 
