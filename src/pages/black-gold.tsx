@@ -19,7 +19,7 @@ import bgSmall from '../images/blackGold/body-bg-small.jpg'
 
 const BlackGoldV2 = (props) => {
 
-  const [showWelcomePopUp, setShowWelcomePopUp] = useState(false)
+  const [showWelcomePopUp, setShowWelcomePopUp] = useState(true)
   const [customerName, setCustomerName] = useState("")
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
@@ -78,36 +78,39 @@ const BlackGoldV2 = (props) => {
         /**
          * Welcome Popup ( 1st Screen )
         */
-        <div className="flex flex-col w-screen justify-center h-screen bg-welcome bg-cover p-14 font-sansNarrow">
+        <div className="grid grid-cols-1 md:grid-cols-2 justify-center h-screen bg-bodyBlackSmall md:bg-bodyBlack bg-cover p-14 font-sansNarrow text-gold">
+          <div className="place-self-center">
+              {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
+              <StaticImage
+                // layout="fullWidth"
+                src="../images/blackGold/coupleImg.jpg"
+                alt="coupleImg"
+                // width={320}
+              ></StaticImage>
+            </div>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 3 }}
-            className=""
+            className="flex flex-col justify-center space-y-10"
           >
             <div className="text-center">
-              {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
-              <h2 className="text-4xl" >You are invited to the wedding of</h2>
-            </div>
-            <div className="text-left pt-4">
               <h1 className="font-greatVibe text-5xl">Tommy</h1>
             </div>
             <div className="text-center">
-              <StaticImage src="../images/sageGreen/frame-foto-pengantin.webp"
-                alt="bunga" height={320}
-              ></StaticImage>
+              <h1 className="text-5xl font-greatVibe">&</h1>
             </div>
-            <div className="text-right">
+            <div className="text-center">
               <h1 className="font-greatVibe text-5xl">Cindy</h1>
             </div>
             <div className="text-center">
-              <StaticImage src="../images/sageGreen/ornament.png"
+              <StaticImage src="../images/blackGold/ornament-small.png"
                 alt="bunga"
               ></StaticImage>
-              <h1 className="">To : Mr Hock and Family</h1>
+              <h1 className="text-3xl">To : Mr Hock and Family</h1>
             </div>
             <div className="mt-6 text-center">
-              <button onClick={closeWelcomePopUp} className="rounded-xl font-bold p-2  w-3/4 md:w-1/4 text-gold bg-green-700">Open Invitation</button>
+              <button onClick={closeWelcomePopUp} className="rounded-xl font-bold p-2  w-3/4 md:w-1/4 text-black" style={{ backgroundColor: '#fdbd00eb' }}>Open Invitation</button>
             </div>
           </motion.div>
         </div>
@@ -115,7 +118,7 @@ const BlackGoldV2 = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-gold text-sm md:text-xl font-sansNarrow bg-bodyBlackSmall md:bg-bodyBlack bg-contain">
+        <div className="text-gold text-sm md:text-xl font-sansNarrow bg-bodyBlackSmall md:bg-bodyBlack bg-cover">
 
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           {/* <StaticImage src="../images/blackGold/body-bg.jpg"
@@ -299,7 +302,7 @@ const BlackGoldV2 = (props) => {
                 </div>
               </div>
             </Parallax> */}
-          <div className="p-4">
+          <div className="p-8">
             <InView as="div" onChange={(inView, entry) => {
               if (inView) {
                 controls2.start('visible')
@@ -375,9 +378,7 @@ const BlackGoldV2 = (props) => {
                   })
                 }
               </div>
-
             </div>
-
           </div>
 
 

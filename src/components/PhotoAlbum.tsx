@@ -51,12 +51,12 @@ const photos = [
 ];
 const options = {
   buttons: {
-    backgroundColor: "rgba(140, 94, 88, 0.8)",
-    iconColor: "rgba(241, 191, 152, 0.7)",
+    backgroundColor: "#000000",
+    iconColor: "#FFFFF",
     showDownloadButton: false
   },
   settings: {
-    overlayColor: "#d6c6bc",
+    overlayColor: "#F9F9F9",
     transitionSpeed: 1000,
     transitionTimingFunction: "linear"
   },
