@@ -15,6 +15,7 @@ import { mutate } from "swr";
 import Footer from "$components/Footer";
 import bg from '../images/blackGold/body-bg.jpg'
 import bgSmall from '../images/blackGold/body-bg-small.jpg'
+import MusicPlayer from "$components/MusicPlayer";
 
 
 const BlackGoldV2 = (props) => {
@@ -92,7 +93,7 @@ const BlackGoldV2 = (props) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 3 }}
-            className="flex flex-col justify-center space-y-10"
+            className="flex flex-col justify-between"
           >
             <div className="text-center">
               <h1 className="font-greatVibe text-5xl">Tommy</h1>
@@ -120,21 +121,34 @@ const BlackGoldV2 = (props) => {
         */
         <div className="text-gold text-sm md:text-xl font-sansNarrow bg-bodyBlackSmall md:bg-bodyBlack bg-cover">
 
-          {/* <MusicPlayer song={song}></MusicPlayer> */}
+          <MusicPlayer song={song}></MusicPlayer>
           {/* <StaticImage src="../images/blackGold/body-bg.jpg"
                 alt="bunga" layout="fullWidth" className="h-full"
               ></StaticImage> */}
-          <div className="grid grid-cols-1 md:grid-cols-2 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 text-center h-screen">
             <div className="grid grid-cols-2">
-              <div className="col-span-2"><StaticImage src="../images/photo-4.jpg"
-                alt="bunga" layout="fullWidth"
-              ></StaticImage></div>
-              <div className=""><StaticImage src="../images/photo-1.jpg"
-                alt="bunga" layout="fullWidth"
-              ></StaticImage></div>
-              <div className=""><StaticImage src="../images/photo-2.jpg"
-                alt="bunga" layout="fullWidth"
-              ></StaticImage></div>
+              <div className="col-span-2">
+                <StaticImage src="../images/photo-4.jpg"
+                alt="bunga" layout="constrained" 
+                bgImageStyle={{ objectFit: 'cover' }}
+                aspectRatio={4/3}
+              ></StaticImage>
+              </div>
+              <div className="">
+                <StaticImage src="../images/photo-1.jpg"
+                alt="bunga" layout="constrained"
+                aspectRatio={3/2}
+                bgImageStyle={{ objectFit: 'cover' }}
+
+              ></StaticImage>
+              </div>
+              <div className="">
+                <StaticImage src="../images/photo-2.jpg"
+                alt="bunga" layout="constrained"
+                aspectRatio={3/2}
+                bgImageStyle={{ objectFit: 'cover' }}
+              ></StaticImage>
+              </div>
             </div>
             <div className="flex flex-col justify-center space-y-10 mt-8">
               <div className="flex flex-col">

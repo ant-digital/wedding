@@ -23,7 +23,7 @@ import bg from '../images/sageGreen/body-bg.jpg'
 
 const SageGreen = (props) => {
 
-  const [showWelcomePopUp, setShowWelcomePopUp] = useState(false)
+  const [showWelcomePopUp, setShowWelcomePopUp] = useState(true)
   const [customerName, setCustomerName] = useState("")
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
@@ -84,51 +84,82 @@ const SageGreen = (props) => {
         /**
          * Welcome Popup ( 1st Screen )
         */
-        <div className="flex flex-col w-screen justify-center h-screen bg-welcomeGreen bg-cover p-14 font-sansNarrow">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 3 }}
-            className=""
+
+        <div style={{ display: "grid" }} className="h-screen">
+          {/* You can use a GatsbyImage component if the image is dynamic */}
+          <StaticImage
+            style={{
+              gridArea: "1/1",
+              // You can set a maximum height for the image, if you wish.
+              // maxHeight: 600,
+            }}
+            // layout="constrained"
+            // You can optionally force an aspect ratio for the generated image
+            // aspectRatio={3 / 1}
+            // This is a presentational image, so the alt should be an empty string
+            alt=""
+            // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
+            src="../images/sageGreen/welcome-bg.jpg"
+            formats={["auto", "webp", "avif"]}
+            objectFit="cover"
+          />
+          <div
+            style={{
+              // By using the same grid area for both, they are stacked on top of each other
+              gridArea: "1/1",
+              position: "relative",
+              // This centers the other elements inside the hero component
+              placeItems: "center",
+              display: "grid",
+            }}
           >
-            <div className="text-center">
-              {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
-              <h2 className="text-2xl" >You are invited to the wedding of</h2>
+            <div className="flex w-screen justify-center font-sansNarrow">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 3 }}
+                className=""
+              >
+                <div className="text-center">
+                  {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
+                  <h2 className="text-2xl md:text-5xl mb-4" >You are invited to the wedding of</h2>
+                </div>
+                <div className="text-left pt-4 pl-4">
+                  <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Tommy</h1>
+                </div>
+                <div className="text-center">
+                  <StaticImage src="../images/sageGreen/frame-foto-pengantin.webp"
+                    alt="bunga" height={320}
+                  ></StaticImage>
+                </div>
+                <div className="text-right pr-4">
+                  <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Cindy</h1>
+                </div>
+                <div className="text-center">
+                  <StaticImage src="../images/sageGreen/ornament.png"
+                    alt="bunga"
+                  ></StaticImage>
+                  <h1 className="text-2xl md:text-5xl">To : Mr Hock and Family</h1>
+                </div>
+                <div className="mt-6 text-center text-2xl md:text-4xl">
+                  <button onClick={closeWelcomePopUp} className="rounded-xl font-bold p-2  w-3/4 md:w-1/2 text-white bg-green-700">Open Invitation</button>
+                </div>
+              </motion.div>
             </div>
-            <div className="text-left pt-4">
-              <h1 className="font-greatVibe text-5xl text-sageGreen">Tommy</h1>
-            </div>
-            <div className="text-center">
-              <StaticImage src="../images/sageGreen/frame-foto-pengantin.webp"
-                alt="bunga" height={320}
-              ></StaticImage>
-            </div>
-            <div className="text-right">
-              <h1 className="font-greatVibe text-5xl text-sageGreen">Cindy</h1>
-            </div>
-            <div className="text-center">
-              <StaticImage src="../images/sageGreen/ornament.png"
-                alt="bunga"
-              ></StaticImage>
-              <h1 className="">To : Mr Hock and Family</h1>
-            </div>
-            <div className="mt-6 text-center">
-              <button onClick={closeWelcomePopUp} className="rounded-xl font-bold p-2  w-3/4 md:w-1/4 text-white bg-green-700">Open Invitation</button>
-            </div>
-          </motion.div>
+          </div>
         </div>
       ) : (
         /**
         * Main Screen
         */
-        <div className="text-sm font-sansNarrow" style={{backgroundImage:`url(${bg})`,backgroundSize:'contain'}}>
+        <div className="text-xl md:text-2xl font-sansNarrow bg-bodyGreen bg-cover">
           {/* <MusicPlayer song={song}></MusicPlayer> */}
-          <div className="grid grid-cols-1 text-center" >
+          <div className="grid grid-cols-1 text-center md:h-screen">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 7 }}
-              className="text-center p-8 text-black md:col-span-3 self-center text-sm"
+              className="text-center p-8 text-black md:col-span-3 self-center text-xl md:text-3xl"
             >
               "Demikianlah mereka bukan lagi dua, melainkan satu. <br></br>Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
             </motion.div>
@@ -137,71 +168,67 @@ const SageGreen = (props) => {
                 <StaticImage src="../images/sageGreen/bride.webp" objectFit="contain"
                   alt="bride" className="my-4"
                 ></StaticImage>
-                <h1 className="font-greatVibe text-5xl text-sageGreen">Tommy</h1>
-                <h3>Putra ketiga dari <br></br>Bapak & Ibu Hock</h3>
+                <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Tommy</h1>
+                <span className="text-xl md:text-3xl">
+                  <h3>Putra ketiga dari <br></br>Bapak & Ibu Hock</h3>
+                </span>
               </div>
               <div className="flex flex-col md:pt-32">
-                <h1 className="text-5xl font-greatVibe text-sageGreen">&</h1>
+                <h1 className="text-5xl md:text-8xl font-greatVibe text-sageGreen">&</h1>
               </div>
               <div className="flex flex-col">
                 <StaticImage src="../images/sageGreen/groom.webp"
                   alt="groom" className="my-4" objectFit="contain"
                 ></StaticImage>
-                <h1 className="font-greatVibe text-5xl text-sageGreen">Cindy</h1>
-                <h3>Putri ketiga dari <br></br>Bapak & Ibu Seng</h3>
+                <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Cindy</h1>
+                <span className="text-xl md:text-3xl">
+                  <h3>Putri ketiga dari <br></br>Bapak & Ibu Seng</h3>
+                </span>
               </div>
             </div>
-
           </div>
-          <div className="flex flex-col mt-4 bg-white bg-opacity-40 mx-4 p-4">
+          <div className="flex flex-col mt-8 bg-white bg-opacity-40 p-8">
             <div className="text-center mb-4">
-              <h1 className="font-greatVibe text-5xl text-sageGreen">Save the Date</h1>
+              <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Save the Date</h1>
             </div>
-            <div id="frame" className="bg-frameGreen flex flex-col space-y-10 bg-cover justify-center p-14">
-              <div className="text-center text-sm">
-                <h1 className="text-sageGreen font-bold">Wedding Ceremony</h1>
+            <div id="frame" className="flex flex-col md:flex-row justify-evenly space-y-10 md:space-y-0">
+              <div className="text-center text-xl md:text-3xl space-y-5">
+                <h1 className="text-sageGreen font-bold text-3xl md:text-5xl">Wedding Ceremony</h1>
                 <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
                 <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
-                  <div className="m-auto flex border-2 rounded-xl text-white text-sm w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
+                  <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
                     <div className="mr-2">
                       <span style={{
                         fontFamily: 'Material Icons', fontSize: '18px'
                       }}>place</span>
                     </div>
                     <div>
-                      <span>Petunjuk Lokasi</span>
+                      <span>Location</span>
                     </div>
                   </div>
                 </a>
               </div>
-              <div className="text-center text-sm">
-                <h1 className="text-sageGreen font-bold">Wedding Reception</h1>
+              <div className="text-center text-xl md:text-3xl space-y-5">
+                <h1 className="text-sageGreen font-bold text-3xl md:text-5xl">Wedding Reception</h1>
                 <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
                 <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
-                  <div className="m-auto flex border-2 rounded-xl text-white text-sm w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
+                  <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
                     <div className="mr-2">
                       <span style={{
                         fontFamily: 'Material Icons', fontSize: '18px'
                       }}>place</span>
                     </div>
                     <div>
-                      <span>Petunjuk Lokasi</span>
+                      <span>Location</span>
 
                     </div>
                   </div>
                 </a>
               </div>
             </div>
-
-            {/* <div id="hello" style={{position:'absolute',top:'20px'}}>
-              <StaticImage src="../images/sageGreen/frame.png"
-                  alt="frame"
-                >
-                </StaticImage>
-              </div> */}
 
           </div>
-          <div className="p-4 mt-4">
+          <div className="p-4 mt-4 text-xl md:text-2xl">
             <InView as="div" onChange={(inView, entry) => {
               if (inView) {
                 controls.start('visible')
@@ -215,7 +242,7 @@ const SageGreen = (props) => {
               >
 
                 <div className="flex justify-center mb-4">
-                  <h2 className="font-bold text-sageGreen text-xl">Protokol Covid-19</h2>
+                  <h2 className="font-bold text-sageGreen text-2xl md:text-5xl">Protokol Covid-19</h2>
                 </div>
                 <div className="flex justify-center mb-4 ">
                   <h4 className="text-center">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi, kami harapkan kedatangan para tamu undangan agar menjalankan protokol yang berlaku.</h4>
@@ -282,7 +309,7 @@ const SageGreen = (props) => {
                 </div>
               </div>
             </Parallax> */}
-          <div className="p-4">
+          <div className="p-4 text-xl md:text-2xl">
             <InView as="div" onChange={(inView, entry) => {
               if (inView) {
                 controls2.start('visible')
@@ -295,12 +322,12 @@ const SageGreen = (props) => {
                 transition={{ duration: 2 }}
               >
                 <div className="flex justify-center mb-4">
-                  <h2 className="font-bold text-sageGreen">Kirim Dana</h2>
+                  <h2 className="font-bold text-sageGreen text-2xl md:text-5xl">Kirim Dana</h2>
                 </div>
-                <div className="flex justify-center mb-4 ">
-                  <span className="text-center text-sm">Sebelumnya, terimakasih atas perhatian dan bentuk tanda kasih Bapak/Ibu/Saudara/i untuk kami. Silahkan kirimkan dana melalui transfer rekening berikut :</span>
+                <div className="flex justify-center mb-4">
+                  <span className="text-center">Sebelumnya, terimakasih atas perhatian dan bentuk tanda kasih Bapak/Ibu/Saudara/i untuk kami. Silahkan kirimkan dana melalui transfer rekening berikut :</span>
                 </div>
-                <div className="flex justify-center mb-4 ">
+                <div className="flex justify-center mb-4">
                   <StaticImage className="float-left" src="../images/qr-dummy.jpeg"
                     width={150}
                     height={150}
@@ -309,15 +336,15 @@ const SageGreen = (props) => {
               </motion.div>
             </InView>
           </div>
-          <div>
-            <h1 className="ont-bold text-sageGreen text-xl md:text-4xl text-center">Countdown</h1>
+          <div className="p-4">
+            <h1 className="font-bold text-sageGreen text-2xl md:text-5xl text-center">Countdown</h1>
             <Countdown setReminder='' color='sageGreen'></Countdown>
           </div>
-          <div className="p-8 mb-4">
+          <div className="p-8 mb-4 text-xl md:text-2xl">
             <div className="flex justify-center mb-4">
-              <h2 className="font-bold text-sageGreen">Wishes Box</h2>
+              <h2 className="font-bold text-sageGreen text-2xl md:text-5xl">Wishes Box</h2>
             </div>
-            <div className="w-full max-w-sm m-auto" >
+            <div className="w-full md:max-w-xl m-auto" >
               <div className="md:flex md:items-center mb-6">
                 <div className="md:w-1/3">
                   <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
@@ -333,14 +360,14 @@ const SageGreen = (props) => {
                   <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Wishes</label>
                 </div>
                 <div className="md:w-2/3">
-                  <input type="textarea" name="message" onChange={handleInputChange} value={message}
+                  <textarea name="message" onChange={handleInputChange} value={message}
                     className="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                  ></input>
+                  ></textarea>
                 </div>
               </div>
               <div className="text-center">
                 <button
-                  className="shadow bg-green-700 hover:bg-white  focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded text-sm"
+                  className="shadow bg-green-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                   type="button"
                   onClick={sendWishes} >
                   Send Wishes</button>
@@ -351,7 +378,7 @@ const SageGreen = (props) => {
                     return (<div key={inbox.name} className="p-2 mb-2">
                       <span>{inbox.message}</span>
                       <br></br>
-                      <span className="text-sm font-bold">{inbox.name}</span>
+                      <span className="font-bold">{inbox.name}</span>
                     </div>)
                   })
                 }
@@ -398,8 +425,8 @@ const SageGreen = (props) => {
         </div>)
       }
       {/* </div> */}
-     {/* </SimpleReactLightbox> */}
-     </>
+      {/* </SimpleReactLightbox> */}
+    </>
   )
 }
 

@@ -38,23 +38,23 @@ const Countdown = ({ setReminder, color }) => {
   });
   return (
     <div className="flex flex-col justify-center w-screen p-4">
-      <div className="grid grid-cols-4 gap-2 md:gap-6 justify-center text-center self-center">
+      <div className="grid grid-cols-4 gap-6 md:gap-6 justify-center text-center self-center">
         <div className={borderClass}>
-          <span className="font-bold">{countdown.days}</span> <br></br><span className="text-sm">hari</span>
+          <span className="font-bold">{countdown.days}</span> <br></br><span >hari</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold">{countdown.hours}</span> <br></br><span className="text-sm">jam</span>
+          <span className="font-bold">{countdown.hours}</span> <br></br><span >jam</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold">{countdown.minutes}</span> <br></br><span className="text-sm">menit</span>
+          <span className="font-bold">{countdown.minutes}</span> <br></br><span >menit</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold">{countdown.seconds}</span> <br></br><span className="text-sm">detik</span>
+          <span className="font-bold">{countdown.seconds}</span> <br></br><span >detik</span>
         </div>
       </div>
       {setReminder ? (
         <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=asdf&details=noway&location=kempinski&dates=20210531T154800Z%2F20210702T154800Z">
-          <div className="m-auto flex bg-gray-200 rounded-xl text-sm text-white w-max mt-4" style={{ backgroundColor: '#000000', padding: '10px 10px 5px 10px' }}>
+          <div className="m-auto flex bg-gray-200 rounded-xl text-white w-max mt-4" style={{ backgroundColor: '#000000', padding: '10px 10px 5px 10px' }}>
             <div className="mr-2">
               <span style={{
                 fontFamily: 'Material Icons', fontSize: '24px'

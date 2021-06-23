@@ -18,7 +18,8 @@ module.exports = {
         foto: "url('images/photo-1-dark.jpg')",
         bodyGreen : "url('images/sageGreen/body-bg.jpg')",
         welcomeGreen : "url('images/sageGreen/welcome-bg.jpg')",
-        frameGreen : "url('images/sageGreen/frame.png')",
+        frameGreenSmall : "url('images/sageGreen/frame.png')",
+        frameGreenBig : "url('images/sageGreen/frame-big.png')",
         bodyBlack : "url('images/blackGold/body-bg.jpg')",
         bodyBlackSmall : "url('images/blackGold/body-bg-small.jpg')",
        })
