@@ -79,7 +79,7 @@ const BlackGoldV2 = (props) => {
         /**
          * Welcome Popup ( 1st Screen )
         */
-        <div className="grid grid-cols-1 md:grid-cols-2 justify-center h-screen bg-bodyBlackSmall md:bg-bodyBlack bg-cover p-14 font-sansNarrow text-gold">
+        <div className="grid grid-cols-1 md:grid-cols-2 justify-center h-screen bg-bodyBlack p-14 font-sansNarrow text-gold">
           <div className="place-self-center">
               {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
               <StaticImage
@@ -119,13 +119,13 @@ const BlackGoldV2 = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-gold text-sm md:text-xl font-sansNarrow bg-bodyBlackSmall md:bg-bodyBlack bg-cover">
+        <div className="text-gold text-sm md:text-xl font-sansNarrow bg-bodyBlack">
 
-          <MusicPlayer song={song}></MusicPlayer>
+          {/* <MusicPlayer song={song}></MusicPlayer> */}
           {/* <StaticImage src="../images/blackGold/body-bg.jpg"
                 alt="bunga" layout="fullWidth" className="h-full"
               ></StaticImage> */}
-          <div className="grid grid-cols-1 md:grid-cols-2 text-center h-screen">
+          <div className="grid grid-cols-1 md:grid-cols-2 text-center md:h-screen">
             <div className="grid grid-cols-2">
               <div className="col-span-2">
                 <StaticImage src="../images/photo-4.jpg"
@@ -151,6 +151,10 @@ const BlackGoldV2 = (props) => {
               </div>
             </div>
             <div className="flex flex-col justify-center space-y-10 mt-8">
+            <StaticImage src="../images/blackGold/daun-emas-kanan.png"
+                alt="bunga"  width={100} height={100} layout="fixed" aspectRatio={2/1}
+                style={{position:'absolute',left:0,top:'100%'}}
+              ></StaticImage>
               <div className="flex flex-col">
                 <h1 className="font-greatVibe text-5xl md:text-8xl mb-2">Tommy</h1>
                 <h3 className="text-white font-bold">Putra ketiga dari <br></br>Bapak & Ibu Hock</h3>
@@ -162,6 +166,11 @@ const BlackGoldV2 = (props) => {
                 <h1 className="font-greatVibe text-5xl md:text-8xl mb-2 ">Cindy</h1>
                 <h3 className="text-white font-bold">Putri ketiga dari <br></br>Bapak & Ibu Seng</h3>
               </div>
+              <StaticImage src="../images/blackGold/daun-emas-kiri.png"
+                alt="bunga"  width={100} height={100} layout="fixed" aspectRatio={2/1}
+                style={{position:'absolute',right:0,top:'75%'}}
+                className="float-right"
+              ></StaticImage>
             </div>
           </div>
           <div className="text-center">
