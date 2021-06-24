@@ -150,10 +150,10 @@ const BlackGoldV2 = (props) => {
               ></StaticImage>
               </div>
             </div>
-            <div className="flex flex-col justify-center space-y-10 mt-8">
+            <div className="flex flex-col justify-center space-y-10 mt-8 relative">
             <StaticImage src="../images/blackGold/daun-emas-kanan.png"
-                alt="bunga"  width={100} height={100} layout="fixed" aspectRatio={2/1}
-                style={{position:'absolute',left:0,top:'100%'}}
+                alt="bunga"  width={100} height={100}
+                style={{position:'absolute',left:0,top:0}}
               ></StaticImage>
               <div className="flex flex-col">
                 <h1 className="font-greatVibe text-5xl md:text-8xl mb-2">Tommy</h1>
@@ -167,13 +167,13 @@ const BlackGoldV2 = (props) => {
                 <h3 className="text-white font-bold">Putri ketiga dari <br></br>Bapak & Ibu Seng</h3>
               </div>
               <StaticImage src="../images/blackGold/daun-emas-kiri.png"
-                alt="bunga"  width={100} height={100} layout="fixed" aspectRatio={2/1}
-                style={{position:'absolute',right:0,top:'75%'}}
+                alt="bunga"  width={100} height={100} layout="fixed"
+                style={{position:'absolute',right:0,bottom:10}}
                 className="float-right"
               ></StaticImage>
             </div>
           </div>
-          <div className="text-center">
+          <div className="text-center mb-2">
             <StaticImage src="../images/blackGold/ornament-small.png"
               alt="bunga"
             ></StaticImage>
@@ -185,6 +185,12 @@ const BlackGoldV2 = (props) => {
             >
               "Demikianlah mereka bukan lagi dua, melainkan satu. <br></br>Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
             </motion.div>
+          </div>
+          <div>
+            <StaticImage src="../images/couple4.jpg"
+              alt="bunga"
+              layout="fullWidth"
+            ></StaticImage>
           </div>
           <div className="flex flex-col mt-8 p-4">
             <div className="text-center">

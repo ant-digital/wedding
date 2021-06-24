@@ -128,7 +128,7 @@ const SageGreen = (props) => {
                   <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Tommy</h1>
                 </div>
                 <div className="text-center">
-                  <StaticImage src="../images/sageGreen/frame-foto-pengantin.webp"
+                  <StaticImage src="../images/sageGreen/frame-foto-pengantin.png"
                     alt="bunga" height={320}
                   ></StaticImage>
                 </div>
@@ -152,7 +152,7 @@ const SageGreen = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-xl md:text-2xl font-sansNarrow bg-bodyGreen bg-cover">
+        <div className="text-xl md:text-2xl font-sansNarrow" style={{backgroundColor:'#bce4c194'}}>
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           <div className="grid grid-cols-1 text-center md:h-screen">
             <motion.div
