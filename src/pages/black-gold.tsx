@@ -79,21 +79,21 @@ const BlackGoldV2 = (props) => {
         /**
          * Welcome Popup ( 1st Screen )
         */
-        <div className="grid grid-cols-1 md:grid-cols-2 justify-center h-screen bg-bodyBlack p-14 font-sansNarrow text-gold">
+        <div className="grid grid-cols-1 md:grid-cols-2 justify-center h-screen bg-bodyBlack p-4 md:p-10 font-sansNarrow text-gold">
           <div className="place-self-center">
-              {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
-              <StaticImage
-                // layout="fullWidth"
-                src="../images/blackGold/coupleImg.jpg"
-                alt="coupleImg"
-                // width={320}
-              ></StaticImage>
-            </div>
+            {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
+            <StaticImage
+              // layout="fullWidth"
+              src="../images/blackGold/coupleImg.jpg"
+              alt="coupleImg"
+            // width={320}
+            ></StaticImage>
+          </div>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 3 }}
-            className="flex flex-col justify-between"
+            className="flex flex-col justify-evenly"
           >
             <div className="text-center">
               <h1 className="font-greatVibe text-5xl">Tommy</h1>
@@ -108,7 +108,7 @@ const BlackGoldV2 = (props) => {
               <StaticImage src="../images/blackGold/ornament-small.png"
                 alt="bunga"
               ></StaticImage>
-              <h1 className="text-3xl">To : Mr Hock and Family</h1>
+              <h1 className="text-xl md:text-3xl">To : Mr Hock and Family</h1>
             </div>
             <div className="mt-6 text-center">
               <button onClick={closeWelcomePopUp} className="rounded-xl font-bold p-2  w-3/4 md:w-1/4 text-black" style={{ backgroundColor: '#fdbd00eb' }}>Open Invitation</button>
@@ -121,7 +121,7 @@ const BlackGoldV2 = (props) => {
         */
         <div className="text-gold text-sm md:text-xl font-sansNarrow bg-bodyBlack">
 
-          {/* <MusicPlayer song={song}></MusicPlayer> */}
+          <MusicPlayer song={song}></MusicPlayer>
           {/* <StaticImage src="../images/blackGold/body-bg.jpg"
                 alt="bunga" layout="fullWidth" className="h-full"
               ></StaticImage> */}
@@ -129,31 +129,31 @@ const BlackGoldV2 = (props) => {
             <div className="grid grid-cols-2">
               <div className="col-span-2">
                 <StaticImage src="../images/photo-4.jpg"
-                alt="bunga" layout="constrained" 
-                bgImageStyle={{ objectFit: 'cover' }}
-                aspectRatio={4/3}
-              ></StaticImage>
+                  alt="bunga" layout="constrained"
+                  bgImageStyle={{ objectFit: 'cover' }}
+                  aspectRatio={4 / 3}
+                ></StaticImage>
               </div>
               <div className="">
                 <StaticImage src="../images/photo-1.jpg"
-                alt="bunga" layout="constrained"
-                aspectRatio={3/2}
-                bgImageStyle={{ objectFit: 'cover' }}
+                  alt="bunga" layout="constrained"
+                  aspectRatio={3 / 2}
+                  bgImageStyle={{ objectFit: 'cover' }}
 
-              ></StaticImage>
+                ></StaticImage>
               </div>
               <div className="">
                 <StaticImage src="../images/photo-2.jpg"
-                alt="bunga" layout="constrained"
-                aspectRatio={3/2}
-                bgImageStyle={{ objectFit: 'cover' }}
-              ></StaticImage>
+                  alt="bunga" layout="constrained"
+                  aspectRatio={3 / 2}
+                  bgImageStyle={{ objectFit: 'cover' }}
+                ></StaticImage>
               </div>
             </div>
             <div className="flex flex-col justify-center space-y-10 mt-8 relative">
-            <StaticImage src="../images/blackGold/daun-emas-kanan.png"
-                alt="bunga"  width={100} height={100}
-                style={{position:'absolute',left:0,top:0}}
+              <StaticImage src="../images/blackGold/daun-emas-kanan.png"
+                alt="bunga" width={100} height={100}
+                style={{ position: 'absolute', left: 0, top: 0 }}
               ></StaticImage>
               <div className="flex flex-col">
                 <h1 className="font-greatVibe text-5xl md:text-8xl mb-2">Tommy</h1>
@@ -167,9 +167,8 @@ const BlackGoldV2 = (props) => {
                 <h3 className="text-white font-bold">Putri ketiga dari <br></br>Bapak & Ibu Seng</h3>
               </div>
               <StaticImage src="../images/blackGold/daun-emas-kiri.png"
-                alt="bunga"  width={100} height={100} layout="fixed"
-                style={{position:'absolute',right:0,bottom:10}}
-                className="float-right"
+                alt="bunga" width={100} height={100} layout="fixed"
+                style={{ position: 'absolute', right: 0, bottom: 10 }}
               ></StaticImage>
             </div>
           </div>
@@ -202,7 +201,12 @@ const BlackGoldV2 = (props) => {
                   alt="bunga"
                 ></StaticImage>
               </div>
-              <div className="text-center">
+              
+              <div className="text-center relative">
+              <StaticImage src="../images/blackGold/daun-emas-kanan.png"
+                alt="bunga" width={75} height={75} layout="fixed"
+                style={{ position: 'absolute', left: 0, top: 0 }}
+              ></StaticImage>
                 <h1 className="font-bold text-white text-xl md:text-4xl mb-4">Wedding Ceremony</h1>
                 <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
                 <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
@@ -218,7 +222,7 @@ const BlackGoldV2 = (props) => {
                   </div>
                 </a>
               </div>
-              <div className="text-center mt-10">
+              <div className="text-center mt-10 relative">
                 <h1 className="font-bold text-white text-xl md:text-4xl mb-4">Wedding Reception</h1>
                 <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
                 <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
@@ -234,7 +238,12 @@ const BlackGoldV2 = (props) => {
                     </div>
                   </div>
                 </a>
+                <StaticImage src="../images/blackGold/daun-emas-kiri.png"
+                alt="bunga" width={75} height={75} layout="fixed"
+                style={{ position: 'absolute', right: 0, bottom: 10 }}
+              ></StaticImage>
               </div>
+              
               <div className="text-center">
                 <StaticImage src="../images/blackGold/ornament-bottom.png"
                   alt="bunga"
