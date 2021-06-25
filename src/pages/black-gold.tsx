@@ -402,4 +402,4 @@ const BlackGold = (props) => {
   )
 }
 
-export default BlackGoldV
+export default BlackGold
