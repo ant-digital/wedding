@@ -18,7 +18,7 @@ import bgSmall from '../images/blackGold/body-bg-small.jpg'
 import MusicPlayer from "$components/MusicPlayer";
 
 
-const BlackGoldV2 = (props) => {
+const BlackGold = (props) => {
 
   const [showWelcomePopUp, setShowWelcomePopUp] = useState(true)
   const [customerName, setCustomerName] = useState("")
@@ -251,12 +251,6 @@ const BlackGoldV2 = (props) => {
               </div>
             </div>
 
-            {/* <div id="hello" style={{position:'absolute',top:'20px'}}>
-              <StaticImage src="../images/sageGreen/frame.png"
-                  alt="frame"
-                >
-                </StaticImage>
-              </div> */}
 
           </div>
           <div className="px-4">
@@ -318,28 +312,6 @@ const BlackGoldV2 = (props) => {
 
           </div>
 
-          {/* <Parallax blur={1} bgImage={coupleImg} bgImageAlt="the cat" strength={300} bgImageStyle={{ objectFit: 'cover' }}>
-              <div className="flex justify-center mt-4">
-                <div className="text-center w-screen text-gold p-2 md:p-10" >
-                  <p className="text-center">Sabtu, 6 Oktober 2021 </p>
-                  <p className="text-center text-md">1.00 Wita - Selesai</p>
-                  <p className="text-center text-md font-gab">The Apurva Kempinski Bali</p>
-                  <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
-                    <div className="m-auto flex bg-gray-200 border-2 rounded-xl text-gold text-sm w-max" style={{ backgroundColor: '#000000', padding: '10px 10px 5px 10px' }}>
-                      <div className="mr-2">
-                        <span style={{
-                          fontFamily: 'Material Icons', fontSize: '24px'
-                        }}>place</span>
-                      </div>
-                      <div>
-                        <span>Petunjuk Lokasi</span>
-
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </Parallax> */}
           <div className="p-8">
             <InView as="div" onChange={(inView, entry) => {
               if (inView) {
@@ -418,44 +390,11 @@ const BlackGoldV2 = (props) => {
               </div>
             </div>
           </div>
-
-
-
-          {/* <Slider dots="true"
-            infinite="true"
-            speed="500"
-            slidesToShow={1}
-            slidesToScroll={1}
-          >
-            <div>
-              <h3>story 1</h3>
-            </div>
-            <div>
-              <h3> story 2</h3>
-            </div>
-            <div>
-              <h3>story 3</h3>
-            </div>
-            <div>
-              <h3>story 4</h3>
-            </div>
-            <div>
-              <h3>story 5</h3>
-            </div>
-            <div>
-              <h3>6</h3>
-            </div>
-          </Slider> */}
           <div>
             <h1 className="font-bold text-xl md:text-4xl text-white mb-4 text-center">Gallery</h1>
             <PhotoAlbum></PhotoAlbum>
 
           </div>
-          {/* <AudioPlayer
-            autoPlay
-            src={song}
-            onPlay={e => console.log("onPlay")}
-          /> */}
           <Footer></Footer>
         </div>)
       }
@@ -463,4 +402,4 @@ const BlackGoldV2 = (props) => {
   )
 }
 
-export default BlackGoldV2
+export default BlackGoldV
