@@ -152,7 +152,7 @@ const SerenityBlue = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-xl md:text-2xl font-sansNarrow text-blue bg-blue bg-cover">
+        <div className="text-xl md:text-2xl w-screen font-sansNarrow text-blue bg-blue bg-cover">
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           {/* <div className="grid grid-cols-1 text-center md:h-screen">
             <motion.div
@@ -207,7 +207,7 @@ const SerenityBlue = (props) => {
               className="max-w-screen"
             >
               <div className="flex flex-col font-sansNarrow bg-white bg-opacity-80 relative">
-              <StaticImage src="../images/serenityBlue/ornament-bunga.png"
+                <StaticImage src="../images/serenityBlue/ornament-bunga.png"
                   alt="bunga" width={150} height={150}
                   style={{ position: 'absolute', left: 0, top: '150px', transform: 'rotate(90deg)' }}
                 ></StaticImage>
@@ -228,7 +228,7 @@ const SerenityBlue = (props) => {
                 >
                   "Demikianlah mereka bukan lagi dua, melainkan satu. <br></br>Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
                 </motion.div>
-                <div className="flex flex-col my-auto">
+                <div className="flex flex-col my-auto space-y-5">
                   <div className="text-center">
                     <h1 className="text-5xl md:text-8xl font-bold">SUTONO</h1>
                     <span className="text-xl md:text-3xl">
@@ -255,7 +255,15 @@ const SerenityBlue = (props) => {
               layout="fullWidth"
             ></StaticImage>
           </div>
-          <div className="flex flex-col p-8">
+          <div className="flex flex-col p-8 bg-blue bg-cover relative">
+          <StaticImage src="../images/serenityBlue/ornament-bunga.png"
+                  alt="bunga" width={100} height={100}
+                  style={{ position: 'absolute', left: 0, top: '150px', transform: 'rotate(90deg)' }}
+                ></StaticImage>
+                <StaticImage src="../images/serenityBlue/ornament-padi.png"
+                  alt="bunga" width={100} height={100}
+                  style={{ position: 'absolute', right: 0, bottom: 0, transform: 'rotate(90deg)' }}
+                ></StaticImage>
             <div className="text-center mb-4">
               <h1 className="font-greatVibe text-5xl md:text-8xl ">Save the Date</h1>
             </div>
@@ -264,7 +272,7 @@ const SerenityBlue = (props) => {
                 <h1 className=" font-bold text-3xl md:text-5xl">Wedding Ceremony</h1>
                 <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
                 <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
-                  <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
+                  <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max" style={{ padding: '10px 10px 5px 10px', backgroundColor: '#0045ac' }}>
                     <div className="mr-2">
                       <span style={{
                         fontFamily: 'Material Icons', fontSize: '18px'
@@ -280,7 +288,7 @@ const SerenityBlue = (props) => {
                 <h1 className=" font-bold text-3xl md:text-5xl">Wedding Reception</h1>
                 <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
                 <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
-                  <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
+                  <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max" style={{ padding: '10px 10px 5px 10px', backgroundColor: '#0045ac' }}>
                     <div className="mr-2">
                       <span style={{
                         fontFamily: 'Material Icons', fontSize: '18px'
