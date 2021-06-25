@@ -18,7 +18,7 @@ const IndexPage = () => {
         <Link to={"/sage-green"}>Sage Green</Link>
         </li>
         <li>
-        <Link to={"/sage-green-v2"}>Sage Green V2</Link>
+        <Link to={"/serenity-blue"}>Serenity Blue</Link>
         </li>
         <li>
         <Link to={"/black-gold"}>Black Gold</Link>

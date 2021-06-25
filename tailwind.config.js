@@ -7,7 +7,8 @@ module.exports = {
         "romeo-text": "#284135",
         "romeo-background": "#f3f2f1",
         "sageGreen":"#1f5c3d",
-        "gold":"#ffdc73"
+        "gold":"#ffdc73",
+        "blue":"#0045ac"
       },
       fontFamily: {
         romeo: "eb garamond",
@@ -22,6 +23,7 @@ module.exports = {
         frameGreenBig : "url('images/sageGreen/frame-big.png')",
         bodyBlack : "url('images/blackGold/body-bg.jpg')",
         bodyBlackSmall : "url('images/blackGold/body-bg-small.jpg')",
+        blue : "url('images/serenityBlue/bg.jpg')",
        })
     },
   },
