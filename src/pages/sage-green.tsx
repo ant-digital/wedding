@@ -6,8 +6,6 @@ import song from '../song.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
 import SimpleReactLightbox from 'simple-react-lightbox'
-import { motion, useAnimation } from "framer-motion"
-import { InView } from 'react-intersection-observer';
 import QRCode from "react-qr-code";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -19,6 +17,7 @@ import MusicPlayer from "$components/MusicPlayer";
 import { Parallax } from 'react-parallax';
 import coupleImg from "../images/couple3.jpg"
 import bg from '../images/sageGreen/body-bg.jpg'
+import MotionBox from "$components/MotionBox";
 
 
 const SageGreen = (props) => {
@@ -30,8 +29,6 @@ const SageGreen = (props) => {
   const [message, setMessage] = useState("")
   const [eventName, setEventName] = useState("")
 
-  const controls = useAnimation();
-  const controls2 = useAnimation();
   const variants = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -44,7 +41,7 @@ const SageGreen = (props) => {
 
   useEffect(() => {
     setEventName(props.location.pathname.replace(/[/]/ig, ''))
-  }, [controls]);
+  }, []);
 
 
   const handleInputChange = (e) => {
@@ -114,15 +111,12 @@ const SageGreen = (props) => {
             }}
           >
             <div className="flex w-screen justify-center font-sansNarrow">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 3 }}
-                className=""
+              <MotionBox
+                variants={variants}
               >
                 <div className="text-center">
                   {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
-                  <h2 className="text-2xl md:text-5xl mb-4" >You are invited to the wedding of</h2>
+                  <h2 className="text-2xl md:text-5xl mb-4 font-bold" >You are invited to the wedding of</h2>
                 </div>
                 <div className="text-left pt-4 pl-4">
                   <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Tommy</h1>
@@ -139,12 +133,12 @@ const SageGreen = (props) => {
                   <StaticImage src="../images/sageGreen/ornament.png"
                     alt="bunga"
                   ></StaticImage>
-                  <h1 className="text-2xl md:text-5xl">To : Mr Hock and Family</h1>
+                  <h1 className="text-xl md:text-3xl">To : Mr Hock and Family</h1>
                 </div>
-                <div className="mt-6 text-center text-2xl md:text-4xl">
+                <div className="mt-6 text-center">
                   <button onClick={closeWelcomePopUp} className="rounded-xl font-bold p-2  w-3/4 md:w-1/2 text-white bg-green-700">Open Invitation</button>
                 </div>
-              </motion.div>
+              </MotionBox>
             </div>
           </div>
         </div>
@@ -152,19 +146,20 @@ const SageGreen = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-xl md:text-2xl font-sansNarrow" style={{backgroundColor:'#bce4c194'}}>
+        <div className="text-sm md:text-xl font-sansNarrow" style={{ backgroundColor: '#bce4c194' }}>
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           <div className="grid grid-cols-1 text-center md:h-screen">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 7 }}
+            <MotionBox
+              // 
+              variants={{ visible: { y: 0 }, hidden: { y: -100 } }}
               className="text-center p-8 text-black md:col-span-3 self-center text-xl md:text-3xl"
             >
               "Demikianlah mereka bukan lagi dua, melainkan satu. <br></br>Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
-            </motion.div>
+            </MotionBox>
             <div className="flex flex-col md:flex-row justify-center gap-10">
-              <div className="flex flex-col">
+              <MotionBox
+                variants={{ visible: { x: 0, opacity: 1 }, hidden: { x: '-50%', opacity: 0 } }}
+                className="flex flex-col">
                 <StaticImage src="../images/sageGreen/bride.webp" objectFit="contain"
                   alt="bride" className="my-4"
                 ></StaticImage>
@@ -172,11 +167,13 @@ const SageGreen = (props) => {
                 <span className="text-xl md:text-3xl">
                   <h3>Putra ketiga dari <br></br>Bapak & Ibu Hock</h3>
                 </span>
-              </div>
+              </MotionBox>
               <div className="flex flex-col md:pt-32">
                 <h1 className="text-5xl md:text-8xl font-greatVibe text-sageGreen">&</h1>
               </div>
-              <div className="flex flex-col">
+              <MotionBox
+                variants={{ visible: { x: 0 }, hidden: { x: '50%' } }}
+                className="flex flex-col">
                 <StaticImage src="../images/sageGreen/groom.webp"
                   alt="groom" className="my-4" objectFit="contain"
                 ></StaticImage>
@@ -184,16 +181,18 @@ const SageGreen = (props) => {
                 <span className="text-xl md:text-3xl">
                   <h3>Putri ketiga dari <br></br>Bapak & Ibu Seng</h3>
                 </span>
-              </div>
+              </MotionBox>
             </div>
           </div>
-          <div className="flex flex-col mt-8 bg-white bg-opacity-40 p-8">
+          <MotionBox
+            variants={{ visible: { x: 0 }, hidden: { x: '50%' } }}
+            className="flex flex-col mt-8 bg-white bg-opacity-40 p-8">
             <div className="text-center mb-4">
               <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Save the Date</h1>
             </div>
             <div id="frame" className="flex flex-col md:flex-row justify-evenly space-y-10 md:space-y-0">
-              <div className="text-center text-xl md:text-3xl space-y-5">
-                <h1 className="text-sageGreen font-bold text-3xl md:text-5xl">Wedding Ceremony</h1>
+              <div className="text-center space-y-5">
+                <h1 className="text-sageGreen font-bold text-xl md:text-4xl">Wedding Ceremony</h1>
                 <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
                 <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
                   <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
@@ -208,8 +207,8 @@ const SageGreen = (props) => {
                   </div>
                 </a>
               </div>
-              <div className="text-center text-xl md:text-3xl space-y-5">
-                <h1 className="text-sageGreen font-bold text-3xl md:text-5xl">Wedding Reception</h1>
+              <div className="text-center space-y-5">
+                <h1 className="text-sageGreen font-bold text-xl md:text-4xl">Wedding Reception</h1>
                 <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
                 <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
                   <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
@@ -227,65 +226,56 @@ const SageGreen = (props) => {
               </div>
             </div>
 
-          </div>
-          <div className="p-4 mt-4 text-xl md:text-2xl">
-            <InView as="div" onChange={(inView, entry) => {
-              if (inView) {
-                controls.start('visible')
-              }
-            }}>
-              <motion.div
-                initial="hidden"
-                animate={controls}
-                variants={variants}
-                transition={{ duration: 1 }}
-              >
+          </MotionBox>
 
-                <div className="flex justify-center mb-4">
-                  <h2 className="font-bold text-sageGreen text-2xl md:text-5xl">Protokol Covid-19</h2>
-                </div>
-                <div className="flex justify-center mb-4 ">
-                  <h4 className="text-center">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi, kami harapkan kedatangan para tamu undangan agar menjalankan protokol yang berlaku.</h4>
-                </div>
-                <div className="flex justify-center">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="flex items-center">
-                      <StaticImage src="../images/distance.png"
-                        alt="Picture of the author"
-                        width={40}
-                        height={40}></StaticImage>
-                      <span className="ml-2">Saling Menjaga Jarak di Dalam Acara</span>
-                    </div>
-                    <div className="flex items-center">
-                      <StaticImage src="../images/masker.png"
-                        alt="Picture of the author"
-                        width={40}
-                        height={40}
-                      ></StaticImage>
-                      <span className="ml-2">Wajib Menggunakan Masker</span>
-                    </div>
-                    <div className="flex items-center">
-                      <StaticImage src="../images/namaste.png"
-                        alt="Picture of the author"
-                        width={40}
-                        height={40}
-                      ></StaticImage>
-                      <span className="ml-2">Menggunakan Salam Namaste</span>
-                    </div>
-                    <div className="flex items-center">
-                      <StaticImage src="../images/wash.png"
-                        alt="Picture of the author"
-                        width={40}
-                        height={40}
-                      ></StaticImage>
-                      <span className="ml-2">Mencuci Tangan dan Menggunakan Hand Sanitizer</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </InView>
+          <MotionBox
+            className="p-4 mt-4"
+            variants={{ visible: { x: 0 }, hidden: { x: '50%'} }}
+          >
 
-          </div>
+            <div className="flex justify-center mb-4">
+              <h2 className="font-bold text-sageGreen text-xl md:text-4xl">Protokol Covid-19</h2>
+            </div>
+            <div className="flex justify-center mb-4 ">
+              <h4 className="text-center">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi, kami harapkan kedatangan para tamu undangan agar menjalankan protokol yang berlaku.</h4>
+            </div>
+            <div className="flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex items-center">
+                  <StaticImage src="../images/distance.png"
+                    alt="Picture of the author"
+                    width={40}
+                    height={40}></StaticImage>
+                  <span className="ml-2">Saling Menjaga Jarak di Dalam Acara</span>
+                </div>
+                <div className="flex items-center">
+                  <StaticImage src="../images/masker.png"
+                    alt="Picture of the author"
+                    width={40}
+                    height={40}
+                  ></StaticImage>
+                  <span className="ml-2">Wajib Menggunakan Masker</span>
+                </div>
+                <div className="flex items-center">
+                  <StaticImage src="../images/namaste.png"
+                    alt="Picture of the author"
+                    width={40}
+                    height={40}
+                  ></StaticImage>
+                  <span className="ml-2">Menggunakan Salam Namaste</span>
+                </div>
+                <div className="flex items-center">
+                  <StaticImage src="../images/wash.png"
+                    alt="Picture of the author"
+                    width={40}
+                    height={40}
+                  ></StaticImage>
+                  <span className="ml-2">Mencuci Tangan dan Menggunakan Hand Sanitizer</span>
+                </div>
+              </div>
+            </div>
+          </MotionBox>
+
 
           {/* <Parallax blur={1} bgImage={coupleImg} bgImageAlt="the cat" strength={300} bgImageStyle={{ objectFit: 'cover' }}>
               <div className="flex justify-center mt-4">
@@ -309,20 +299,15 @@ const SageGreen = (props) => {
                 </div>
               </div>
             </Parallax> */}
-          <div className="p-4 text-xl md:text-2xl">
-            <InView as="div" onChange={(inView, entry) => {
-              if (inView) {
-                controls2.start('visible')
-              }
-            }}>
-              <motion.div
+          <div className="p-4">
+            {/* <motion.div
                 initial="hidden"
                 animate={controls2}
                 variants={variants}
-                transition={{ duration: 2 }}
+                transition={{ duration: 3 }}
               >
                 <div className="flex justify-center mb-4">
-                  <h2 className="font-bold text-sageGreen text-2xl md:text-5xl">Kirim Dana</h2>
+                  <h2 className="font-bold text-sageGreen text-xl md:text-4xl">Kirim Dana</h2>
                 </div>
                 <div className="flex justify-center mb-4">
                   <span className="text-center">Sebelumnya, terimakasih atas perhatian dan bentuk tanda kasih Bapak/Ibu/Saudara/i untuk kami. Silahkan kirimkan dana melalui transfer rekening berikut :</span>
@@ -333,16 +318,15 @@ const SageGreen = (props) => {
                     height={150}
                     alt="bottom"></StaticImage>
                 </div>
-              </motion.div>
-            </InView>
+              </motion.div> */}
           </div>
-          <div className="p-4">
-            <h1 className="font-bold text-sageGreen text-2xl md:text-5xl text-center">Countdown</h1>
+          <div className="">
+            <h1 className="font-bold text-sageGreen text-xl md:text-4xl text-center">Countdown</h1>
             <Countdown setReminder='' color='sageGreen'></Countdown>
           </div>
-          <div className="p-8 mb-4 text-xl md:text-2xl">
+          <div className="p-8 mb-4">
             <div className="flex justify-center mb-4">
-              <h2 className="font-bold text-sageGreen text-2xl md:text-5xl">Wishes Box</h2>
+              <h2 className="font-bold text-sageGreen text-xl md:text-4xl">Wishes Box</h2>
             </div>
             <div className="w-full md:max-w-xl m-auto" >
               <div className="md:flex md:items-center mb-6">
