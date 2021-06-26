@@ -146,7 +146,7 @@ const SageGreen = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-sm md:text-xl font-sansNarrow" style={{ backgroundColor: '#bce4c194' }}>
+        <div className="text-sm md:text-xl font-sansNarrow overflow-hidden" style={{ backgroundColor: '#bce4c194' }}>
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           <div className="grid grid-cols-1 text-center md:h-screen">
             <MotionBox
@@ -229,7 +229,7 @@ const SageGreen = (props) => {
           </MotionBox>
 
           <MotionBox
-            className="p-4 mt-4"
+            className="p-4 mt-8"
             variants={{ visible: { x: 0 }, hidden: { x: '50%'} }}
           >
 
