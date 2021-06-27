@@ -4,9 +4,9 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from "react";
 const MotionBox = ({ children, variants, className }) => {
     const controls = useAnimation();
-    const { ref, inView } = useInView({triggerOnce:true})
+    const { ref, inView } = useInView({ triggerOnce: true })
     useEffect(() => {
-        console.log('IV',inView)
+        console.log('IV', inView)
         if (inView) {
             controls.start('visible')
         }
@@ -22,7 +22,7 @@ const MotionBox = ({ children, variants, className }) => {
             initial="hidden"
             animate={controls}
             variants={variants}
-            transition={{ duration: 3 }}
+            transition={{ duration: 3, delay: 0.2,type:'tween' }}
         >
             {children}
         </motion.div>

@@ -18,6 +18,7 @@ import { Parallax } from 'react-parallax';
 import coupleImg from "../images/couple3.jpg"
 import bg from '../images/sageGreen/body-bg.jpg'
 import MotionBox from "$components/MotionBox";
+import { motion } from 'framer-motion'
 
 
 const SageGreen = (props) => {
@@ -29,10 +30,10 @@ const SageGreen = (props) => {
   const [message, setMessage] = useState("")
   const [eventName, setEventName] = useState("")
 
-  const variants = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0 },
-  }
+  // const variants = {
+  //   visible: { opacity: 1 },
+  //   hidden: { opacity: 0 },
+  // }
 
   const closeWelcomePopUp = () => {
     setShowWelcomePopUp(!showWelcomePopUp)
@@ -112,8 +113,10 @@ const SageGreen = (props) => {
           >
             <div className="flex w-screen justify-center font-sansNarrow">
               <MotionBox
-                variants={variants}
-              >
+                variants={{
+                  visible: { opacity: 1 },
+                  hidden: { opacity: 0 },
+                }}>
                 <div className="text-center">
                   {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
                   <h2 className="text-2xl md:text-5xl mb-4 font-bold" >You are invited to the wedding of</h2>
@@ -149,43 +152,52 @@ const SageGreen = (props) => {
         <div className="text-sm md:text-xl font-sansNarrow overflow-hidden" style={{ backgroundColor: '#bce4c194' }}>
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           <div className="grid grid-cols-1 text-center md:h-screen">
-            <MotionBox
-              // 
-              variants={{ visible: { y: 0 }, hidden: { y: -100 } }}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: { x: 0, transition: { when: 'beforeChildren', delay: 0.5, type: 'tween', duration: 3 } },
+                hidden: { x: '100vw' }
+              }}
               className="text-center p-8 text-black md:col-span-3 self-center text-xl md:text-3xl"
             >
               "Demikianlah mereka bukan lagi dua, melainkan satu. <br></br>Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
-            </MotionBox>
-            <div className="flex flex-col md:flex-row justify-center gap-10">
-              <MotionBox
-                variants={{ visible: { x: 0, opacity: 1 }, hidden: { x: '-50%', opacity: 0 } }}
-                className="flex flex-col">
-                <StaticImage src="../images/sageGreen/bride.webp" objectFit="contain"
-                  alt="bride" className="my-4"
-                ></StaticImage>
-                <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Tommy</h1>
-                <span className="text-xl md:text-3xl">
-                  <h3>Putra ketiga dari <br></br>Bapak & Ibu Hock</h3>
-                </span>
-              </MotionBox>
-              <div className="flex flex-col md:pt-32">
-                <h1 className="text-5xl md:text-8xl font-greatVibe text-sageGreen">&</h1>
-              </div>
-              <MotionBox
-                variants={{ visible: { x: 0 }, hidden: { x: '50%' } }}
-                className="flex flex-col">
-                <StaticImage src="../images/sageGreen/groom.webp"
-                  alt="groom" className="my-4" objectFit="contain"
-                ></StaticImage>
-                <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Cindy</h1>
-                <span className="text-xl md:text-3xl">
-                  <h3>Putri ketiga dari <br></br>Bapak & Ibu Seng</h3>
-                </span>
-              </MotionBox>
-            </div>
+              <motion.div
+                variants={{
+                  visible: { opacity: 1, transition: { duration: 2, delay: 0.2, type: "tween" } },
+                  hidden: { opacity: 0 }
+                }}
+                className="flex flex-col md:flex-row justify-center gap-10">
+                <div
+                  className="flex flex-col">
+                  <StaticImage src="../images/sageGreen/bride.webp" objectFit="contain"
+                    alt="bride" className="my-4"
+                  ></StaticImage>
+                  <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Tommy</h1>
+                  <span className="text-xl md:text-3xl">
+                    <h3>Putra ketiga dari <br></br>Bapak & Ibu Hock</h3>
+                  </span>
+                </div>
+                <div className="flex flex-col md:pt-32">
+                  <h1 className="text-5xl md:text-8xl font-greatVibe text-sageGreen">&</h1>
+                </div>
+                <div
+                  // variants={{ visible: { opacity: 1 }, hidden: { opacity: 0 } }}
+                  className="flex flex-col">
+                  <StaticImage src="../images/sageGreen/groom.webp"
+                    alt="groom" className="my-4" objectFit="contain"
+                  ></StaticImage>
+                  <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Cindy</h1>
+                  <span className="text-xl md:text-3xl">
+                    <h3>Putri ketiga dari <br></br>Bapak & Ibu Seng</h3>
+                  </span>
+                </div>
+              </motion.div>
+            </motion.div>
+
           </div>
           <MotionBox
-            variants={{ visible: { x: 0 }, hidden: { x: '50%' } }}
+            variants={{ visible: { x: 0 }, hidden: { x: '100vw' } }}
             className="flex flex-col mt-8 bg-white bg-opacity-40 p-8">
             <div className="text-center mb-4">
               <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Save the Date</h1>
@@ -230,7 +242,7 @@ const SageGreen = (props) => {
 
           <MotionBox
             className="p-4 mt-8"
-            variants={{ visible: { x: 0 }, hidden: { x: '50%'} }}
+            variants={{ visible: { x: 0 }, hidden: { x: '-100vw' } }}
           >
 
             <div className="flex justify-center mb-4">
@@ -405,7 +417,7 @@ const SageGreen = (props) => {
             src={song}
             onPlay={e => console.log("onPlay")}
           /> */}
-          <Footer></Footer>
+          <Footer color="black"></Footer>
         </div>)
       }
       {/* </div> */}

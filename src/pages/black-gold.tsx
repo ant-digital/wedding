@@ -6,33 +6,24 @@ import song from '../song.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
 import SimpleReactLightbox from 'simple-react-lightbox'
-import { motion, useAnimation } from "framer-motion"
-import { InView } from 'react-intersection-observer';
+import { motion } from "framer-motion"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import useInboxes from "src/useInboxes";
 import { mutate } from "swr";
 import Footer from "$components/Footer";
-import bg from '../images/blackGold/body-bg.jpg'
-import bgSmall from '../images/blackGold/body-bg-small.jpg'
 import MusicPlayer from "$components/MusicPlayer";
+import MotionBox from "$components/MotionBox";
 
 
 const BlackGold = (props) => {
 
-  const [showWelcomePopUp, setShowWelcomePopUp] = useState(true)
+  const [showWelcomePopUp, setShowWelcomePopUp] = useState(false)
   const [customerName, setCustomerName] = useState("")
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
   const [message, setMessage] = useState("")
   const [eventName, setEventName] = useState("")
-
-  const controls = useAnimation();
-  const controls2 = useAnimation();
-  const variants = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0 },
-  }
 
   const closeWelcomePopUp = () => {
     setShowWelcomePopUp(!showWelcomePopUp)
@@ -41,7 +32,7 @@ const BlackGold = (props) => {
 
   useEffect(() => {
     setEventName(props.location.pathname.replace(/[/]/ig, ''))
-  }, [controls]);
+  }, []);
 
 
   const handleInputChange = (e) => {
@@ -79,7 +70,15 @@ const BlackGold = (props) => {
         /**
          * Welcome Popup ( 1st Screen )
         */
-        <div className="grid grid-cols-1 md:grid-cols-2 justify-center h-screen bg-bodyBlack p-4 md:p-10 font-sansNarrow text-gold">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: { opacity: 1, transition: { when: 'beforeChildren', delay: 0.2, type: 'tween', duration: 2 } },
+            hidden: { opacity: 0 }
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 justify-center h-screen bg-bodyBlack p-4 md:p-10 font-sansNarrow text-gold"
+        >
           <div className="place-self-center">
             {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
             <StaticImage
@@ -90,9 +89,10 @@ const BlackGold = (props) => {
             ></StaticImage>
           </div>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 3 }}
+            variants={{
+              visible: { opacity: 1, transition: { type: 'tween', duration: 2 } },
+              hidden: { opacity: 0 },
+            }}
             className="flex flex-col justify-evenly"
           >
             <div className="text-center">
@@ -114,14 +114,14 @@ const BlackGold = (props) => {
               <button onClick={closeWelcomePopUp} className="rounded-xl font-bold p-2  w-3/4 md:w-1/4 text-black" style={{ backgroundColor: '#fdbd00eb' }}>Open Invitation</button>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       ) : (
         /**
         * Main Screen
         */
-        <div className="text-gold text-sm md:text-xl font-sansNarrow bg-bodyBlack">
+        <div className="text-gold text-sm md:text-xl font-sansNarrow bg-bodyBlack overflow-hidden">
 
-          <MusicPlayer song={song}></MusicPlayer>
+          {/* <MusicPlayer song={song}></MusicPlayer> */}
           {/* <StaticImage src="../images/blackGold/body-bg.jpg"
                 alt="bunga" layout="fullWidth" className="h-full"
               ></StaticImage> */}
@@ -130,7 +130,7 @@ const BlackGold = (props) => {
               <div className="col-span-2">
                 <StaticImage src="../images/photo-4.jpg"
                   alt="bunga" layout="constrained"
-                  bgImageStyle={{ objectFit: 'cover' }}
+                  // bgImageStyle={{ objectFit: 'cover' }}
                   aspectRatio={4 / 3}
                 ></StaticImage>
               </div>
@@ -138,7 +138,7 @@ const BlackGold = (props) => {
                 <StaticImage src="../images/photo-1.jpg"
                   alt="bunga" layout="constrained"
                   aspectRatio={3 / 2}
-                  bgImageStyle={{ objectFit: 'cover' }}
+                // bgImageStyle={{ objectFit: 'cover' }}
 
                 ></StaticImage>
               </div>
@@ -146,11 +146,19 @@ const BlackGold = (props) => {
                 <StaticImage src="../images/photo-2.jpg"
                   alt="bunga" layout="constrained"
                   aspectRatio={3 / 2}
-                  bgImageStyle={{ objectFit: 'cover' }}
+                // bgImageStyle={{ objectFit: 'cover' }}
                 ></StaticImage>
               </div>
             </div>
-            <div className="flex flex-col justify-center space-y-10 mt-8 relative">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: { opacity: 1, transition: { duration: 3, delay: 0.5, type: "tween" } },
+                hidden: { opacity: 0 }
+              }}
+              className="flex flex-col justify-center space-y-10 mt-8 relative"
+            >
               <StaticImage src="../images/blackGold/daun-emas-kanan.png"
                 alt="bunga" width={100} height={100}
                 style={{ position: 'absolute', left: 0, top: 0 }}
@@ -170,20 +178,15 @@ const BlackGold = (props) => {
                 alt="bunga" width={100} height={100} layout="fixed"
                 style={{ position: 'absolute', right: 0, bottom: 10 }}
               ></StaticImage>
-            </div>
+            </motion.div>
           </div>
-          <div className="text-center mb-2">
+          <div className="text-center mb-2 md:mt-4">
             <StaticImage src="../images/blackGold/ornament-small.png"
               alt="bunga"
             ></StaticImage>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 5 }}
-              className="text-center px-4 md:col-span-3 self-center"
-            >
+            <div className="text-center px-4 md:col-span-3 self-center">
               "Demikianlah mereka bukan lagi dua, melainkan satu. <br></br>Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
-            </motion.div>
+            </div>
           </div>
           <div>
             <StaticImage src="../images/couple4.jpg"
@@ -191,6 +194,7 @@ const BlackGold = (props) => {
               layout="fullWidth"
             ></StaticImage>
           </div>
+
           <div className="flex flex-col mt-8 p-4">
             <div className="text-center">
               <h1 className="font-greatVibe text-5xl">Save the Date</h1>
@@ -201,143 +205,124 @@ const BlackGold = (props) => {
                   alt="bunga"
                 ></StaticImage>
               </div>
-              
-              <div className="text-center relative">
-              <StaticImage src="../images/blackGold/daun-emas-kanan.png"
-                alt="bunga" width={75} height={75} layout="fixed"
-                style={{ position: 'absolute', left: 0, top: 0 }}
-              ></StaticImage>
-                <h1 className="font-bold text-white text-xl md:text-4xl mb-4">Wedding Ceremony</h1>
-                <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
-                <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
-                  <div className="m-auto flex rounded-xl text-black w-max mt-2" style={{ padding: '10px 10px 5px 10px', backgroundColor: '#fdbd00eb' }}>
-                    <div className="mr-2">
-                      <span style={{
-                        fontFamily: 'Material Icons', fontSize: '18px'
-                      }}>place</span>
+              <MotionBox
+                className=""
+                variants={{ visible: { opacity: 1 }, hidden: { opacity: 0 } }}
+              >
+                <div className="text-center relative">
+                  <StaticImage src="../images/blackGold/daun-emas-kanan.png"
+                    alt="bunga" width={75} height={75} layout="fixed"
+                    style={{ position: 'absolute', left: 0, top: 0 }}
+                  ></StaticImage>
+                  <h1 className="font-bold text-white text-xl md:text-4xl mb-4">Wedding Ceremony</h1>
+                  <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
+                  <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
+                    <div className="m-auto flex rounded-xl text-black w-max mt-2" style={{ padding: '10px 10px 5px 10px', backgroundColor: '#fdbd00eb' }}>
+                      <div className="mr-2">
+                        <span style={{
+                          fontFamily: 'Material Icons', fontSize: '18px'
+                        }}>place</span>
+                      </div>
+                      <div>
+                        <span>Petunjuk Lokasi</span>
+                      </div>
                     </div>
-                    <div>
-                      <span>Petunjuk Lokasi</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="text-center mt-10 relative">
-                <h1 className="font-bold text-white text-xl md:text-4xl mb-4">Wedding Reception</h1>
-                <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
-                <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
-                  <div className="m-auto flex rounded-xl text-black w-max mt-2" style={{ padding: '10px 10px 5px 10px', backgroundColor: '#fdbd00eb' }}>
-                    <div className="mr-2">
-                      <span style={{
-                        fontFamily: 'Material Icons', fontSize: '18px'
-                      }}>place</span>
-                    </div>
-                    <div>
-                      <span>Petunjuk Lokasi</span>
+                  </a>
+                </div>
+                <div className="text-center mt-10 relative">
+                  <h1 className="font-bold text-white text-xl md:text-4xl mb-4">Wedding Reception</h1>
+                  <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
+                  <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
+                    <div className="m-auto flex rounded-xl text-black w-max mt-2" style={{ padding: '10px 10px 5px 10px', backgroundColor: '#fdbd00eb' }}>
+                      <div className="mr-2">
+                        <span style={{
+                          fontFamily: 'Material Icons', fontSize: '18px'
+                        }}>place</span>
+                      </div>
+                      <div>
+                        <span>Petunjuk Lokasi</span>
 
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <StaticImage src="../images/blackGold/daun-emas-kiri.png"
-                alt="bunga" width={75} height={75} layout="fixed"
-                style={{ position: 'absolute', right: 0, bottom: 10 }}
-              ></StaticImage>
-              </div>
-              
+                  </a>
+                  <StaticImage src="../images/blackGold/daun-emas-kiri.png"
+                    alt="bunga" width={75} height={75} layout="fixed"
+                    style={{ position: 'absolute', right: 0, bottom: 10 }}
+                  ></StaticImage>
+                </div>
+              </MotionBox>
+
               <div className="text-center">
                 <StaticImage src="../images/blackGold/ornament-bottom.png"
                   alt="bunga"
                 ></StaticImage>
               </div>
             </div>
-
-
           </div>
-          <div className="px-4">
-            <InView as="div" onChange={(inView, entry) => {
-              if (inView) {
-                controls.start('visible')
-              }
-            }}>
-              <motion.div
-                initial="hidden"
-                animate={controls}
-                variants={variants}
-                transition={{ duration: 1 }}
-              >
 
-                <div className="flex justify-center mb-4">
-                  <h1 className="font-bold text-white text-xl md:text-4xl">Protokol Covid-19</h1>
-                </div>
-                <div className="flex justify-center mb-4 ">
-                  <h4 className="text-center">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi, kami harapkan kedatangan para tamu undangan agar menjalankan protokol yang berlaku.</h4>
-                </div>
-                <div className="flex justify-center">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="flex items-center">
-                      <StaticImage src="../images/distance.png"
-                        alt="Picture of the author"
-                        width={40}
-                        height={40}></StaticImage>
-                      <span className="ml-2">Saling Menjaga Jarak di Dalam Acara</span>
-                    </div>
-                    <div className="flex items-center">
-                      <StaticImage src="../images/masker.png"
-                        alt="Picture of the author"
-                        width={40}
-                        height={40}
-                      ></StaticImage>
-                      <span className="ml-2">Wajib Menggunakan Masker</span>
-                    </div>
-                    <div className="flex items-center">
-                      <StaticImage src="../images/namaste.png"
-                        alt="Picture of the author"
-                        width={40}
-                        height={40}
-                      ></StaticImage>
-                      <span className="ml-2">Menggunakan Salam Namaste</span>
-                    </div>
-                    <div className="flex items-center">
-                      <StaticImage src="../images/wash.png"
-                        alt="Picture of the author"
-                        width={40}
-                        height={40}
-                      ></StaticImage>
-                      <span className="ml-2">Mencuci Tangan dan Menggunakan Hand Sanitizer</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </InView>
+          <MotionBox
+            className="px-4"
+            variants={{ visible: { x: 0 }, hidden: { x: '-100vw' } }}
+          >
 
-          </div>
+
+            <div className="flex justify-center mb-4">
+              <h1 className="font-bold text-white text-xl md:text-4xl">Protokol Covid-19</h1>
+            </div>
+            <div className="flex justify-center mb-4 ">
+              <h4 className="text-center">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi, kami harapkan kedatangan para tamu undangan agar menjalankan protokol yang berlaku.</h4>
+            </div>
+            <div className="flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex items-center">
+                  <StaticImage src="../images/distance.png"
+                    alt="Picture of the author"
+                    width={40}
+                    height={40}></StaticImage>
+                  <span className="ml-2">Saling Menjaga Jarak di Dalam Acara</span>
+                </div>
+                <div className="flex items-center">
+                  <StaticImage src="../images/masker.png"
+                    alt="Picture of the author"
+                    width={40}
+                    height={40}
+                  ></StaticImage>
+                  <span className="ml-2">Wajib Menggunakan Masker</span>
+                </div>
+                <div className="flex items-center">
+                  <StaticImage src="../images/namaste.png"
+                    alt="Picture of the author"
+                    width={40}
+                    height={40}
+                  ></StaticImage>
+                  <span className="ml-2">Menggunakan Salam Namaste</span>
+                </div>
+                <div className="flex items-center">
+                  <StaticImage src="../images/wash.png"
+                    alt="Picture of the author"
+                    width={40}
+                    height={40}
+                  ></StaticImage>
+                  <span className="ml-2">Mencuci Tangan dan Menggunakan Hand Sanitizer</span>
+                </div>
+              </div>
+            </div>
+
+          </MotionBox>
 
           <div className="p-8">
-            <InView as="div" onChange={(inView, entry) => {
-              if (inView) {
-                controls2.start('visible')
-              }
-            }}>
-              <motion.div
-                initial="hidden"
-                animate={controls2}
-                variants={variants}
-                transition={{ duration: 2 }}
-              >
-                <div className="flex justify-center mb-4">
-                  <h2 className="font-bold text-white text-xl md:text-4xl">Kirim Dana</h2>
-                </div>
-                <div className="flex justify-center mb-4 ">
-                  <span className="text-center">Sebelumnya, terimakasih atas perhatian dan bentuk tanda kasih Bapak/Ibu/Saudara/i untuk kami. Silahkan kirimkan dana melalui transfer rekening berikut :</span>
-                </div>
-                <div className="flex justify-center mb-4 ">
-                  <StaticImage className="float-left" src="../images/qr-dummy.jpeg"
-                    width={150}
-                    height={150}
-                    alt="bottom"></StaticImage>
-                </div>
-              </motion.div>
-            </InView>
+            <div className="flex justify-center mb-4">
+              <h2 className="font-bold text-white text-xl md:text-4xl">Kirim Dana</h2>
+            </div>
+            <div className="flex justify-center mb-4 ">
+              <span className="text-center">Sebelumnya, terimakasih atas perhatian dan bentuk tanda kasih Bapak/Ibu/Saudara/i untuk kami. Silahkan kirimkan dana melalui transfer rekening berikut :</span>
+            </div>
+            <div className="flex justify-center mb-4 ">
+              <StaticImage className="float-left" src="../images/qr-dummy.jpeg"
+                width={150}
+                height={150}
+                alt="bottom"></StaticImage>
+            </div>
           </div>
           <div>
             <h1 className="font-bold text-white text-xl md:text-4xl text-center">Countdown</h1>
@@ -395,7 +380,7 @@ const BlackGold = (props) => {
             <PhotoAlbum></PhotoAlbum>
 
           </div>
-          <Footer></Footer>
+          <Footer color="white"></Footer>
         </div>)
       }
     </SimpleReactLightbox>

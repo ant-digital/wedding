@@ -1,7 +1,21 @@
 import React from "react";
-const Footer = () => {
+import classNames from "classnames";
+
+
+const Footer = ({color='white'}) => {
+  const classes = classNames({
+    'flex': true,
+    'flex-col': true,
+    'text-center': true,
+    'w-screen': true,
+    'p-8': true,
+    'font-bold': true,
+    'text-black': color === 'black' ? true : false,
+    'text-white': color === 'white' ? true : false
+
+  });
   return (
-    <div className="flex flex-col text-center w-screen p-4 text-black font-bold">
+    <div className={classes}>
       <span>Made with &hearts;, Ant Digital</span>
     </div>
   )
