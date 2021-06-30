@@ -6,7 +6,6 @@ const MotionBox = ({ children, variants, className }) => {
     const controls = useAnimation();
     const { ref, inView } = useInView({ triggerOnce: true })
     useEffect(() => {
-        console.log('IV', inView)
         if (inView) {
             controls.start('visible')
         }

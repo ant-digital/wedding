@@ -22,7 +22,6 @@ const LinkGenerator = () => {
     }
 
     const generateLink = () => {
-        console.log('this')
         setGeneratedLink(inputLink + `?name=${guestName}`)
     }
 

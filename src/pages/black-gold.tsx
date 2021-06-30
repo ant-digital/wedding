@@ -23,6 +23,7 @@ const BlackGold = (props) => {
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
   const [message, setMessage] = useState("")
+  const [attend, setAttend] = useState(false)
   const [eventName, setEventName] = useState("")
 
   const closeWelcomePopUp = () => {
@@ -38,8 +39,15 @@ const BlackGold = (props) => {
   const handleInputChange = (e) => {
     if (e.target.name === 'name') {
       setSenderName(e.target.value.trim())
-    } else {
+    } else if (e.target.name === 'name') {
       setMessage(e.target.value.trim())
+    }
+    else {
+      if (e.target.value === 'true') {
+        setAttend(true)
+      } else {
+        setAttend(false)
+      }
     }
   }
 
@@ -55,8 +63,9 @@ const BlackGold = (props) => {
       },
       body: JSON.stringify({
         name: senderName,
-        message: message,
-        eventName: eventName
+        message,
+        eventName,
+        attend
       }),
     })
     mutate(`${process.env.BACKEND_URL}/inbox?eventName=${eventName}`)
@@ -352,6 +361,15 @@ const BlackGold = (props) => {
                   <input type="textarea" name="message" onChange={handleInputChange} value={message}
                     className="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                   ></input>
+                </div>
+              </div>
+              <div className="flex flex-col md:items-center mb-6">
+                <div className="mb-2">
+                  <label className="block text-gray-500 font-bold text-md md:text-2xl">Are you going to attend?</label>
+                </div>
+                <div className="">
+                  <input type="radio" style={{ width: '20px', height: '20px' }} value="true" onChange={handleInputChange} checked={attend}></input> <span className="mx-4">Yes</span>
+                  <input type="radio" style={{ width: '20px', height: '20px' }} value="false" onChange={handleInputChange} checked={!attend}></input> <span className="mx-4" >No</span>
                 </div>
               </div>
               <div className="text-center">
