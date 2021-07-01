@@ -39,7 +39,7 @@ const BlackGold = (props) => {
   const handleInputChange = (e) => {
     if (e.target.name === 'name') {
       setSenderName(e.target.value.trim())
-    } else if (e.target.name === 'name') {
+    } else if (e.target.name === 'message') {
       setMessage(e.target.value.trim())
     }
     else {
@@ -380,19 +380,19 @@ const BlackGold = (props) => {
                   onClick={sendWishes} >
                   Send Wishes</button>
               </div>
-              <div className="w-full mt-4">
+            </div>
+          </div>
+          <div className="w-3/4 mx-auto my-4 border-2 overflow-y-scroll bg-white bg-opacity-40" style={{height:'300px',borderColor:'#ffdc73'}}>
                 {
                   inboxes.map((inbox, index) => {
                     return (<div key={inbox.name} className="p-2 mb-2">
                       <span>{inbox.message}</span>
                       <br></br>
-                      <span className="font-bold">{inbox.name}</span>
+                      <span className="font-bold text-sm">{inbox.name}</span>
                     </div>)
                   })
                 }
               </div>
-            </div>
-          </div>
           <div>
             <h1 className="font-bold text-xl md:text-4xl text-white mb-4 text-center">Gallery</h1>
             <PhotoAlbum></PhotoAlbum>
