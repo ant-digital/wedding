@@ -38,9 +38,9 @@ const BlackGold = (props) => {
 
   const handleInputChange = (e) => {
     if (e.target.name === 'name') {
-      setSenderName(e.target.value.trim())
+      setSenderName(e.target.value)
     } else if (e.target.name === 'message') {
-      setMessage(e.target.value.trim())
+      setMessage(e.target.value)
     }
     else {
       if (e.target.value === 'true') {
@@ -62,8 +62,8 @@ const BlackGold = (props) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        name: senderName,
-        message,
+        name: senderName.trim(),
+        message: message.trim(),
         eventName,
         attend
       }),
