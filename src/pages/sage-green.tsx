@@ -166,7 +166,15 @@ const SageGreen = (props) => {
                   visible: { opacity: 1, transition: { duration: 2, delay: 0.2, type: "tween" } },
                   hidden: { opacity: 0 }
                 }}
-                className="flex flex-col md:flex-row justify-center gap-10">
+                className="flex flex-col md:flex-row justify-center gap-10 relative">
+                <StaticImage src="../images/sageGreen/ornament1-kiri.png"
+                  alt="bunga" width={120}
+                  style={{ position: 'absolute', left: '-30px', top: '200px' }}
+                ></StaticImage>
+                <StaticImage src="../images/sageGreen/ornament1-kanan.png"
+                  alt="bunga" width={120} 
+                  style={{ position: 'absolute', right: '-30px', bottom: 0 }}
+                ></StaticImage>
                 <div
                   className="flex flex-col">
                   <StaticImage src="../images/sageGreen/bride.webp" objectFit="contain"
@@ -197,7 +205,15 @@ const SageGreen = (props) => {
           </div>
           <MotionBox
             variants={{ visible: { x: 0 }, hidden: { x: '100vw' } }}
-            className="flex flex-col mt-8 bg-white bg-opacity-40 p-8">
+            className="flex flex-col mt-8 bg-white bg-opacity-40 p-8 relative">
+            <StaticImage src="../images/sageGreen/ornament2-kiri.png"
+              alt="bunga" width={120} height={200}
+              style={{ position: 'absolute', left: 0, top: 0 }}
+            ></StaticImage>
+            <StaticImage src="../images/sageGreen/ornament2-kanan.png"
+              alt="bunga" width={150} height={200}
+              style={{ position: 'absolute', right: 0, bottom: 0 }}
+            ></StaticImage>
             <div className="text-center mb-4">
               <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Save the Date</h1>
             </div>

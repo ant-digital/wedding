@@ -484,7 +484,7 @@ const SerenityBlue = (props) => {
           </div>
           <div>
             <h1 className="font-bold text-xl md:text-4xl text-blue mb-4 text-center">Gallery</h1>
-            <PhotoAlbum color='green'></PhotoAlbum>
+            <PhotoAlbum color='blue'></PhotoAlbum>
           </div>
 
           <Footer></Footer>
