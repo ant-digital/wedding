@@ -48,11 +48,19 @@ const SerenityBlue = (props) => {
   }, [controls]);
 
 
+
   const handleInputChange = (e) => {
     if (e.target.name === 'name') {
-      setSenderName(e.target.value.trim())
-    } else {
-      setMessage(e.target.value.trim())
+      setSenderName(e.target.value)
+    } else if (e.target.name === 'message') {
+      setMessage(e.target.value)
+    }
+    else {
+      if (e.target.value === 'true') {
+        setAttend(true)
+      } else {
+        setAttend(false)
+      }
     }
   }
 
@@ -67,9 +75,10 @@ const SerenityBlue = (props) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        name: senderName,
-        message: message,
-        eventName: eventName
+        name: senderName.trim(),
+        message: message.trim(),
+        eventName,
+        attend
       }),
     })
     mutate(`${process.env.BACKEND_URL}/inbox?eventName=${eventName}`)

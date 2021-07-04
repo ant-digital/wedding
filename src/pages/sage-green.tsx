@@ -65,7 +65,8 @@ const SageGreen = (props) => {
       body: JSON.stringify({
         name: senderName.trim(),
         message: message.trim(),
-        eventName: eventName
+        eventName,
+        attend
       }),
     })
     mutate(`${process.env.BACKEND_URL}/inbox?eventName=${eventName}`)
