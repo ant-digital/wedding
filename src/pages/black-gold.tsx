@@ -19,7 +19,7 @@ import MotionBox from "$components/MotionBox";
 const BlackGold = (props) => {
 
   const [showWelcomePopUp, setShowWelcomePopUp] = useState(true)
-  const [customerName, setCustomerName] = useState("")
+  const [customerName, setCustomerName] = useState("Guest")
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
   const [message, setMessage] = useState("")
@@ -28,11 +28,13 @@ const BlackGold = (props) => {
 
   const closeWelcomePopUp = () => {
     setShowWelcomePopUp(!showWelcomePopUp)
-    setCustomerName(props.location.search ? props.location.search.split('=')[1] : '')
+    // setCustomerName(props.location.search ? props.location.search.split('=')[1] : 'Guest')
   }
 
   useEffect(() => {
     setEventName(props.location.pathname.replace(/[/]/ig, ''))
+    console.log('p',props.location.search)
+    setCustomerName(props.location.search ? props.location.search.split('=')[1] : 'Guest')
   }, []);
 
 
@@ -89,7 +91,7 @@ const BlackGold = (props) => {
           className="grid grid-cols-1 md:grid-cols-2 justify-center h-screen bg-bodyBlack p-4 md:p-10 font-sansNarrow text-gold"
         >
           <div className="place-self-center">
-            {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
+            {/* <h1 className="text-3xl">Dear, {customerName}</h1> */}
             <StaticImage
               // layout="fullWidth"
               src="../images/blackGold/coupleImg.jpg"
@@ -117,7 +119,7 @@ const BlackGold = (props) => {
               <StaticImage src="../images/blackGold/ornament-small.png"
                 alt="bunga"
               ></StaticImage>
-              <h1 className="text-xl md:text-3xl">To : Mr Hock and Family</h1>
+              <h1 className="text-xl md:text-3xl">To : {decodeURI(customerName)}</h1>
             </div>
             <div className="mt-6 text-center">
               <button onClick={closeWelcomePopUp} className="rounded-xl font-bold p-2  w-3/4 md:w-1/4 text-black" style={{ backgroundColor: '#fdbd00eb' }}>Open Invitation</button>

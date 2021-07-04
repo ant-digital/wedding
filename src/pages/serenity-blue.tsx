@@ -16,9 +16,6 @@ import useInboxes from "src/useInboxes";
 import { mutate } from "swr";
 import Footer from "$components/Footer";
 import MusicPlayer from "$components/MusicPlayer";
-import { Parallax } from 'react-parallax';
-import coupleImg from "../images/couple3.jpg"
-import bg from '../images/sageGreen/body-bg.jpg'
 
 
 const SerenityBlue = (props) => {
@@ -40,11 +37,11 @@ const SerenityBlue = (props) => {
 
   const closeWelcomePopUp = () => {
     setShowWelcomePopUp(!showWelcomePopUp)
-    setCustomerName(props.location.search ? props.location.search.split('=')[1] : '')
   }
 
   useEffect(() => {
     setEventName(props.location.pathname.replace(/[/]/ig, ''))
+    setCustomerName(props.location.search ? props.location.search.split('=')[1] : 'Guest')
   }, [controls]);
 
 
@@ -87,9 +84,7 @@ const SerenityBlue = (props) => {
   }
 
   return (
-    // <SimpleReactLightbox>
-    <>
-
+    <SimpleReactLightbox>
       {showWelcomePopUp ? (
         /**
          * Welcome Popup ( 1st Screen )
@@ -126,10 +121,7 @@ const SerenityBlue = (props) => {
               >
 
                 <div className="text-center">
-                  <h1 className="text-3xl md:text-6xl">Dear,
-                    {/* {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''} */}
-                    Guest
-                  </h1>
+                  <h1 className="text-3xl md:text-6xl">Dear,{decodeURI(customerName)}</h1>
                   <h2 className="text-2xl md:text-5xl mb-4 mt-4" >You are invited to the wedding of</h2>
                 </div>
                 <div className="text-center">
@@ -471,8 +463,8 @@ const SerenityBlue = (props) => {
               </div>
               <div className="text-center">
                 <button
-                  className="shadow hover:bg-white text-white focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
-                  style={{backgroundColor:'#0045ac'}}
+                  className="shadow text-white font-bold py-2 px-4 rounded"
+                  style={{ backgroundColor: '#0045ac' }}
                   type="button"
                   onClick={sendWishes} >
                   Send Wishes</button>
@@ -499,8 +491,7 @@ const SerenityBlue = (props) => {
         </div>)
       }
       {/* </div> */}
-      {/* </SimpleReactLightbox> */}
-    </>
+    </SimpleReactLightbox>
   )
 }
 

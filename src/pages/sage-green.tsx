@@ -29,10 +29,10 @@ const SageGreen = (props) => {
 
   const closeWelcomePopUp = () => {
     setShowWelcomePopUp(!showWelcomePopUp)
-    setCustomerName(props.location.search ? props.location.search.split('=')[1] : '')
   }
 
   useEffect(() => {
+    setCustomerName(props.location.search ? props.location.search.split('=')[1] : 'Guest')
     setEventName(props.location.pathname.replace(/[/]/ig, ''))
   }, []);
 
@@ -135,7 +135,7 @@ const SageGreen = (props) => {
                   <StaticImage src="../images/sageGreen/ornament.png"
                     alt="bunga"
                   ></StaticImage>
-                  <h1 className="text-xl md:text-3xl">To : Mr Hock and Family</h1>
+                  <h1 className="text-xl md:text-3xl">To : {decodeURI(customerName)}</h1>
                 </div>
                 <div className="mt-6 text-center">
                   <button onClick={closeWelcomePopUp} className="rounded-xl font-bold p-2  w-3/4 md:w-1/2 text-white bg-green-700">Open Invitation</button>
@@ -371,7 +371,7 @@ const SageGreen = (props) => {
               </div>
               <div className="text-center">
                 <button
-                  className="bg-green-700 shadow hover:bg-white text-white focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
+                  className="bg-green-700 text-white font-bold py-2 px-4 rounded"
                   type="button"
                   onClick={sendWishes} >
                   Send Wishes</button>

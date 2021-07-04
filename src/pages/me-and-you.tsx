@@ -37,7 +37,7 @@ const MeAndYou = (props) => {
 
   const enter = () => {
     setShow(!show)
-    setCustomerName(props.location.search ? props.location.search.split('=')[1] : '')
+    setCustomerName(props.location.search ? props.location.search.split('=')[1] : 'Guest')
   }
 
   useEffect(() => {
@@ -86,7 +86,7 @@ const MeAndYou = (props) => {
             >
               <div className="flex flex-col justify-center text-center w-screen fixed h-screen z-0 bg-foto bg-center text-white bg-opacity-20">
                 <div className="mt-8">
-                  <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1>
+                  <h1 className="text-3xl">Dear, {customerName}</h1>
                   <h2 className="text-2xl" >You are invited to the wedding of</h2>
                 </div>
                 <div className="mt-6 mb-4">
