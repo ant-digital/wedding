@@ -2,7 +2,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import React, { useEffect, useState } from "react"
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-import song from '../from-this-moment.mp3'
+import song from '../beautiful-in-white.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
 import SimpleReactLightbox from 'simple-react-lightbox'
