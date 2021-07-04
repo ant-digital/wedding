@@ -7,7 +7,8 @@ const MusicPlayer = ({ song }) => {
     setMuted(!muted)
   }
   return (
-    <div className="sticky top-4 z-50 cursor-pointer"
+    <div className="fixed top-4 z-50 cursor-pointer"
+    // style={{position: '-webkit-sticky'}}
     // style={{ position: 'sticky', zIndex: 50, top: '50%' }}
     >
       <span className="material-icons " onClick={mute}>

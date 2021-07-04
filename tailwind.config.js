@@ -13,7 +13,9 @@ module.exports = {
       fontFamily: {
         romeo: "eb garamond",
         greatVibe:'Great Vibes',
-        sansNarrow:"PT Sans Narrow"
+        sansNarrow:"PT Sans Narrow",
+        openSans:"Open Sans Condensed",
+        archivo:"Archivo Narrow"
       },
       backgroundImage: theme => ({
         foto: "url('images/photo-1-dark.jpg')",

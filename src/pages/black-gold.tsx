@@ -2,7 +2,7 @@
 import { StaticImage } from "gatsby-plugin-image"
 import React, { useEffect, useState } from "react"
 import 'react-h5-audio-player/lib/styles.css';
-import song from '../song.mp3'
+import song from '../marry-your-daughter.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
 import SimpleReactLightbox from 'simple-react-lightbox'
@@ -18,7 +18,7 @@ import MotionBox from "$components/MotionBox";
 
 const BlackGold = (props) => {
 
-  const [showWelcomePopUp, setShowWelcomePopUp] = useState(false)
+  const [showWelcomePopUp, setShowWelcomePopUp] = useState(true)
   const [customerName, setCustomerName] = useState("")
   const { inboxes, isLoading, isError } = useInboxes(props.location.pathname)
   const [senderName, setSenderName] = useState("")
@@ -129,8 +129,7 @@ const BlackGold = (props) => {
         * Main Screen
         */
         <div className="text-gold text-sm md:text-xl font-sansNarrow bg-bodyBlack overflow-hidden">
-
-          {/* <MusicPlayer song={song}></MusicPlayer> */}
+          <MusicPlayer song={song}></MusicPlayer>
           {/* <StaticImage src="../images/blackGold/body-bg.jpg"
                 alt="bunga" layout="fullWidth" className="h-full"
               ></StaticImage> */}
@@ -350,7 +349,7 @@ const BlackGold = (props) => {
                 </div>
                 <div className="md:w-2/3">
                   <input type="text" name="name" onChange={handleInputChange} value={senderName}
-                    className="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"></input>
+                    className="appearance-none border-2 border-gold rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gold"></input>
                 </div>
               </div>
               <div className="md:flex md:items-center mb-6">
@@ -359,7 +358,7 @@ const BlackGold = (props) => {
                 </div>
                 <div className="md:w-2/3">
                   <input type="textarea" name="message" onChange={handleInputChange} value={message}
-                    className="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    className="appearance-none border-2 border-gold rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gold0"
                   ></input>
                 </div>
               </div>
@@ -392,7 +391,7 @@ const BlackGold = (props) => {
                     </div>)
                   })
                 }
-              </div>
+            </div>
           <div>
             <h1 className="font-bold text-xl md:text-4xl text-white mb-4 text-center">Gallery</h1>
             <PhotoAlbum></PhotoAlbum>

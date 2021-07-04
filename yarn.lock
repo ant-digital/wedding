@@ -1093,6 +1093,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/archivo-narrow@^4.4.5":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/archivo-narrow/-/archivo-narrow-4.4.5.tgz#5037c6585355a11fcdb95615f0b3139d6578b45a"
+  integrity sha512-HBPQqzRpclcD5bRBwmTvkOrTJ5vJRH3flN5Hk1nsKDsCKCONeh+dzRKLnTajc6hEr2JKBHxkoK5ydXsEtVYz3A==
+
 "@fontsource/eb-garamond@^4.3.0":
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/@fontsource/eb-garamond/-/eb-garamond-4.3.0.tgz#3ecbbf422addb1cfcbe0b845078243abeffc4e7d"
@@ -1102,6 +1107,11 @@
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/@fontsource/great-vibes/-/great-vibes-4.4.5.tgz#9504b98966bc7c0e039ae84e1924f01adcef50c6"
   integrity sha512-dVM/3nyUshDty2j7t74+K3r1qUf04MdS0P/9FxRkZsAXAsuwRqahCF3Gq5qSaDcOngKe0c7Q99aiTxtZMz46QQ==
+
+"@fontsource/open-sans-condensed@^4.4.5":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/open-sans-condensed/-/open-sans-condensed-4.4.5.tgz#f0458a459e63162b7cf9b232c8b0144c73c6b56b"
+  integrity sha512-6x6OGA7PiY4nDeyX6Kq6PWMkWtO5zNLvTEuW1TGcTlnlfe8a3+F6Qi1DmBOPLuiuZuAReASHiBVfpH9wED71mQ==
 
 "@fontsource/pt-sans-narrow@^4.4.5":
   version "4.4.5"

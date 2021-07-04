@@ -2,7 +2,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import React, { useEffect, useState } from "react"
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-import song from '../song.mp3'
+import song from '../from-this-moment.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
 import SimpleReactLightbox from 'simple-react-lightbox'
@@ -14,12 +14,8 @@ import useInboxes from "src/useInboxes";
 import { mutate } from "swr";
 import Footer from "$components/Footer";
 import MusicPlayer from "$components/MusicPlayer";
-import { Parallax } from 'react-parallax';
-import coupleImg from "../images/couple3.jpg"
-import bg from '../images/sageGreen/body-bg.jpg'
 import MotionBox from "$components/MotionBox";
 import { motion } from 'framer-motion'
-
 
 const SageGreen = (props) => {
 
@@ -29,11 +25,7 @@ const SageGreen = (props) => {
   const [senderName, setSenderName] = useState("")
   const [message, setMessage] = useState("")
   const [eventName, setEventName] = useState("")
-
-  // const variants = {
-  //   visible: { opacity: 1 },
-  //   hidden: { opacity: 0 },
-  // }
+  const [attend, setAttend] = useState(false)
 
   const closeWelcomePopUp = () => {
     setShowWelcomePopUp(!showWelcomePopUp)
@@ -47,9 +39,16 @@ const SageGreen = (props) => {
 
   const handleInputChange = (e) => {
     if (e.target.name === 'name') {
-      setSenderName(e.target.value.trim())
-    } else {
-      setMessage(e.target.value.trim())
+      setSenderName(e.target.value)
+    } else if (e.target.name === 'message') {
+      setMessage(e.target.value)
+    }
+    else {
+      if (e.target.value === 'true') {
+        setAttend(true)
+      } else {
+        setAttend(false)
+      }
     }
   }
 
@@ -64,8 +63,8 @@ const SageGreen = (props) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        name: senderName,
-        message: message,
+        name: senderName.trim(),
+        message: message.trim(),
         eventName: eventName
       }),
     })
@@ -75,8 +74,7 @@ const SageGreen = (props) => {
   }
 
   return (
-    // <SimpleReactLightbox>
-    <>
+    <SimpleReactLightbox>
 
       {showWelcomePopUp ? (
         /**
@@ -149,8 +147,8 @@ const SageGreen = (props) => {
         /**
         * Main Screen
         */
-        <div className="text-sm md:text-xl font-sansNarrow overflow-hidden" style={{ backgroundColor: '#bce4c194' }}>
-          {/* <MusicPlayer song={song}></MusicPlayer> */}
+        <div className="text-sm md:text-xl font-sansNarrow overflow-hidden bg-bodyGreen bg-cover">
+          <MusicPlayer song={song}></MusicPlayer>
           <div className="grid grid-cols-1 text-center md:h-screen">
             <motion.div
               initial="hidden"
@@ -340,7 +338,7 @@ const SageGreen = (props) => {
             <div className="flex justify-center mb-4">
               <h2 className="font-bold text-sageGreen text-xl md:text-4xl">Wishes Box</h2>
             </div>
-            <div className="w-full md:max-w-xl m-auto" >
+            <div className="w-full max-w-sm m-auto" >
               <div className="md:flex md:items-center mb-6">
                 <div className="md:w-1/3">
                   <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
@@ -348,7 +346,7 @@ const SageGreen = (props) => {
                 </div>
                 <div className="md:w-2/3">
                   <input type="text" name="name" onChange={handleInputChange} value={senderName}
-                    className="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"></input>
+                    className="appearance-none border-2 border-sageGreen rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gold"></input>
                 </div>
               </div>
               <div className="md:flex md:items-center mb-6">
@@ -356,73 +354,49 @@ const SageGreen = (props) => {
                   <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Wishes</label>
                 </div>
                 <div className="md:w-2/3">
-                  <textarea name="message" onChange={handleInputChange} value={message}
-                    className="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                  ></textarea>
+                  <input type="textarea" name="message" onChange={handleInputChange} value={message}
+                    className="appearance-none border-2 border-sageGreen rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gold0"
+                  ></input>
+                </div>
+              </div>
+              <div className="flex flex-col md:items-center mb-6">
+                <div className="mb-2">
+                  <label className="block text-gray-500 font-bold text-md md:text-2xl">Are you going to attend?</label>
+                </div>
+                <div className="">
+                  <input type="radio" style={{ width: '20px', height: '20px' }} value="true" onChange={handleInputChange} checked={attend}></input> <span className="mx-4">Yes</span>
+                  <input type="radio" style={{ width: '20px', height: '20px' }} value="false" onChange={handleInputChange} checked={!attend}></input> <span className="mx-4" >No</span>
                 </div>
               </div>
               <div className="text-center">
                 <button
-                  className="shadow bg-green-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                  className="bg-green-700 shadow hover:bg-white text-white focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
                   type="button"
                   onClick={sendWishes} >
                   Send Wishes</button>
               </div>
-              <div className="w-full mt-4">
-                {
-                  inboxes.map((inbox, index) => {
-                    return (<div key={inbox.name} className="p-2 mb-2">
-                      <span>{inbox.message}</span>
-                      <br></br>
-                      <span className="font-bold">{inbox.name}</span>
-                    </div>)
-                  })
-                }
-              </div>
-
             </div>
-
           </div>
-
-
-
-          {/* <Slider dots="true"
-            infinite="true"
-            speed="500"
-            slidesToShow={1}
-            slidesToScroll={1}
-          >
-            <div>
-              <h3>story 1</h3>
-            </div>
-            <div>
-              <h3> story 2</h3>
-            </div>
-            <div>
-              <h3>story 3</h3>
-            </div>
-            <div>
-              <h3>story 4</h3>
-            </div>
-            <div>
-              <h3>story 5</h3>
-            </div>
-            <div>
-              <h3>6</h3>
-            </div>
-          </Slider> */}
-          {/* <PhotoAlbum></PhotoAlbum> */}
-          {/* <AudioPlayer
-            autoPlay
-            src={song}
-            onPlay={e => console.log("onPlay")}
-          /> */}
+          <div className="w-3/4 mx-auto my-4 border-2 overflow-y-scroll bg-white bg-opacity-40" style={{ height: '300px', borderColor: '#047857' }}>
+            {
+              inboxes.map((inbox, index) => {
+                return (<div key={inbox.name} className="p-2 mb-2">
+                  <span>{inbox.message}</span>
+                  <br></br>
+                  <span className="font-bold text-sm">{inbox.name}</span>
+                </div>)
+              })
+            }
+          </div>
+          <div>
+            <h1 className="font-bold text-xl md:text-4xl text-sageGreen mb-4 text-center">Gallery</h1>
+            <PhotoAlbum color='green'></PhotoAlbum>
+          </div>
           <Footer color="black"></Footer>
         </div>)
       }
       {/* </div> */}
-      {/* </SimpleReactLightbox> */}
-    </>
+    </SimpleReactLightbox>
   )
 }
 

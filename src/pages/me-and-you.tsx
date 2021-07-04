@@ -2,7 +2,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import React, { useEffect, useState } from "react"
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-import song from '../song.mp3'
+// import song from '../song.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
 import SimpleReactLightbox from 'simple-react-lightbox'
@@ -141,7 +141,7 @@ const MeAndYou = (props) => {
               layout="constrained"
             ></StaticImage>
           </div> */}
-          <MusicPlayer song={song}></MusicPlayer>
+          {/* <MusicPlayer song={song}></MusicPlayer> */}
           <div className="grid grid-cols-1 text-center md:h-screen overflow-visible" >
             <motion.div
               initial={{ opacity: 0 }}
