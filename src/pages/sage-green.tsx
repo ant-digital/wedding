@@ -172,7 +172,7 @@ const SageGreen = (props) => {
                   style={{ position: 'absolute', left: '-30px', top: '200px' }}
                 ></StaticImage>
                 <StaticImage src="../images/sageGreen/ornament1-kanan.png"
-                  alt="bunga" width={120} 
+                  alt="bunga" width={120}
                   style={{ position: 'absolute', right: '-30px', bottom: 0 }}
                 ></StaticImage>
                 <div
@@ -398,9 +398,9 @@ const SageGreen = (props) => {
             {
               inboxes.map((inbox, index) => {
                 return (<div key={inbox.name} className="p-2 mb-2">
-                  <span>{inbox.message}</span>
+                  <span className="font-black">{inbox.message}</span>
                   <br></br>
-                  <span className="font-bold text-sm">{inbox.name}</span>
+                  <span className="text-sm">{inbox.name}</span>
                 </div>)
               })
             }

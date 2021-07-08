@@ -387,7 +387,7 @@ const BlackGold = (props) => {
                 {
                   inboxes.map((inbox, index) => {
                     return (<div key={inbox.name} className="p-2 mb-2">
-                      <span>{inbox.message}</span>
+                      <span className="font-black">{inbox.message}</span>
                       <br></br>
                       <span className="font-bold text-sm">{inbox.name}</span>
                     </div>)
@@ -396,7 +396,7 @@ const BlackGold = (props) => {
             </div>
           <div>
             <h1 className="font-bold text-xl md:text-4xl text-white mb-4 text-center">Gallery</h1>
-            <PhotoAlbum></PhotoAlbum>
+            <PhotoAlbum color="black"></PhotoAlbum>
 
           </div>
           <Footer color="white"></Footer>

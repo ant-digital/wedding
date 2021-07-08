@@ -475,9 +475,9 @@ const SerenityBlue = (props) => {
             {
               inboxes.map((inbox, index) => {
                 return (<div key={inbox.name} className="p-2 mb-2">
-                  <span>{inbox.message}</span>
+                  <span className="font-black">{inbox.message}</span>
                   <br></br>
-                  <span className="font-bold text-sm">{inbox.name}</span>
+                  <span className="text-sm">{inbox.name}</span>
                 </div>)
               })
             }

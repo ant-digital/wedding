@@ -10,12 +10,12 @@ const IndexPage = () => {
     <main className={"prose p-8"}>
       wedding
       <ul>
-        <li>
+        {/* <li>
           <Link to={"/romeo-and-juliet"}>Romeo & Juliet</Link>
         </li>
         <li>
         <Link to={"/me-and-you"}>Me & You</Link>
-        </li>
+        </li> */}
         <li>
         <Link to={"/sage-green"}>Sage Green</Link>
         </li>
@@ -25,12 +25,12 @@ const IndexPage = () => {
         <li>
         <Link to={"/black-gold"}>Black Gold</Link>
         </li>
-        <li>
+        {/* <li>
         <Link to={"/link-generator"}>Link Generator</Link>
         </li>
         <li>
         <Link to={"/test"}>Test</Link>
-        </li>
+        </li> */}
       </ul>
     </main>
   )
