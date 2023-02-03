@@ -5,7 +5,6 @@ import 'react-h5-audio-player/lib/styles.css';
 import song from '../beautiful-in-white.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
-import SimpleReactLightbox from 'simple-react-lightbox'
 import QRCode from "react-qr-code";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -75,39 +74,32 @@ const SageGreen = (props) => {
   }
 
   return (
-    <SimpleReactLightbox>
+    <>
 
       {showWelcomePopUp ? (
         /**
          * Welcome Popup ( 1st Screen )
         */
 
-        <div style={{ display: "grid" }} className="h-screen">
-          {/* You can use a GatsbyImage component if the image is dynamic */}
+        <div className="max-h-screen">
           <StaticImage
             style={{
-              gridArea: "1/1",
-              // You can set a maximum height for the image, if you wish.
-              // maxHeight: 600,
+              width: '100vw',
+              height: 'auto', position: 'fixed', top: 0,
+              zIndex: 1
             }}
-            // layout="constrained"
-            // You can optionally force an aspect ratio for the generated image
-            // aspectRatio={3 / 1}
-            // This is a presentational image, so the alt should be an empty string
-            alt=""
-            // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
-            src="../images/sageGreen/welcome-bg.jpg"
+            src="../images/hanging-flower.png"
             formats={["auto", "webp", "avif"]}
-            objectFit="cover"
+            objectFit='cover'
+            alt=''
           />
           <div
             style={{
-              // By using the same grid area for both, they are stacked on top of each other
-              gridArea: "1/1",
-              position: "relative",
-              // This centers the other elements inside the hero component
               placeItems: "center",
-              display: "grid",
+              display: "flex",
+              position: 'fixed',
+              top: '16%',
+              zIndex: 1
             }}
           >
             <div className="flex w-screen justify-center font-sansNarrow">
@@ -118,32 +110,49 @@ const SageGreen = (props) => {
                 }}>
                 <div className="text-center">
                   {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
-                  <h2 className="text-2xl md:text-5xl mb-4 font-bold" >You are invited to the wedding of</h2>
+                  <h2 className="text-base md:text-5xl mb-4 font-bold" >Dear Guest, You are invited to the wedding of</h2>
                 </div>
-                <div className="text-left pt-4 pl-4">
-                  <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Tommy</h1>
+                <div className="text-left pt-4 pl-6">
+                  <h1 className="font-greatVibe text-xl md:text-8xl text-sageGreen">Christianto</h1>
                 </div>
                 <div className="text-center">
                   <StaticImage src="../images/sageGreen/frame-foto-pengantin.png"
-                    alt="bunga" height={320}
+                    alt="bunga"
+                    style={
+                      {
+                        width: "50vw",
+                        maxWidth: '300px',
+                        maxHeight: '300px'
+                      }
+                    }
                   ></StaticImage>
                 </div>
-                <div className="text-right pr-4">
-                  <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Cindy</h1>
+                <div className="text-right pr-6">
+                  <h1 className="font-greatVibe text-xl md:text-8xl text-sageGreen">Kezia</h1>
                 </div>
                 <div className="text-center">
                   <StaticImage src="../images/sageGreen/ornament.png"
                     alt="bunga"
                   ></StaticImage>
-                  <h1 className="text-xl md:text-3xl">To : {decodeURI(customerName)}</h1>
                 </div>
-                <div className="mt-6 text-center">
+                <div className="mt-4 text-center">
                   <button onClick={closeWelcomePopUp} className="rounded-xl font-bold p-2  w-3/4 md:w-1/2 text-white bg-green-700">Open Invitation</button>
                 </div>
               </MotionBox>
             </div>
           </div>
-        </div>
+          <StaticImage
+            style={{
+              width: '100vw',
+              height: 'auto', position: 'fixed', bottom: 0,
+            }}
+            alt=""
+            src="../images/forest.png"
+            formats={["auto", "webp", "avif"]}
+            objectFit='cover'
+          />
+
+        </div >
       ) : (
         /**
         * Main Screen
@@ -412,8 +421,7 @@ const SageGreen = (props) => {
           <Footer color="black"></Footer>
         </div>)
       }
-      {/* </div> */}
-    </SimpleReactLightbox>
+    </>
   )
 }
 

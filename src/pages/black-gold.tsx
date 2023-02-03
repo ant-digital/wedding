@@ -5,7 +5,7 @@ import 'react-h5-audio-player/lib/styles.css';
 import song from '../marry-your-daughter.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
-import SimpleReactLightbox from 'simple-react-lightbox'
+
 import { motion } from "framer-motion"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -33,7 +33,7 @@ const BlackGold = (props) => {
 
   useEffect(() => {
     setEventName(props.location.pathname.replace(/[/]/ig, ''))
-    console.log('p',props.location.search)
+    console.log('p', props.location.search)
     setCustomerName(props.location.search ? props.location.search.split('=')[1] : 'Guest')
   }, []);
 
@@ -76,7 +76,7 @@ const BlackGold = (props) => {
   }
 
   return (
-    <SimpleReactLightbox>
+    <>
       {showWelcomePopUp ? (
         /**
          * Welcome Popup ( 1st Screen )
@@ -383,17 +383,17 @@ const BlackGold = (props) => {
               </div>
             </div>
           </div>
-          <div className="w-3/4 mx-auto my-4 border-2 overflow-y-scroll bg-white bg-opacity-40" style={{height:'300px',borderColor:'#ffdc73'}}>
-                {
-                  inboxes.map((inbox, index) => {
-                    return (<div key={inbox.name} className="p-2 mb-2">
-                      <span className="font-black">{inbox.message}</span>
-                      <br></br>
-                      <span className="font-bold text-sm">{inbox.name}</span>
-                    </div>)
-                  })
-                }
-            </div>
+          <div className="w-3/4 mx-auto my-4 border-2 overflow-y-scroll bg-white bg-opacity-40" style={{ height: '300px', borderColor: '#ffdc73' }}>
+            {
+              inboxes.map((inbox, index) => {
+                return (<div key={inbox.name} className="p-2 mb-2">
+                  <span className="font-black">{inbox.message}</span>
+                  <br></br>
+                  <span className="font-bold text-sm">{inbox.name}</span>
+                </div>)
+              })
+            }
+          </div>
           <div>
             <h1 className="font-bold text-xl md:text-4xl text-white mb-4 text-center">Gallery</h1>
             <PhotoAlbum color="black"></PhotoAlbum>
@@ -402,7 +402,7 @@ const BlackGold = (props) => {
           <Footer color="white"></Footer>
         </div>)
       }
-    </SimpleReactLightbox>
+    </>
   )
 }
 

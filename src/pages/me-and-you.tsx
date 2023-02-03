@@ -5,7 +5,7 @@ import 'react-h5-audio-player/lib/styles.css';
 // import song from '../song.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
-import SimpleReactLightbox from 'simple-react-lightbox'
+
 import { motion, useAnimation } from "framer-motion"
 import { InView } from 'react-intersection-observer';
 import QRCode from "react-qr-code";
@@ -75,10 +75,10 @@ const MeAndYou = (props) => {
   }
 
   return (
-    <SimpleReactLightbox>
-      <div className="text-xl font-romeo" style={{ backgroundColor: '#e8e8e8'}} >
+    <>
+      <div className="text-xl font-romeo" style={{ backgroundColor: '#e8e8e8' }} >
         {show ? (
-          <div className="w-screen h-screen" style={{ backgroundColor: '#e8e8e8'}}>
+          <div className="w-screen h-screen" style={{ backgroundColor: '#e8e8e8' }}>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -188,7 +188,7 @@ const MeAndYou = (props) => {
                 variants={variants}
                 transition={{ duration: 1 }}
               >
-                
+
                 <div className="flex justify-center mb-4">
                   <h2 className="font-bold">Protokol Covid</h2>
                 </div>
@@ -245,38 +245,38 @@ const MeAndYou = (props) => {
             Dengan segala kerendahan hati dan dengan ungkapan syukur atas karunia Tuhan, kami mengundang Bapak/ Ibu/ Saudara/ i untuk menghadiri Resepsi Pernikahan putra-putri kami yang akan diselenggarakan pada :
             {/* </p> */}
           </div>
-          <Parallax blur={1} bgImage={coupleImg} bgImageAlt="the cat" strength={300} bgImageStyle={{objectFit:'cover'}}>
+          <Parallax blur={1} bgImage={coupleImg} bgImageAlt="the cat" strength={300} bgImageStyle={{ objectFit: 'cover' }}>
 
-          <div className="flex justify-center mt-4">
-            <div className="text-center w-screen text-white p-2 md:p-10" >
-              {/* <StaticImage src="../images/floral+7+top-right.png"
+            <div className="flex justify-center mt-4">
+              <div className="text-center w-screen text-white p-2 md:p-10" >
+                {/* <StaticImage src="../images/floral+7+top-right.png"
                 width={150}
                 height={150}
                 className="float-right"
                 alt="top"
               ></StaticImage> */}
-              <p className="text-center">Sabtu, 6 Oktober 2021 </p>
-              <p className="text-center text-md">1.00 Wita - Selesai</p>
-              <p className="text-center text-md font-gab">The Apurva Kempinski Bali</p>
-              <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
-                <div className="m-auto flex bg-gray-200 border-2 rounded-xl text-white text-sm w-max" style={{ backgroundColor: '#000000', padding: '10px 10px 5px 10px' }}>
-                  <div className="mr-2">
-                    <span style={{
-                      fontFamily: 'Material Icons', fontSize: '24px'
-                    }}>place</span>
-                  </div>
-                  <div>
-                    <span>Petunjuk Lokasi</span>
+                <p className="text-center">Sabtu, 6 Oktober 2021 </p>
+                <p className="text-center text-md">1.00 Wita - Selesai</p>
+                <p className="text-center text-md font-gab">The Apurva Kempinski Bali</p>
+                <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
+                  <div className="m-auto flex bg-gray-200 border-2 rounded-xl text-white text-sm w-max" style={{ backgroundColor: '#000000', padding: '10px 10px 5px 10px' }}>
+                    <div className="mr-2">
+                      <span style={{
+                        fontFamily: 'Material Icons', fontSize: '24px'
+                      }}>place</span>
+                    </div>
+                    <div>
+                      <span>Petunjuk Lokasi</span>
 
+                    </div>
                   </div>
-                </div>
-              </a>
-              {/* <StaticImage className="float-left" src="../images/floral+7+bot-left.png"
+                </a>
+                {/* <StaticImage className="float-left" src="../images/floral+7+bot-left.png"
                 width={150}
                 height={150}
                 alt="bottom"></StaticImage> */}
+              </div>
             </div>
-          </div>
           </Parallax>
           <div className="bg-gray-200 p-4 mb-4 border-t-2 border-white">
             <InView as="div" onChange={(inView, entry) => {
@@ -390,7 +390,7 @@ const MeAndYou = (props) => {
           <Footer></Footer>
         </>)
         }</div>
-    </SimpleReactLightbox>
+    </>
   )
 }
 

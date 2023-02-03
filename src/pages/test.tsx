@@ -5,7 +5,7 @@ import 'react-h5-audio-player/lib/styles.css';
 // import song from '../song.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
-import SimpleReactLightbox from 'simple-react-lightbox'
+
 import { motion, useAnimation } from "framer-motion"
 import { InView } from 'react-intersection-observer';
 import "slick-carousel/slick/slick.css";
@@ -76,7 +76,7 @@ const BlackGoldV2 = (props) => {
     /**
     * Main Screen
     */
-    <div className="text-gold text-sm md:text-xl font-sansNarrow bg-contain flex flex-col" style={{backgroundImage:`url(${back})`}}>
+    <div className="text-gold text-sm md:text-xl font-sansNarrow bg-contain flex flex-col" style={{ backgroundImage: `url(${back})` }}>
       <div className="grid grid-cols-1 md:grid-cols-2 text-center">
         <div className="flex flex-col justify-center space-y-10 mt-8">
           <div className="flex flex-col">

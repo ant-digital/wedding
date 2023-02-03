@@ -5,7 +5,7 @@ import 'react-h5-audio-player/lib/styles.css';
 // import song from '../song.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
-import SimpleReactLightbox from 'simple-react-lightbox'
+
 import { motion, useAnimation } from "framer-motion"
 import { InView } from 'react-intersection-observer';
 import QRCode from "react-qr-code";
@@ -84,7 +84,7 @@ const SerenityBlue = (props) => {
   }
 
   return (
-    <SimpleReactLightbox>
+    <>
       {showWelcomePopUp ? (
         /**
          * Welcome Popup ( 1st Screen )
@@ -491,7 +491,7 @@ const SerenityBlue = (props) => {
         </div>)
       }
       {/* </div> */}
-    </SimpleReactLightbox>
+    </>
   )
 }
 

@@ -1,6 +1,5 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
-import { SRLWrapper } from "simple-react-lightbox";
 
 const photos = [
   {
@@ -75,52 +74,8 @@ const options = {
 };
 const PhotoAlbum = () => {
   return (
-    <div className="w-screen" style={{backgroundColor:'#d6c6bc'}}>
+    <div className="w-screen" style={{ backgroundColor: '#d6c6bc' }}>
       <h1 className="text-2xl text-white mb-4 text-center">Gallery</h1>
-      <SRLWrapper options={options}>
-        <div id="gallery-with-links" className="grid grid-cols-3 gap-4">
-          <div >
-            {/* <a href="A001.jpg"> */}
-              <StaticImage
-                src="../../static/A001.jpg"
-                alt="Beach and waves"
-              ></StaticImage>
-            {/* </a> */}
-          </div>
-          <div >
-            {/* <a href="A002.jpg"> */}
-              <StaticImage
-                src="../../static/A002.jpg"
-                alt="Waves"
-              ></StaticImage>
-            {/* </a> */}
-          </div>
-          <div >
-            {/* <a href="A003.jpg"> */}
-              <StaticImage
-                src="../../static/A003.jpg"
-                alt="Under the water"
-              ></StaticImage>
-            {/* </a> */}
-          </div>
-          <div >
-            {/* <a href="A004.jpg"> */}
-              <StaticImage
-                src="../../static/A004.jpg"
-                alt="Canyon night"
-              ></StaticImage>
-            {/* </a> */}
-          </div>
-          <div >
-            {/* <a href="A005.jpg"> */}
-              <StaticImage
-                src="../../static/A005.jpg"
-                alt="Valley"
-              ></StaticImage>
-            {/* </a> */}
-          </div>
-        </div>
-      </SRLWrapper>
     </div>
   )
 }

@@ -5,7 +5,7 @@ import 'react-h5-audio-player/lib/styles.css';
 // import song from '../song.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
-import SimpleReactLightbox from 'simple-react-lightbox'
+
 import { motion, useAnimation } from "framer-motion"
 import { InView } from 'react-intersection-observer';
 import QRCode from "react-qr-code";
@@ -72,7 +72,7 @@ const NinoAndCynthia = (props) => {
   }
 
   return (
-    <SimpleReactLightbox>
+    <>
       <div className="text-xl font-romeo" style={{ backgroundColor: '#e8e8e8' }}>
         {show ? (
           <motion.div
@@ -186,15 +186,15 @@ const NinoAndCynthia = (props) => {
           </motion.div>
           <div className="text-center p-4 flex flex-col mt-4 bg-white" >
             <div>
-            <p className="text-2xl" style={{ fontFamily: 'Edwardian Script ITC' }}>
-              "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
-            <br></br>Matius 19:6 TB</p>
+              <p className="text-2xl" style={{ fontFamily: 'Edwardian Script ITC' }}>
+                "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
+                <br></br>Matius 19:6 TB</p>
             </div>
             <div>
               <h1 className="text-4xl font-bold">HOLY MATRIMONY</h1>
             </div>
-            
-            </div>
+
+          </div>
           <div className="p-4 border-t-2 border-white">
             <InView as="div" onChange={(inView, entry) => {
               if (inView) {
@@ -401,7 +401,7 @@ const NinoAndCynthia = (props) => {
           <Footer></Footer>
         </>)
         }</div>
-    </SimpleReactLightbox>
+    </>
   )
 }
 
