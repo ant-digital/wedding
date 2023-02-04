@@ -45,54 +45,41 @@ const SageGreen = (props) => {
       setMessage(e.target.value)
     }
     else {
-      const queryParams = new URLSearchParams(props.location.search)
-      const id = queryParams.get("id")
       if (e.target.value === 'true') {
         setAttend(true)
-        saveAttendance(id, true)
       } else {
         setAttend(false)
-        saveAttendance(id, false)
       }
     }
   }
 
-  const saveAttendance = async (id: string, value: boolean) => {
+  const saveAttendance = async () => {
+    const queryParams = new URLSearchParams(props.location.search)
+    const id = queryParams.get("id")
     const raw = JSON.stringify({
       id,
-      value
+      value: attend,
+      content: message
     });
 
     const requestOptions: any = {
       method: 'POST',
       body: raw,
-      redirect: 'follow'
     };
 
-    await fetch(`https://us-central1-bidding-mobil.cloudfunctions.net/function-1`, requestOptions)
+    return fetch(`https://us-central1-bidding-mobil.cloudfunctions.net/function-1`, requestOptions)
       .then(response => response.text())
       .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+      .catch(error => console.log('saveAttendance error', error));
   }
 
   const sendWishes = async () => {
-    mutate(`${process.env.BACKEND_URL}/inbox?eventName=${eventName}`, [...inboxes, {
+    mutate(`https://us-central1-bidding-mobil.cloudfunctions.net/function-1/wishes`, [...inboxes, {
       name: senderName,
       message: message
     }], false)
-    await fetch(`${process.env.BACKEND_URL}/inbox`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: senderName.trim(),
-        message: message.trim(),
-        eventName,
-        attend
-      }),
-    })
-    mutate(`${process.env.BACKEND_URL}/inbox?eventName=${eventName}`)
+    await saveAttendance()
+    mutate(`https://us-central1-bidding-mobil.cloudfunctions.net/function-1/wishes`)
     setSenderName("")
     setMessage("")
   }
@@ -229,7 +216,7 @@ const SageGreen = (props) => {
                     className="bg-green-700 text-white font-bold py-2 px-4 rounded"
                     type="button"
                     onClick={sendWishes} >
-                    Send Wishes</button>
+                    Save</button>
                 </div>
               </div>
             </div>
@@ -476,7 +463,7 @@ const SageGreen = (props) => {
               </div>
             </div>
           </div> */}
-          {/* <div className="w-3/4 mx-auto my-4 border-2 overflow-y-scroll bg-white bg-opacity-40" style={{ height: '300px', borderColor: '#047857' }}>
+          <div className="w-3/4 mx-auto my-4 border-2 overflow-y-scroll bg-white bg-opacity-40" style={{ height: '300px', borderColor: '#047857' }}>
             {
               inboxes.map((inbox, index) => {
                 return (<div key={inbox.name} className="p-2 mb-2">
@@ -486,7 +473,7 @@ const SageGreen = (props) => {
                 </div>)
               })
             }
-          </div> */}
+          </div>
           <div>
             <h1 className="font-bold text-xl md:text-4xl text-sageGreen mb-4 text-center">Gallery</h1>
             <PhotoAlbum color='green'></PhotoAlbum>
