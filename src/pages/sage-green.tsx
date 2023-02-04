@@ -39,7 +39,7 @@ const SageGreen = (props) => {
   useEffect(() => {
     const queryParams = new URLSearchParams(props.location.search)
     const guest = queryParams.get("u")
-    setCustomerName(guest ? guest.replace(/[_]/ig, ' ') || 'Guest')
+    setCustomerName(guest ? guest.replace(/[_]/ig, ' ') : 'Guest')
     setEventName(props.location.pathname.replace(/[/]/ig, ''))
   }, []);
 
