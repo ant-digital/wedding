@@ -33,7 +33,7 @@ const SageGreen = (props) => {
   useEffect(() => {
     const queryParams = new URLSearchParams(props.location.search)
     const guest = queryParams.get("u")
-    setCustomerName(guest || 'Guest')
+    setCustomerName(guest.replace(/[_]/ig, ' ') || 'Guest')
     setEventName(props.location.pathname.replace(/[/]/ig, ''))
   }, []);
 
@@ -134,7 +134,7 @@ const SageGreen = (props) => {
                 }}>
                 <div className="text-center">
                   {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
-                  <h2 className="text-base md:text-5xl mb-4 font-bold" >Dear , You are invited to the wedding of</h2>
+                  <h2 className="text-base md:text-5xl mb-4 font-bold" >Dear {customerName} , You are invited to the wedding of</h2>
                 </div>
                 <div className="text-left pt-4 pl-6">
                   <h1 className="font-greatVibe text-3xl md:text-8xl text-sageGreen">Christianto</h1>
