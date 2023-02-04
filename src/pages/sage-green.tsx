@@ -31,7 +31,9 @@ const SageGreen = (props) => {
   }
 
   useEffect(() => {
-    setCustomerName(props.location.search ? props.location.search.split('=')[1] : 'Guest')
+    const queryParams = new URLSearchParams(window.location.search)
+    const guest = queryParams.get("u")
+    setCustomerName(guest || 'Guest')
     setEventName(props.location.pathname.replace(/[/]/ig, ''))
   }, []);
 
@@ -43,12 +45,43 @@ const SageGreen = (props) => {
       setMessage(e.target.value)
     }
     else {
+      const queryParams = new URLSearchParams(window.location.search)
+      const id = queryParams.get("id")
       if (e.target.value === 'true') {
         setAttend(true)
+        saveAttendance(id, true)
       } else {
         setAttend(false)
+        saveAttendance(id, false)
       }
     }
+  }
+
+  const saveAttendance = async (id: string, value: boolean) => {
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer secret_GVmANtUxILEKpkSzpBJN3iP13lLMpZ2uR4eB7YCBTlG");
+    myHeaders.append("Notion-Version", "2022-06-28");
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      "properties": {
+        "Attend": {
+          "checkbox": value
+        }
+      }
+    });
+
+    var requestOptions: any = {
+      method: 'PATCH',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    await fetch(`https://api.notion.com/v1/pages/${id}`, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
   }
 
   const sendWishes = async () => {
@@ -113,7 +146,7 @@ const SageGreen = (props) => {
                   <h2 className="text-base md:text-5xl mb-4 font-bold" >Dear Guest, You are invited to the wedding of</h2>
                 </div>
                 <div className="text-left pt-4 pl-6">
-                  <h1 className="font-greatVibe text-2xl md:text-8xl text-sageGreen">Christianto</h1>
+                  <h1 className="font-greatVibe text-3xl md:text-8xl text-sageGreen">Christianto</h1>
                 </div>
                 <div className="text-center">
                   <StaticImage src="../images/sageGreen/frame-foto-pengantin.png"
@@ -128,7 +161,7 @@ const SageGreen = (props) => {
                   ></StaticImage>
                 </div>
                 <div className="text-right pr-6">
-                  <h1 className="font-greatVibe text-2xl md:text-8xl text-sageGreen">Kezia</h1>
+                  <h1 className="font-greatVibe text-3xl md:text-8xl text-sageGreen">Kezia</h1>
                 </div>
                 <div className="text-center">
                   <StaticImage src="../images/sageGreen/ornament.png"
@@ -158,9 +191,56 @@ const SageGreen = (props) => {
         * Main Screen
         */
         <div className="text-sm md:text-xl font-sansNarrow overflow-hidden bg-bodyGreen bg-cover">
-          <MusicPlayer song={song}></MusicPlayer>
+          {/* <MusicPlayer song={song}></MusicPlayer> */}
           <div className="grid grid-cols-1 text-center md:h-screen">
-            <motion.div
+            <div className="">
+              <h1 className="font-bold text-sageGreen text-xl md:text-4xl text-center">Countdown</h1>
+              <Countdown setReminder='' color='sageGreen'></Countdown>
+            </div>
+            <div className="p-8 mb-4">
+              <div className="flex justify-center mb-4">
+                <h2 className="font-bold text-sageGreen text-xl md:text-4xl">Wishes Box</h2>
+              </div>
+              <div className="w-full max-w-sm m-auto" >
+                <div className="md:flex md:items-center mb-6">
+                  <div className="md:w-1/3">
+                    <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
+                      Name</label>
+                  </div>
+                  <div className="md:w-2/3">
+                    <input type="text" name="name" onChange={handleInputChange} value={senderName}
+                      className="appearance-none border-2 border-sageGreen rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gold"></input>
+                  </div>
+                </div>
+                <div className="md:flex md:items-center mb-6">
+                  <div className="md:w-1/3">
+                    <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Wishes</label>
+                  </div>
+                  <div className="md:w-2/3">
+                    <input type="textarea" name="message" onChange={handleInputChange} value={message}
+                      className="appearance-none border-2 border-sageGreen rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gold0"
+                    ></input>
+                  </div>
+                </div>
+                <div className="flex flex-col md:items-center mb-6">
+                  <div className="mb-2">
+                    <label className="block text-gray-500 font-bold text-md md:text-2xl">Are you going to attend?</label>
+                  </div>
+                  <div className="">
+                    <input type="radio" style={{ width: '20px', height: '20px' }} value="true" onChange={handleInputChange} checked={attend}></input> <span className="mx-4">Yes</span>
+                    <input type="radio" style={{ width: '20px', height: '20px' }} value="false" onChange={handleInputChange} checked={!attend}></input> <span className="mx-4" >No</span>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <button
+                    className="bg-green-700 text-white font-bold py-2 px-4 rounded"
+                    type="button"
+                    onClick={sendWishes} >
+                    Send Wishes</button>
+                </div>
+              </div>
+            </div>
+            {/* <motion.div
               initial="hidden"
               animate="visible"
               variants={{
@@ -209,7 +289,7 @@ const SageGreen = (props) => {
                   </span>
                 </div>
               </motion.div>
-            </motion.div>
+            </motion.div> */}
 
           </div>
           <MotionBox
@@ -229,8 +309,8 @@ const SageGreen = (props) => {
             <div id="frame" className="flex flex-col md:flex-row justify-evenly space-y-10 md:space-y-0">
               <div className="text-center space-y-5">
                 <h1 className="text-sageGreen font-bold text-xl md:text-4xl">Wedding Ceremony</h1>
-                <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
-                <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
+                <p>Saturday, 18 November 2023 <br></br>08:00 WIB - end <br></br>Hotel Episode Gading Serpong</p>
+                <a href="https://www.google.com/maps/dir/-6.2062592,106.8531712/hotel+episode+gading+serpong/@-6.1883929,106.6131143,11z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x2e69fd94da2847cd:0xa1421103e3d49919!2m2!1d106.6202915!2d-6.2563993?hl=en-US">
                   <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
                     <div className="mr-2">
                       <span style={{
@@ -356,7 +436,7 @@ const SageGreen = (props) => {
                 </div>
               </motion.div> */}
           </div>
-          <div className="">
+          {/* <div className="">
             <h1 className="font-bold text-sageGreen text-xl md:text-4xl text-center">Countdown</h1>
             <Countdown setReminder='' color='sageGreen'></Countdown>
           </div>
@@ -402,8 +482,8 @@ const SageGreen = (props) => {
                   Send Wishes</button>
               </div>
             </div>
-          </div>
-          <div className="w-3/4 mx-auto my-4 border-2 overflow-y-scroll bg-white bg-opacity-40" style={{ height: '300px', borderColor: '#047857' }}>
+          </div> */}
+          {/* <div className="w-3/4 mx-auto my-4 border-2 overflow-y-scroll bg-white bg-opacity-40" style={{ height: '300px', borderColor: '#047857' }}>
             {
               inboxes.map((inbox, index) => {
                 return (<div key={inbox.name} className="p-2 mb-2">
@@ -413,7 +493,7 @@ const SageGreen = (props) => {
                 </div>)
               })
             }
-          </div>
+          </div> */}
           <div>
             <h1 className="font-bold text-xl md:text-4xl text-sageGreen mb-4 text-center">Gallery</h1>
             <PhotoAlbum color='green'></PhotoAlbum>
