@@ -31,7 +31,7 @@ const SageGreen = (props) => {
   }
 
   useEffect(() => {
-    const queryParams = new URLSearchParams(window.location.search)
+    const queryParams = new URLSearchParams(props.location.search)
     const guest = queryParams.get("u")
     setCustomerName(guest || 'Guest')
     setEventName(props.location.pathname.replace(/[/]/ig, ''))
@@ -45,7 +45,7 @@ const SageGreen = (props) => {
       setMessage(e.target.value)
     }
     else {
-      const queryParams = new URLSearchParams(window.location.search)
+      const queryParams = new URLSearchParams(props.location.search)
       const id = queryParams.get("id")
       if (e.target.value === 'true') {
         setAttend(true)
