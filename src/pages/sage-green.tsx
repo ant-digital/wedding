@@ -113,7 +113,7 @@ const SageGreen = (props) => {
                   <h2 className="text-base md:text-5xl mb-4 font-bold" >Dear Guest, You are invited to the wedding of</h2>
                 </div>
                 <div className="text-left pt-4 pl-6">
-                  <h1 className="font-greatVibe text-xl md:text-8xl text-sageGreen">Christianto</h1>
+                  <h1 className="font-greatVibe text-2xl md:text-8xl text-sageGreen">Christianto</h1>
                 </div>
                 <div className="text-center">
                   <StaticImage src="../images/sageGreen/frame-foto-pengantin.png"
@@ -128,7 +128,7 @@ const SageGreen = (props) => {
                   ></StaticImage>
                 </div>
                 <div className="text-right pr-6">
-                  <h1 className="font-greatVibe text-xl md:text-8xl text-sageGreen">Kezia</h1>
+                  <h1 className="font-greatVibe text-2xl md:text-8xl text-sageGreen">Kezia</h1>
                 </div>
                 <div className="text-center">
                   <StaticImage src="../images/sageGreen/ornament.png"
