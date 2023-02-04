@@ -58,27 +58,18 @@ const SageGreen = (props) => {
   }
 
   const saveAttendance = async (id: string, value: boolean) => {
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer secret_GVmANtUxILEKpkSzpBJN3iP13lLMpZ2uR4eB7YCBTlG");
-    myHeaders.append("Notion-Version", "2022-06-28");
-    myHeaders.append("Content-Type", "application/json");
-
-    var raw = JSON.stringify({
-      "properties": {
-        "Attend": {
-          "checkbox": value
-        }
-      }
+    const raw = JSON.stringify({
+      id,
+      value
     });
 
-    var requestOptions: any = {
-      method: 'PATCH',
-      headers: myHeaders,
+    const requestOptions: any = {
+      method: 'POST',
       body: raw,
       redirect: 'follow'
     };
 
-    await fetch(`https://api.notion.com/v1/pages/${id}`, requestOptions)
+    await fetch(`https://us-central1-bidding-mobil.cloudfunctions.net/function-1`, requestOptions)
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
@@ -143,7 +134,7 @@ const SageGreen = (props) => {
                 }}>
                 <div className="text-center">
                   {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
-                  <h2 className="text-base md:text-5xl mb-4 font-bold" >Dear Guest, You are invited to the wedding of</h2>
+                  <h2 className="text-base md:text-5xl mb-4 font-bold" >Dear , You are invited to the wedding of</h2>
                 </div>
                 <div className="text-left pt-4 pl-6">
                   <h1 className="font-greatVibe text-3xl md:text-8xl text-sageGreen">Christianto</h1>
@@ -193,8 +184,10 @@ const SageGreen = (props) => {
         <div className="text-sm md:text-xl font-sansNarrow overflow-hidden bg-bodyGreen bg-cover">
           {/* <MusicPlayer song={song}></MusicPlayer> */}
           <div className="grid grid-cols-1 text-center md:h-screen">
-            <div className="">
-              <h1 className="font-bold text-sageGreen text-xl md:text-4xl text-center">Countdown</h1>
+            <div className="mt-4">
+              <h1 className="font-romeo text-sageGreen text-3xl md:text-4xl text-center mb-2">COUNTING DOWN TO THE BIG DAY</h1>
+              <h2 className="text-sageGreen text-md md:text-4xl text-center">The clock was ticking so fast, between thrilling moments that we had never felt before. We look forward to welcoming family and friends to witness our blessing vows on a happy day.</h2>
+
               <Countdown setReminder='' color='sageGreen'></Countdown>
             </div>
             <div className="p-8 mb-4">

@@ -27,7 +27,7 @@ const options = {
   }
 };
 const Countdown = ({ setReminder, color }) => {
-  const countdown = useCountdown(dayjs('2022-05-14:00:00.000Z'))
+  const countdown = useCountdown(dayjs('2023-11-18T11:00.000Z'))
   var borderClass = classNames({
     'border-2': true,
     'rounded-lg': true,
@@ -42,16 +42,16 @@ const Countdown = ({ setReminder, color }) => {
     <div className="flex flex-col justify-center w-screen p-4">
       <div className="grid grid-cols-4 gap-6 md:gap-6 justify-center text-center self-center">
         <div className={borderClass}>
-          <span className="font-bold">{countdown.days}</span> <br></br><span >hari</span>
+          <span className="font-bold">{countdown.days}</span> <br></br><span >days</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold">{countdown.hours}</span> <br></br><span >jam</span>
+          <span className="font-bold">{countdown.hours}</span> <br></br><span >hours</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold">{countdown.minutes}</span> <br></br><span >menit</span>
+          <span className="font-bold">{countdown.minutes}</span> <br></br><span >minutes</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold">{countdown.seconds}</span> <br></br><span >detik</span>
+          <span className="font-bold">{countdown.seconds}</span> <br></br><span >seconds</span>
         </div>
       </div>
       {setReminder ? (
