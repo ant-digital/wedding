@@ -75,7 +75,7 @@ const SageGreen = (props) => {
 
   const sendWishes = async () => {
     mutate(`https://us-central1-bidding-mobil.cloudfunctions.net/function-1/wishes`, [...inboxes, {
-      name: senderName,
+      name: customerName,
       message: message
     }], false)
     await saveAttendance()
@@ -272,7 +272,7 @@ const SageGreen = (props) => {
             </motion.div> */}
 
           </div>
-          <MotionBox
+          <div
             variants={{ visible: { x: 0 }, hidden: { x: '100vw' } }}
             className="flex flex-col mt-8 bg-white bg-opacity-40 p-8 relative">
             <StaticImage src="../images/sageGreen/ornament2-kiri.png"
@@ -322,11 +322,10 @@ const SageGreen = (props) => {
               </div>
             </div>
 
-          </MotionBox>
+          </div>
 
-          <MotionBox
+          <div
             className="p-4 mt-8"
-            variants={{ visible: { x: 0 }, hidden: { x: '-100vw' } }}
           >
 
             <div className="flex justify-center mb-4">
@@ -370,7 +369,7 @@ const SageGreen = (props) => {
                 </div>
               </div>
             </div>
-          </MotionBox>
+          </div>
 
 
           {/* <Parallax blur={1} bgImage={coupleImg} bgImageAlt="the cat" strength={300} bgImageStyle={{ objectFit: 'cover' }}>
@@ -395,8 +394,8 @@ const SageGreen = (props) => {
                 </div>
               </div>
             </Parallax> */}
-          <div className="p-4">
-            {/* <motion.div
+          {/* <div className="p-4">
+            <motion.div
                 initial="hidden"
                 animate={controls2}
                 variants={variants}
@@ -414,8 +413,8 @@ const SageGreen = (props) => {
                     height={150}
                     alt="bottom"></StaticImage>
                 </div>
-              </motion.div> */}
-          </div>
+              </motion.div> 
+          </div> */}
           {/* <div className="">
             <h1 className="font-bold text-sageGreen text-xl md:text-4xl text-center">Countdown</h1>
             <Countdown setReminder='' color='sageGreen'></Countdown>
