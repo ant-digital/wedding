@@ -99,6 +99,7 @@ const SageGreen = (props) => {
         */
 
         <div className="max-h-screen">
+
           <StaticImage
             style={{
               width: '100vw',
@@ -121,10 +122,9 @@ const SageGreen = (props) => {
           >
             <div className="flex w-screen justify-center font-sansNarrow">
               <motion.div
-                variants={{
-                  visible: { opacity: 1 },
-                  hidden: { opacity: 0 },
-                }}>
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 3 }}>
                 <div className="text-center">
                   {/* <h1 className="text-3xl">Dear, {props.location.search ? window.decodeURIComponent(props.location.search.split('=')[1]) : ''}</h1> */}
                   <h2 className="text-base md:text-5xl mb-4 font-bold" >Dear {customerName} , You are invited to the wedding of</h2>
@@ -188,16 +188,7 @@ const SageGreen = (props) => {
                 <h2 className="font-bold text-sageGreen text-xl md:text-4xl">Wishes Box</h2>
               </div>
               <div className="w-full max-w-sm m-auto" >
-                <div className="md:flex md:items-center mb-6">
-                  <div className="md:w-1/3">
-                    <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
-                      Name</label>
-                  </div>
-                  <div className="md:w-2/3">
-                    <input type="text" name="name" onChange={handleInputChange} value={senderName}
-                      className="appearance-none border-2 border-sageGreen rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gold"></input>
-                  </div>
-                </div>
+
                 <div className="md:flex md:items-center mb-6">
                   <div className="md:w-1/3">
                     <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Wishes</label>
@@ -329,67 +320,6 @@ const SageGreen = (props) => {
             </div>
 
           </motion.div>
-
-          <div className="p-4 mt-4 text-xl md:text-2xl">
-            <InView as="div" onChange={(inView, entry) => {
-              if (inView) {
-                controls.start('visible')
-              }
-            }}>
-              <motion.div
-                initial="hidden"
-                animate={controls}
-                variants={variants}
-                transition={{ duration: 1 }}
-              >
-
-                <div className="flex justify-center mb-4">
-                  <h2 className="font-bold  text-2xl md:text-5xl">Protokol Covid-19</h2>
-                </div>
-                <div className="flex justify-center mb-4 ">
-                  <h4 className="text-center">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi, kami harapkan kedatangan para tamu undangan agar menjalankan protokol yang berlaku.</h4>
-                </div>
-                <div className="flex justify-center">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="flex items-center">
-                      <StaticImage src="../images/distance.png"
-                        alt="Picture of the author"
-                        width={40}
-                        height={40}></StaticImage>
-                      <span className="ml-2">Saling Menjaga Jarak di Dalam Acara</span>
-                    </div>
-                    <div className="flex items-center">
-                      <StaticImage src="../images/masker.png"
-                        alt="Picture of the author"
-                        width={40}
-                        height={40}
-                      ></StaticImage>
-                      <span className="ml-2">Wajib Menggunakan Masker</span>
-                    </div>
-                    <div className="flex items-center">
-                      <StaticImage src="../images/namaste.png"
-                        alt="Picture of the author"
-                        width={40}
-                        height={40}
-                      ></StaticImage>
-                      <span className="ml-2">Menggunakan Salam Namaste</span>
-                    </div>
-                    <div className="flex items-center">
-                      <StaticImage src="../images/wash.png"
-                        alt="Picture of the author"
-                        width={40}
-                        height={40}
-                      ></StaticImage>
-                      <span className="ml-2">Mencuci Tangan dan Menggunakan Hand Sanitizer</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </InView>
-
-          </div>
-
-
           {/* <Parallax blur={1} bgImage={coupleImg} bgImageAlt="the cat" strength={300} bgImageStyle={{ objectFit: 'cover' }}>
               <div className="flex justify-center mt-4">
                 <div className="text-center w-screen text-white p-2 md:p-10" >
@@ -576,10 +506,10 @@ const SageGreen = (props) => {
               })
             }
           </div>
-          <div>
+          {/* <div>
             <h1 className="font-bold text-xl md:text-4xl text-sageGreen mb-4 text-center">Gallery</h1>
             <PhotoAlbum color='green'></PhotoAlbum>
-          </div>
+          </div> */}
           <Footer color="black"></Footer>
         </div>)
       }
