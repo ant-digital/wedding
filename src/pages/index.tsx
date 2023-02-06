@@ -29,7 +29,7 @@ const IndexPage = () => {
           <Link to={"/link-generator"}>Link Generator</Link>
         </li>
         <li>
-          <Link to={"/test"}>Test</Link>
+          <Link to={"/chris"}>Test</Link>
         </li>
       </ul>
     </main>
