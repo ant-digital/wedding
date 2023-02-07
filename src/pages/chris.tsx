@@ -234,7 +234,7 @@ const Chris = (props) => {
                                         />
                                         <br></br>
                                         <div style={{ color: "rgb(159, 160, 161)", letterSpacing: '3px' }} className="text-2xl font-MrsEavesRomanSmallCaps uppercase">Christianto</div>
-                                        <div style={{ color: "#757575" }} className="text-xs">First Son of <br></br>Mr. Hengky Foe & Mrs. Wong Jaw Pee</div>
+                                        <div style={{ color: "#757575", letterSpacing: '1px' }} className="text-xs">First Son of <br></br>Mr. Hengky Foe & Mrs. Wong Jaw Pee</div>
                                     </div>
                                     <div className="flex flex-col md:pt-32">
                                         <h1 className="text-5xl"></h1>
@@ -250,7 +250,7 @@ const Chris = (props) => {
                                         />
                                         <br></br>
                                         <div style={{ color: "rgb(159, 160, 161)", letterSpacing: '3px' }} className="text-2xl font-MrsEavesRomanSmallCaps uppercase">Kezia Christy</div>
-                                        <div style={{ color: "#757575" }} className="text-xs px-4">First Daughter of<br></br> Mr. Budianto Agustjik & Mrs. Khoe Ay Ling</div>
+                                        <div style={{ color: "#757575", letterSpacing: '1px' }} className="text-xs px-4">First Daughter of<br></br> Mr. Budianto Agustjik & Mrs. Khoe Ay Ling</div>
 
                                     </div>
                                 </div>
@@ -314,7 +314,95 @@ const Chris = (props) => {
                         </div>
 
                     </div>
-                    <div className="p-8 mb-4 text-white" style={{ background: "rgb(149, 150, 151)" }}>
+                    <div className="flex flex-col md:flex-row">
+                        <div>
+                            <StaticImage alt=""
+                                src="../images/couple.jpg"
+                                formats={["auto", "webp", "avif"]}
+                                objectFit='cover'
+                            />
+                        </div>
+                        <div>
+                            <StaticImage
+                                alt=""
+                                src="../images/couple3.jpg"
+                                formats={["auto", "webp", "avif"]}
+                                objectFit='cover'
+                            />
+                        </div>
+                        <div>
+                            <StaticImage
+                                alt=""
+                                src="../images/couple4.jpg"
+                                formats={["auto", "webp", "avif"]}
+                                objectFit='cover'
+                            />
+                        </div>
+                    </div>
+
+                    <motion.div
+                        variants={{ visible: { x: 0 }, hidden: { x: '100vw' } }}
+                        className="flex flex-col p-8 relative" style={{ background: "rgb(149, 150, 151)" }}>
+                        <StaticImage src="../images/image2-bottom.svg"
+                            alt="bunga" width={100}
+                            style={{ position: 'absolute', left: 0, top: 0, opacity: 0.4 }}
+                        ></StaticImage>
+                        <StaticImage src="../images/image2-top.svg"
+                            alt="bunga" width={100}
+                            style={{ position: 'absolute', right: 0, bottom: 0, zIndex: 0, opacity: 0.4 }}
+                        ></StaticImage>
+                        <div style={{ letterSpacing: '0.5px' }} className="font-MrsEavesRomanSmallCaps capitalize text-white text-4xl md:text-4xl text-center mb-2">The Wedding</div>
+
+                        <div className="text-white text-xl text-center">18 • November • 2023</div>
+                        <div id="frame" className="flex flex-col md:flex-row justify-evenly space-y-10 md:space-y-0">
+                            <div className="flex flex-col text-center text-white space-y-8 border-4 border-white p-8 mt-4">
+                                <div>
+                                    <StaticImage src="../images/ring.svg"
+                                        alt="ring"
+                                    // style={{ position: 'absolute', right: 0, bottom: 0, zIndex: 0 }}
+                                    ></StaticImage>
+                                </div>
+                                <div style={{ letterSpacing: '0.5px' }} className="font-MrsEavesRomanSmallCaps capitalize text-white text-4xl md:text-4xl text-center mb-2">Holy Matrimony</div>
+
+                                <div>Saturday, 11 November 2023 <br></br>09:00  <br></br>Gereja St Matia Rasul Kosambi</div>
+                                <div>
+                                    <a href="https://www.google.com/maps/dir/-6.2062592,106.8531712/hotel+episode+gading+serpong/@-6.1883929,106.6131143,11z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x2e69fd94da2847cd:0xa1421103e3d49919!2m2!1d106.6202915!2d-6.2563993?hl=en-US">
+                                        <div className="mx-auto mt-2 flex rounded-xl w-max bg-white text-center p-2">
+                                            {/* <div className="mr-2">
+                                                <span style={{
+                                                    fontFamily: 'Material Icons', fontSize: '18px'
+                                                }}>place</span>
+                                            </div> */}
+                                            {/* <div> */}
+                                            <span className="text-gray-500">Open Maps</span>
+                                            {/* </div> */}
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                            {/* <div className="text-center space-y-5">
+                                <h1 className=" font-bold text-xl md:text-4xl">Wedding Reception</h1>
+                                <p>Saturday, 18 November 2023 <br></br>18:00 <br></br>Hotel Episode Gading Serpong</p>
+                                <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
+                                    <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
+                                        <div className="mr-2">
+                                            <span style={{
+                                                fontFamily: 'Material Icons', fontSize: '18px'
+                                            }}>place</span>
+                                        </div>
+                                        <div>
+                                            <span>Location</span>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div> */}
+                        </div>
+
+                    </motion.div>
+                    {/* {!open ? (<MusicPlayer song={song}></MusicPlayer>) : ''} */}
+                    <div className="p-8 mb-4 text-white bg-white">
                         <div className="flex justify-center mb-4">
                             <h2 className="font-bold  text-xl md:text-4xl">Wishes Box</h2>
                         </div>
@@ -348,59 +436,6 @@ const Chris = (props) => {
                             </div>
                         </div>
                     </div>
-                    <motion.div
-                        variants={{ visible: { x: 0 }, hidden: { x: '100vw' } }}
-                        className="flex flex-col mt-8 bg-white bg-opacity-40 p-8 relative">
-                        <StaticImage src="../images/sageGreen/ornament2-kiri.png"
-                            alt="bunga" width={120} height={200}
-                            style={{ position: 'absolute', left: 0, top: 0 }}
-                        ></StaticImage>
-                        <StaticImage src="../images/sageGreen/ornament2-kanan.png"
-                            alt="bunga" width={150} height={200}
-                            style={{ position: 'absolute', right: 0, bottom: 0 }}
-                        ></StaticImage>
-                        <div className="text-center mb-4">
-                            <h1 className="font-greatVibe text-5xl md:text-8xl ">Save the Date</h1>
-                        </div>
-                        <div id="frame" className="flex flex-col md:flex-row justify-evenly space-y-10 md:space-y-0">
-                            <div className="text-center space-y-5">
-                                <h1 className=" font-bold text-xl md:text-4xl">Holy Matrimony</h1>
-                                <p>Saturday, 11 November 2023 <br></br>09:00  <br></br>Gereja St Matia Rasul Kosambi</p>
-                                <a href="https://www.google.com/maps/dir/-6.2062592,106.8531712/hotel+episode+gading+serpong/@-6.1883929,106.6131143,11z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x2e69fd94da2847cd:0xa1421103e3d49919!2m2!1d106.6202915!2d-6.2563993?hl=en-US">
-                                    <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
-                                        <div className="mr-2">
-                                            <span style={{
-                                                fontFamily: 'Material Icons', fontSize: '18px'
-                                            }}>place</span>
-                                        </div>
-                                        <div>
-                                            <span>Location</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className="text-center space-y-5">
-                                <h1 className=" font-bold text-xl md:text-4xl">Wedding Reception</h1>
-                                <p>Saturday, 18 November 2023 <br></br>18:00 <br></br>Hotel Episode Gading Serpong</p>
-                                <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
-                                    <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
-                                        <div className="mr-2">
-                                            <span style={{
-                                                fontFamily: 'Material Icons', fontSize: '18px'
-                                            }}>place</span>
-                                        </div>
-                                        <div>
-                                            <span>Location</span>
-
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                    </motion.div>
-                    {/* {!open ? (<MusicPlayer song={song}></MusicPlayer>) : ''} */}
-
                     <div className="p-4 text-xl md:text-2xl">
                         <InView as="div" onChange={(inView, entry) => {
                             if (inView) {
