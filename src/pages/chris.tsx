@@ -28,13 +28,20 @@ const Chris = (props) => {
     const controls = useAnimation();
     const controls2 = useAnimation();
     const controls3 = useAnimation();
+    const controls4 = useAnimation();
+
 
     const variants = {
         visible: { opacity: 1 },
         hidden: { opacity: 0 },
     }
+    const sequence = async () => {
+        await controls3.start("visible")
+        await controls4.start('visible')
+    }
     if (!open) {
-        controls3.start("visible")
+        sequence()
+
     }
     const handleInputChange = (e) => {
         if (e.target.name === 'name') {
@@ -137,7 +144,7 @@ const Chris = (props) => {
                                     <div className="mt-5 sm:mt-6">
                                         <button
                                             type="button"
-                                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-gray-500 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-grey-700 focus:outline-none focus:ring-2 focus:ring-grey-500 focus:ring-offset-2 sm:text-sm"
+                                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-gray-500 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-grey-700 focus:outline-none focus:ring-0 focus:ring-white focus:ring-offset-2 sm:text-sm"
                                             onClick={() => setOpen(false)}
                                         >
                                             Open
@@ -159,7 +166,14 @@ const Chris = (props) => {
                             animate={controls3}
 
                             variants={{
-                                visible: { x: 0, transition: { when: 'beforeChildren', type: 'tween', duration: 2, delayChildren: 5 } },
+                                visible: {
+                                    x: 0,
+                                    transition: {
+                                        delayChildren: 0.3,
+                                        staggerChildren: 0.2,
+                                        type: 'tween', duration: 3
+                                    }
+                                },
                                 hidden: { x: '100vw' }
                             }}
                             className="text-center  text-xl md:text-3xl"
@@ -170,7 +184,7 @@ const Chris = (props) => {
                             <motion.div
                                 className="mt-4"
                                 initial="hidden"
-                                animate="visible"
+                                animate={controls4}
                                 variants={{
                                     visible: { opacity: 1, transition: { type: 'tween', duration: 5 } },
                                     hidden: { opacity: 0 }
