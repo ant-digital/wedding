@@ -2,7 +2,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import React, { Fragment, useEffect, useState } from "react"
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-// import song from '../song.mp3'
+import song from '../this-is-how-you-fall-in-love.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
 
@@ -11,14 +11,10 @@ import { InView } from 'react-intersection-observer';
 import QRCode from "react-qr-code";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import useInboxes from "src/useInboxes";
 import { mutate } from "swr";
 import Footer from "$components/Footer";
-import MusicPlayer from "$components/MusicPlayer";
-import { Parallax } from 'react-parallax';
-import { CheckIcon } from '@heroicons/react/24/outline'
 import { Dialog, Transition } from "@headlessui/react";
+import MusicPlayer from "$components/MusicPlayer";
 
 const Chris = (props) => {
     const [open, setOpen] = useState(true)
@@ -136,7 +132,9 @@ const Chris = (props) => {
                                             </Dialog.Title>
                                             <div className="mt-2">
                                                 <p className="text-sm text-gray-500">
-                                                    With great joy, we are pleased to cordially invite you to celebrate the marriage of Chris and Kezia
+                                                    With great joy, we are pleased to cordially invite you to celebrate the marriage of
+                                                    <br></br>
+                                                    <span className="font-bold text-md text-black">Chris and Kezia</span>
                                                 </p>
                                             </div>
                                         </div>
@@ -159,7 +157,6 @@ const Chris = (props) => {
             <div >
 
                 <div className="text-sm md:text-xl overflow-hidden">
-                    {/* <MusicPlayer song={song}></MusicPlayer> */}
                     <div className="flex flex-col  justify-center text-center h-screen bg-gray-300">
                         <motion.div
                             initial="hidden"
@@ -179,7 +176,7 @@ const Chris = (props) => {
                             className="text-center  text-xl md:text-3xl"
                         >
                             <div className="font-MrsEavesRomanSmallCaps text-sageGreen text-md md:text-4xl text-center mb-2">The wedding of</div>
-                            <div className="font-MrsEavesRoman text-sageGreen text-2xl uppercase md:text-4xl text-center mb-2">Christianto & Kezia Christy</div>
+                            <div className="font-MrsEavesRoman text-sageGreen text-xl uppercase md:text-4xl text-center mb-2">Christianto & Kezia Christy</div>
                             <div className="text-sageGreen text-xl md:text-4xl text-center">18 • November • 2023</div>
                             <motion.div
                                 className="mt-4"
@@ -372,6 +369,8 @@ const Chris = (props) => {
               </div>
             </div>
           </div> */}
+                    <MusicPlayer song={song}></MusicPlayer>
+
                     <div className="p-4 mt-4 text-xl md:text-2xl">
                         <InView as="div" onChange={(inView, entry) => {
                             if (inView) {
