@@ -29,32 +29,32 @@ const options = {
 const Countdown = ({ setReminder, color }) => {
   const countdown = useCountdown(dayjs('2023-11-18', "YYYY-MM-DD"))
   var borderClass = classNames({
-    'border-2': true,
     'rounded-lg': true,
-    'p-2': true,
+    'p-1': true,
     'md:p-6': true,
     'border-gold': color === 'gold' ? true : false,
     'border-sageGreen': color === 'sageGreen' ? true : false,
     'border-blue': color === 'blue' ? true : false,
     'bg-white': true,
     'text-black': true,
-    border: 0
+    border: 0,
+    // 'w-3/4': true
 
   });
   return (
     <div className="flex flex-col justify-center w-screen p-4">
       <div className="grid grid-cols-4 gap-6 md:gap-6 justify-center text-center self-center">
         <div className={borderClass}>
-          <span className="font-bold">{countdown.days}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >days</span>
+          <span className="font-bold text-sm">{countdown.days}</span> <br></br><span style={{ fontSize: '10px', textAlign: 'center' }} >days</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold ">{countdown.hours}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >hours</span>
+          <span className="font-bold text-sm">{countdown.hours}</span> <br></br><span style={{ fontSize: '10px', textAlign: 'center' }} >hours</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold ">{countdown.minutes}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >minutes</span>
+          <span className="font-bold text-sm">{countdown.minutes}</span> <br></br><span style={{ fontSize: '10px', textAlign: 'center' }} >minutes</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold ">{countdown.seconds}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >seconds</span>
+          <span className="font-bold text-sm">{countdown.seconds}</span> <br></br><span style={{ fontSize: '10px', textAlign: 'center' }} >seconds</span>
         </div>
       </div>
       {setReminder ? (
