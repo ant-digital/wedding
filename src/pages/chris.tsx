@@ -5,7 +5,7 @@ import 'react-h5-audio-player/lib/styles.css';
 import song from '../this-is-how-you-fall-in-love.mp3'
 import PhotoAlbum from "$components/PhotoAlbum";
 import Countdown from "$components/Countdown"
-
+import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
 import { motion, useAnimation } from "framer-motion"
 import { InView } from 'react-intersection-observer';
 import QRCode from "react-qr-code";
@@ -188,7 +188,13 @@ const Chris = (props) => {
                                     hidden: { opacity: 0 }
                                 }}
                             >
-                                <Countdown setReminder='' color='white'></Countdown>
+                                {/* <Countdown setReminder='' color='white'></Countdown> */}
+                                <FlipClockCountdown
+                                    style={{ justifyContent: 'center', }}
+                                    digitBlockStyle={{ width: 30, height: 30, fontSize: 35, backgroundColor: 'white', color: 'black' }}
+                                    dividerStyle={{ color: 'black', height: 0.5 }}
+                                    to={new Date().getTime() + 2400 * 3600 * 1000 + 5000} />;
+
 
                             </motion.div>
                         </motion.div>
@@ -476,7 +482,7 @@ const Chris = (props) => {
                     </div> */}
                     <Footer color="black"></Footer>
                 </div>
-            </div>
+            </div >
         </>
 
     )
