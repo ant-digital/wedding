@@ -35,7 +35,10 @@ const Countdown = ({ setReminder, color }) => {
     'md:p-6': true,
     'border-gold': color === 'gold' ? true : false,
     'border-sageGreen': color === 'sageGreen' ? true : false,
-    'border-blue': color === 'blue' ? true : false
+    'border-blue': color === 'blue' ? true : false,
+    'bg-white': true,
+    'text-black': true,
+    border: 0
 
   });
   return (
@@ -45,13 +48,13 @@ const Countdown = ({ setReminder, color }) => {
           <span className="font-bold">{countdown.days}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >days</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold">{countdown.hours}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >hours</span>
+          <span className="font-bold ">{countdown.hours}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >hours</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold">{countdown.minutes}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >minutes</span>
+          <span className="font-bold ">{countdown.minutes}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >minutes</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold">{countdown.seconds}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >seconds</span>
+          <span className="font-bold ">{countdown.seconds}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >seconds</span>
         </div>
       </div>
       {setReminder ? (

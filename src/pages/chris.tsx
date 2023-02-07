@@ -114,7 +114,7 @@ const Chris = (props) => {
                             >
                                 <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                                     <div>
-                                        <div className="mx-auto flex items-center justify-center text-3xl">
+                                        <div className="mx-auto flex items-center justify-center text-2xl">
                                             <h2 className="font-MrsEavesRomanSmallCaps" style={{ color: '#9fa0a1', textTransform: 'capitalize' }}>Wedding Invitation</h2>
                                         </div>
                                         <div className="mt-3 text-center sm:mt-5">
@@ -131,21 +131,22 @@ const Chris = (props) => {
                                                 ></StaticImage>
                                             </Dialog.Title>
                                             <div className="mt-2">
-                                                <p className="text-sm text-gray-500">
+                                                <p className="text-sm text-gray-500" style={{ lineHeight: '30px' }}>
                                                     With great joy, we are pleased to cordially invite you to celebrate the marriage of
                                                     <br></br>
-                                                    <span className="font-bold text-md text-black">Chris and Kezia</span>
+                                                    <span className="font-bold text-md text-black">Christianto & Kezia</span>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="mt-5 sm:mt-6">
+                                    <div className="mt-8 text-center">
                                         <button
                                             type="button"
-                                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-gray-500 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-grey-700 focus:outline-none focus:ring-0 focus:ring-white focus:ring-offset-2 sm:text-sm"
+                                            style={{ letterSpacing: '3px' }}
+                                            className="text-xs uppercase inline-flex justify-center rounded-md border border-transparent bg-gray-400 px-4 py-2 text-white shadow-sm hover:bg-grey-700 focus:outline-none focus:ring-0 focus:ring-white focus:ring-offset-2 sm:text-sm"
                                             onClick={() => setOpen(false)}
                                         >
-                                            Open
+                                            Open Invitation
                                         </button>
                                     </div>
                                 </Dialog.Panel>
@@ -175,9 +176,9 @@ const Chris = (props) => {
                             }}
                             className="text-center  text-xl md:text-3xl"
                         >
-                            <div className="font-MrsEavesRomanSmallCaps text-sageGreen text-md md:text-4xl text-center mb-2">The wedding of</div>
-                            <div className="font-MrsEavesRoman text-sageGreen text-xl uppercase md:text-4xl text-center mb-2">Christianto & Kezia Christy</div>
-                            <div className="text-sageGreen text-xl md:text-4xl text-center">18 • November • 2023</div>
+                            <div style={{ letterSpacing: '0.5px' }} className="font-MrsEavesRomanSmallCaps text-white text-md md:text-4xl text-center mb-2">The wedding of</div>
+                            <div className="font-MrsEavesRoman text-white text-xl uppercase md:text-4xl text-center mb-2">Christianto & Kezia Christy</div>
+                            <div className="text-white text-sm md:text-4xl text-center">18 • November • 2023</div>
                             <motion.div
                                 className="mt-4"
                                 initial="hidden"
@@ -187,7 +188,7 @@ const Chris = (props) => {
                                     hidden: { opacity: 0 }
                                 }}
                             >
-                                <Countdown setReminder='' color='sageGreen'></Countdown>
+                                <Countdown setReminder='' color='white'></Countdown>
 
                             </motion.div>
                         </motion.div>
