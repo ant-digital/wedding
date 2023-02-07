@@ -45,16 +45,16 @@ const Countdown = ({ setReminder, color }) => {
     <div className="flex flex-col justify-center w-screen p-4">
       <div className="grid grid-cols-4 gap-6 md:gap-6 justify-center text-center self-center">
         <div className={borderClass}>
-          <span className="font-bold text-sm">{countdown.days}</span> <br></br><span style={{ fontSize: '10px', textAlign: 'center' }} >days</span>
+          <span className="font-bold text-xs">{countdown.days}</span> <br></br><span style={{ fontSize: '10px', textAlign: 'center' }} >days</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold text-sm">{countdown.hours}</span> <br></br><span style={{ fontSize: '10px', textAlign: 'center' }} >hours</span>
+          <span className="font-bold text-xs">{countdown.hours}</span> <br></br><span style={{ fontSize: '10px', textAlign: 'center' }} >hours</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold text-sm">{countdown.minutes}</span> <br></br><span style={{ fontSize: '10px', textAlign: 'center' }} >minutes</span>
+          <span className="font-bold text-xs">{countdown.minutes}</span> <br></br><span style={{ fontSize: '10px', textAlign: 'center' }} >minutes</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold text-sm">{countdown.seconds}</span> <br></br><span style={{ fontSize: '10px', textAlign: 'center' }} >seconds</span>
+          <span className="font-bold text-xs">{countdown.seconds}</span> <br></br><span style={{ fontSize: '10px', textAlign: 'center' }} >seconds</span>
         </div>
       </div>
       {setReminder ? (

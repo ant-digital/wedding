@@ -156,9 +156,9 @@ const Chris = (props) => {
                 </Dialog>
             </Transition.Root>
             <div >
-
+                {/* MAIN CONTENT */}
                 <div className="text-sm md:text-xl overflow-hidden">
-                    <div className="flex flex-col  justify-center text-center h-screen bg-gray-300">
+                    <div className="flex flex-col  justify-center text-center h-screen bg-foto bg-cover bg-center">
                         <motion.div
                             initial="hidden"
                             animate={controls3}
@@ -195,9 +195,128 @@ const Chris = (props) => {
 
 
                     </div>
-                    <div className="p-8 mb-4">
+                    <div className="text-2xl md:text-2xl" style={{ background: "rgb(250, 250, 250)", }}>
+                        <StaticImage
+                            style={{
+                                zIndex: 1
+                            }}
+                            width={100}
+                            src="../images/image-top.svg"
+                            formats={["auto", "webp", "avif"]}
+                            objectFit='cover'
+                            alt=''
+                        />
+
+                        <InView as="div" onChange={(inView, entry) => {
+                            if (inView) {
+                                controls.start('visible')
+                            }
+                        }}>
+
+                            <motion.div
+                                initial="hidden"
+                                animate={controls}
+                                variants={variants}
+                                transition={{ duration: 1 }}
+                            >
+                                <div style={{ letterSpacing: '0.5px' }} className="font-MrsEavesRomanSmallCaps text-gray-500 text-2xl md:text-4xl text-center mb-2 capitalize">Meet The Couple</div>
+
+                                <div className="mt-8 flex flex-col md:flex-row justify-center gap-10 md: gap-14 text-center ">
+
+                                    <div className="flex flex-col">
+                                        <StaticImage
+                                            objectFit="cover"
+                                            src="../images/kezia.jpeg"
+                                            height={210}
+                                            width={210}
+                                            className="inline-block rounded-md self-center"
+                                            alt=""
+                                        />
+                                        <br></br>
+                                        <div style={{ color: "rgb(159, 160, 161)", letterSpacing: '3px' }} className="text-2xl font-MrsEavesRomanSmallCaps uppercase">Christianto</div>
+                                        <div style={{ color: "#757575" }} className="text-xs">First Son of <br></br>Mr. Hengky Foe & Mrs. Wong Jaw Pee</div>
+                                    </div>
+                                    <div className="flex flex-col md:pt-32">
+                                        <h1 className="text-5xl"></h1>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <StaticImage
+                                            height={210}
+                                            width={210}
+                                            className="inline-block rounded-full self-center"
+                                            src="../images/kezia.jpeg"
+
+                                            alt=""
+                                        />
+                                        <br></br>
+                                        <div style={{ color: "rgb(159, 160, 161)", letterSpacing: '3px' }} className="text-2xl font-MrsEavesRomanSmallCaps uppercase">Kezia Christy</div>
+                                        <div style={{ color: "#757575" }} className="text-xs px-4">First Daughter of<br></br> Mr. Budianto Agustjik & Mrs. Khoe Ay Ling</div>
+
+                                    </div>
+                                </div>
+
+                                {/* <div className="flex justify-center mb-4">
+                                    <h2 className="font-bold  text-2xl md:text-5xl">Protokol Covid-19</h2>
+                                </div>
+                                <div className="flex justify-center mb-4 ">
+                                    <h4 className="text-center">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi, kami harapkan kedatangan para tamu undangan agar menjalankan protokol yang berlaku.</h4>
+                                </div>
+                                <div className="flex justify-center">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div className="flex items-center">
+                                            <StaticImage src="../images/distance.png"
+                                                alt="Picture of the author"
+                                                width={40}
+                                                height={40}></StaticImage>
+                                            <span className="ml-2">Saling Menjaga Jarak di Dalam Acara</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <StaticImage src="../images/masker.png"
+                                                alt="Picture of the author"
+                                                width={40}
+                                                height={40}
+                                            ></StaticImage>
+                                            <span className="ml-2">Wajib Menggunakan Masker</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <StaticImage src="../images/namaste.png"
+                                                alt="Picture of the author"
+                                                width={40}
+                                                height={40}
+                                            ></StaticImage>
+                                            <span className="ml-2">Menggunakan Salam Namaste</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <StaticImage src="../images/wash.png"
+                                                alt="Picture of the author"
+                                                width={40}
+                                                height={40}
+                                            ></StaticImage>
+                                            <span className="ml-2">Mencuci Tangan dan Menggunakan Hand Sanitizer</span>
+                                        </div>
+                                    </div>
+                                </div> */}
+                            </motion.div>
+                        </InView>
+                        <div className="flex">
+                            <StaticImage
+                                style={{
+                                    zIndex: 1,
+                                    marginLeft: 'auto'
+                                }}
+                                width={100}
+
+                                alt=""
+                                src="../images/image-bottom.svg"
+                                formats={["auto", "webp", "avif"]}
+                                objectFit='cover'
+                            />
+                        </div>
+
+                    </div>
+                    <div className="p-8 mb-4 text-white" style={{ background: "rgb(149, 150, 151)" }}>
                         <div className="flex justify-center mb-4">
-                            <h2 className="font-bold text-sageGreen text-xl md:text-4xl">Wishes Box</h2>
+                            <h2 className="font-bold  text-xl md:text-4xl">Wishes Box</h2>
                         </div>
                         <div className="w-full max-w-sm m-auto" >
 
@@ -241,11 +360,11 @@ const Chris = (props) => {
                             style={{ position: 'absolute', right: 0, bottom: 0 }}
                         ></StaticImage>
                         <div className="text-center mb-4">
-                            <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Save the Date</h1>
+                            <h1 className="font-greatVibe text-5xl md:text-8xl ">Save the Date</h1>
                         </div>
                         <div id="frame" className="flex flex-col md:flex-row justify-evenly space-y-10 md:space-y-0">
                             <div className="text-center space-y-5">
-                                <h1 className="text-sageGreen font-bold text-xl md:text-4xl">Holy Matrimony</h1>
+                                <h1 className=" font-bold text-xl md:text-4xl">Holy Matrimony</h1>
                                 <p>Saturday, 11 November 2023 <br></br>09:00  <br></br>Gereja St Matia Rasul Kosambi</p>
                                 <a href="https://www.google.com/maps/dir/-6.2062592,106.8531712/hotel+episode+gading+serpong/@-6.1883929,106.6131143,11z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x2e69fd94da2847cd:0xa1421103e3d49919!2m2!1d106.6202915!2d-6.2563993?hl=en-US">
                                     <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
@@ -261,7 +380,7 @@ const Chris = (props) => {
                                 </a>
                             </div>
                             <div className="text-center space-y-5">
-                                <h1 className="text-sageGreen font-bold text-xl md:text-4xl">Wedding Reception</h1>
+                                <h1 className=" font-bold text-xl md:text-4xl">Wedding Reception</h1>
                                 <p>Saturday, 18 November 2023 <br></br>18:00 <br></br>Hotel Episode Gading Serpong</p>
                                 <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
                                     <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
@@ -281,64 +400,7 @@ const Chris = (props) => {
 
                     </motion.div>
                     {/* {!open ? (<MusicPlayer song={song}></MusicPlayer>) : ''} */}
-                    <div className="p-4 mt-4 text-xl md:text-2xl">
-                        <InView as="div" onChange={(inView, entry) => {
-                            if (inView) {
-                                controls.start('visible')
-                            }
-                        }}>
-                            <motion.div
-                                initial="hidden"
-                                animate={controls}
-                                variants={variants}
-                                transition={{ duration: 1 }}
-                            >
 
-                                <div className="flex justify-center mb-4">
-                                    <h2 className="font-bold  text-2xl md:text-5xl">Protokol Covid-19</h2>
-                                </div>
-                                <div className="flex justify-center mb-4 ">
-                                    <h4 className="text-center">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi, kami harapkan kedatangan para tamu undangan agar menjalankan protokol yang berlaku.</h4>
-                                </div>
-                                <div className="flex justify-center">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div className="flex items-center">
-                                            <StaticImage src="../images/distance.png"
-                                                alt="Picture of the author"
-                                                width={40}
-                                                height={40}></StaticImage>
-                                            <span className="ml-2">Saling Menjaga Jarak di Dalam Acara</span>
-                                        </div>
-                                        <div className="flex items-center">
-                                            <StaticImage src="../images/masker.png"
-                                                alt="Picture of the author"
-                                                width={40}
-                                                height={40}
-                                            ></StaticImage>
-                                            <span className="ml-2">Wajib Menggunakan Masker</span>
-                                        </div>
-                                        <div className="flex items-center">
-                                            <StaticImage src="../images/namaste.png"
-                                                alt="Picture of the author"
-                                                width={40}
-                                                height={40}
-                                            ></StaticImage>
-                                            <span className="ml-2">Menggunakan Salam Namaste</span>
-                                        </div>
-                                        <div className="flex items-center">
-                                            <StaticImage src="../images/wash.png"
-                                                alt="Picture of the author"
-                                                width={40}
-                                                height={40}
-                                            ></StaticImage>
-                                            <span className="ml-2">Mencuci Tangan dan Menggunakan Hand Sanitizer</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </InView>
-
-                    </div>
                     <div className="p-4 text-xl md:text-2xl">
                         <InView as="div" onChange={(inView, entry) => {
                             if (inView) {
