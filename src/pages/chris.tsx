@@ -402,7 +402,7 @@ const Chris = (props) => {
 
                     </motion.div>
                     {/* {!open ? (<MusicPlayer song={song}></MusicPlayer>) : ''} */}
-                    <div className="p-8 mb-4 text-white bg-white">
+                    {/* <div className="p-8 mb-4 text-white bg-white">
                         <div className="flex justify-center mb-4">
                             <h2 className="font-bold  text-xl md:text-4xl">Wishes Box</h2>
                         </div>
@@ -473,7 +473,7 @@ const Chris = (props) => {
                                 </div>)
                             })
                         }
-                    </div>
+                    </div> */}
                     <Footer color="black"></Footer>
                 </div>
             </div>
