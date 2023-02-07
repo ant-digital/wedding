@@ -27,7 +27,8 @@ const options = {
   }
 };
 const Countdown = ({ setReminder, color }) => {
-  const countdown = useCountdown(dayjs('2023-11-19:00:00.000Z'))
+  const countdown = useCountdown(dayjs('2023-11-18', "YYYY-MM-DD"))
+  console.log('countdown', countdown)
   var borderClass = classNames({
     'border-2': true,
     'rounded-lg': true,
