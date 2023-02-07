@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 
-const Footer = ({color='white'}) => {
+const Footer = ({ color = 'white' }) => {
   const classes = classNames({
     'flex': true,
     'flex-col': true,
@@ -16,7 +16,7 @@ const Footer = ({color='white'}) => {
   });
   return (
     <div className={classes}>
-      <span>Made with &hearts;, Ant Digital</span>
+      <span>Made with &hearts;, Bride & Groom</span>
     </div>
   )
 }
