@@ -151,122 +151,71 @@ const Chris = (props) => {
             </Transition.Root>
             <div >
 
-                <div className="text-sm md:text-xl font-sansNarrow overflow-hidden">
+                <div className="text-sm md:text-xl overflow-hidden">
                     {/* <MusicPlayer song={song}></MusicPlayer> */}
-                    <div className="grid grid-cols-1 text-center md:h-screen">
-                        <div className="mt-4">
+                    <div className="flex flex-col  justify-center text-center h-screen bg-gray-300">
+                        <motion.div
+                            initial="hidden"
+                            animate={controls3}
+
+                            variants={{
+                                visible: { x: 0, transition: { when: 'beforeChildren', type: 'tween', duration: 2, delayChildren: 5 } },
+                                hidden: { x: '100vw' }
+                            }}
+                            className="text-center  text-xl md:text-3xl"
+                        >
+                            <div className="font-MrsEavesRomanSmallCaps text-sageGreen text-md md:text-4xl text-center mb-2">The wedding of</div>
+                            <div className="font-MrsEavesRoman text-sageGreen text-2xl uppercase md:text-4xl text-center mb-2">Christianto & Kezia Christy</div>
+                            <div className="text-sageGreen text-xl md:text-4xl text-center">18 • November • 2023</div>
                             <motion.div
+                                className="mt-4"
                                 initial="hidden"
-                                animate={controls3}
-
+                                animate="visible"
                                 variants={{
-                                    visible: { x: 0, transition: { when: 'afterChildren', delay: 0, duration: 2, delayChildren: 5 } },
-                                    hidden: { x: '100vw' }
+                                    visible: { opacity: 1, transition: { type: 'tween', duration: 5 } },
+                                    hidden: { opacity: 0 }
                                 }}
-                                className="text-center  text-xl md:text-3xl"
                             >
-                                <h2 className="p-8 text-sageGreen text-md md:text-4xl text-center">The clock was ticking so fast, between thrilling moments that we had never felt before. We look forward to welcoming family and friends to witness our blessing vows on a happy day.</h2>
+                                <Countdown setReminder='' color='sageGreen'></Countdown>
 
-                                <motion.div
-                                    initial="hidden"
-                                    animate="visible"
-                                    variants={{
-                                        visible: { opacity: 100, transition: { delay: 4, duration: 10 } },
-                                        hidden: { opacity: 0 }
-                                    }}
-                                >
-                                    <Countdown setReminder='' color='sageGreen'></Countdown>
-
-                                </motion.div>
                             </motion.div>
+                        </motion.div>
 
 
+                    </div>
+                    <div className="p-8 mb-4">
+                        <div className="flex justify-center mb-4">
+                            <h2 className="font-bold text-sageGreen text-xl md:text-4xl">Wishes Box</h2>
                         </div>
-                        <div className="p-8 mb-4">
-                            <div className="flex justify-center mb-4">
-                                <h2 className="font-bold text-sageGreen text-xl md:text-4xl">Wishes Box</h2>
-                            </div>
-                            <div className="w-full max-w-sm m-auto" >
+                        <div className="w-full max-w-sm m-auto" >
 
-                                <div className="md:flex md:items-center mb-6">
-                                    <div className="md:w-1/3">
-                                        <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Wishes</label>
-                                    </div>
-                                    <div className="md:w-2/3">
-                                        <input type="textarea" name="message" onChange={handleInputChange} value={""}
-                                            className="appearance-none border-2 border-sageGreen rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gold0"
-                                        ></input>
-                                    </div>
+                            <div className="md:flex md:items-center mb-6">
+                                <div className="md:w-1/3">
+                                    <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Wishes</label>
                                 </div>
-                                <div className="flex flex-col md:items-center mb-6">
-                                    <div className="mb-2">
-                                        <label className="block text-gray-500 font-bold text-md md:text-2xl">Are you going to attend?</label>
-                                    </div>
-                                    <div className="">
-                                        <input type="radio" style={{ width: '20px', height: '20px' }} value="true" onChange={handleInputChange} checked={attend}></input> <span className="mx-4">Yes</span>
-                                        <input type="radio" style={{ width: '20px', height: '20px' }} value="false" onChange={handleInputChange} checked={!attend}></input> <span className="mx-4" >No</span>
-                                    </div>
-                                </div>
-                                <div className="text-center">
-                                    <button
-                                        className="bg-green-700 text-white font-bold py-2 px-4 rounded"
-                                        type="button"
-                                        onClick={sendWishes} >
-                                        Save</button>
+                                <div className="md:w-2/3">
+                                    <input type="textarea" name="message" onChange={handleInputChange} value={""}
+                                        className="appearance-none border-2 border-sageGreen rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gold0"
+                                    ></input>
                                 </div>
                             </div>
+                            <div className="flex flex-col md:items-center mb-6">
+                                <div className="mb-2">
+                                    <label className="block text-gray-500 font-bold text-md md:text-2xl">Are you going to attend?</label>
+                                </div>
+                                <div className="">
+                                    <input type="radio" style={{ width: '20px', height: '20px' }} value="true" onChange={handleInputChange} checked={attend}></input> <span className="mx-4">Yes</span>
+                                    <input type="radio" style={{ width: '20px', height: '20px' }} value="false" onChange={handleInputChange} checked={!attend}></input> <span className="mx-4" >No</span>
+                                </div>
+                            </div>
+                            <div className="text-center">
+                                <button
+                                    className="bg-green-700 text-white font-bold py-2 px-4 rounded"
+                                    type="button"
+                                    onClick={sendWishes} >
+                                    Save</button>
+                            </div>
                         </div>
-                        {/* <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                visible: { x: 0, transition: { when: 'beforeChildren', delay: 0.5, type: 'tween', duration: 3 } },
-                hidden: { x: '100vw' }
-              }}
-              className="text-center p-8 text-black md:col-span-3 self-center text-xl md:text-3xl"
-            >
-              "Demikianlah mereka bukan lagi dua, melainkan satu. <br></br>Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
-              <motion.div
-                variants={{
-                  visible: { opacity: 1, transition: { duration: 2, delay: 0.2, type: "tween" } },
-                  hidden: { opacity: 0 }
-                }}
-                className="flex flex-col md:flex-row justify-center gap-10 relative">
-                <StaticImage src="../images/sageGreen/ornament1-kiri.png"
-                  alt="bunga" width={120}
-                  style={{ position: 'absolute', left: '-30px', top: '200px' }}
-                ></StaticImage>
-                <StaticImage src="../images/sageGreen/ornament1-kanan.png"
-                  alt="bunga" width={120}
-                  style={{ position: 'absolute', right: '-30px', bottom: 0 }}
-                ></StaticImage>
-                <div
-                  className="flex flex-col">
-                  <StaticImage src="../images/sageGreen/bride.webp" objectFit="contain"
-                    alt="bride" className="my-4"
-                  ></StaticImage>
-                  <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Tommy</h1>
-                  <span className="text-xl md:text-3xl">
-                    <h3>Putra ketiga dari <br></br>Bapak & Ibu Hock</h3>
-                  </span>
-                </div>
-                <div className="flex flex-col md:pt-32">
-                  <h1 className="text-5xl md:text-8xl font-greatVibe text-sageGreen">&</h1>
-                </div>
-                <div
-                  // variants={{ visible: { opacity: 1 }, hidden: { opacity: 0 } }}
-                  className="flex flex-col">
-                  <StaticImage src="../images/sageGreen/groom.webp"
-                    alt="groom" className="my-4" objectFit="contain"
-                  ></StaticImage>
-                  <h1 className="font-greatVibe text-5xl md:text-8xl text-sageGreen">Cindy</h1>
-                  <span className="text-xl md:text-3xl">
-                    <h3>Putri ketiga dari <br></br>Bapak & Ibu Seng</h3>
-                  </span>
-                </div>
-              </motion.div>
-            </motion.div> */}
-
                     </div>
                     <motion.div
                         variants={{ visible: { x: 0 }, hidden: { x: '100vw' } }}
@@ -284,8 +233,8 @@ const Chris = (props) => {
                         </div>
                         <div id="frame" className="flex flex-col md:flex-row justify-evenly space-y-10 md:space-y-0">
                             <div className="text-center space-y-5">
-                                <h1 className="text-sageGreen font-bold text-xl md:text-4xl">Wedding Ceremony</h1>
-                                <p>Saturday, 18 November 2023 <br></br>08:00 WIB - end <br></br>Hotel Episode Gading Serpong</p>
+                                <h1 className="text-sageGreen font-bold text-xl md:text-4xl">Holy Matrimony</h1>
+                                <p>Saturday, 11 November 2023 <br></br>09:00  <br></br>Gereja St Matia Rasul Kosambi</p>
                                 <a href="https://www.google.com/maps/dir/-6.2062592,106.8531712/hotel+episode+gading+serpong/@-6.1883929,106.6131143,11z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x2e69fd94da2847cd:0xa1421103e3d49919!2m2!1d106.6202915!2d-6.2563993?hl=en-US">
                                     <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
                                         <div className="mr-2">
@@ -301,7 +250,7 @@ const Chris = (props) => {
                             </div>
                             <div className="text-center space-y-5">
                                 <h1 className="text-sageGreen font-bold text-xl md:text-4xl">Wedding Reception</h1>
-                                <p>Saturday, 06 May 2021 <br></br>08:00 WIB - end <br></br>JW Marriot</p>
+                                <p>Saturday, 18 November 2023 <br></br>18:00 <br></br>Hotel Episode Gading Serpong</p>
                                 <a href="https://www.google.com/maps/place/The+Apurva+Kempinski+Bali/@-8.8285465,115.2133893,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd25cc0e01a2dfb:0x486d1b655b87ed9c!5m2!4m1!1i2!8m2!3d-8.8285465!4d115.2155844?hl=en-US">
                                     <div className="mx-auto mt-4 flex border-2 rounded-xl text-white w-max bg-green-700" style={{ padding: '10px 10px 5px 10px' }}>
                                         <div className="mr-2">

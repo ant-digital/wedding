@@ -42,16 +42,16 @@ const Countdown = ({ setReminder, color }) => {
     <div className="flex flex-col justify-center w-screen p-4">
       <div className="grid grid-cols-4 gap-6 md:gap-6 justify-center text-center self-center">
         <div className={borderClass}>
-          <span className="font-bold">{countdown.days}</span> <br></br><span >days</span>
+          <span className="font-bold">{countdown.days}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >days</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold">{countdown.hours}</span> <br></br><span >hours</span>
+          <span className="font-bold">{countdown.hours}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >hours</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold">{countdown.minutes}</span> <br></br><span >minutes</span>
+          <span className="font-bold">{countdown.minutes}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >minutes</span>
         </div>
         <div className={borderClass}>
-          <span className="font-bold">{countdown.seconds}</span> <br></br><span >seconds</span>
+          <span className="font-bold">{countdown.seconds}</span> <br></br><span style={{ fontSize: '12px', textAlign: 'center' }} >seconds</span>
         </div>
       </div>
       {setReminder ? (
