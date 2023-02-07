@@ -369,7 +369,8 @@ const Chris = (props) => {
               </div>
             </div>
           </div> */}
-                    <MusicPlayer song={song}></MusicPlayer>
+                    {open ? (<MusicPlayer song={song}></MusicPlayer>) : ''}
+
 
                     <div className="p-4 mt-4 text-xl md:text-2xl">
                         <InView as="div" onChange={(inView, entry) => {
