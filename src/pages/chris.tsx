@@ -193,7 +193,7 @@ const Chris = (props) => {
                                     style={{ justifyContent: 'center', }}
                                     digitBlockStyle={{ width: 30, height: 30, fontSize: 35, backgroundColor: 'white', color: 'black' }}
                                     dividerStyle={{ color: 'black', height: 0.5 }}
-                                    to={new Date().getTime() + 2400 * 3600 * 1000 + 5000} />;
+                                    to={1700240400} />;
 
 
                             </motion.div>
