@@ -178,7 +178,7 @@ const Chris = (props) => {
                         >
                             <div style={{ letterSpacing: '0.5px' }} className="font-MrsEavesRomanSmallCaps text-white text-md md:text-4xl text-center mb-2">The wedding of</div>
                             <div className="font-MrsEavesRoman text-white text-xl uppercase md:text-4xl text-center mb-2">Christianto & Kezia Christy</div>
-                            <div className="text-white text-sm md:text-4xl text-center">18 • November • 2023</div>
+                            <div className="text-white text-sm md:text-xl text-center">18 • November • 2023</div>
                             <motion.div
                                 className="mt-4"
                                 initial="hidden"
@@ -191,9 +191,11 @@ const Chris = (props) => {
                                 {/* <Countdown setReminder='' color='white'></Countdown> */}
                                 <FlipClockCountdown
                                     style={{ justifyContent: 'center', }}
-                                    digitBlockStyle={{ width: 30, height: 30, fontSize: 35, backgroundColor: 'white', color: 'black' }}
+                                    labelStyle={{ fontSize: 12, color: 'white' }}
+
+                                    digitBlockStyle={{ width: 20, height: 20, fontSize: 15, backgroundColor: 'white', color: 'black' }}
                                     dividerStyle={{ color: 'black', height: 0.5 }}
-                                    to={1700240400} />;
+                                    to={1700240400000} />;
 
 
                             </motion.div>
